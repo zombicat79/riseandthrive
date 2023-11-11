@@ -1,0 +1,14 @@
+{
+  "name": "riseandthrive",
+  "version": "1.0.0",
+  "description": "Rise & Thrive businnes page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "author": "David Castejón",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
