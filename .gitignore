@@ -22,3 +22,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# unused fonts
+/public/fonts/Noto_Sans
+/public/fonts/Raleway
+/public/fonts/Raleway_Dots

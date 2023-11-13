@@ -1,3 +1,32 @@
-* {
+*, 
+*::before, 
+*::after {
     padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    background-color: #fff;
+    height: 200vh; // remove after defining content
+}
+
+html {
+    font-family: NotoSans-Regular;
+    font-size: 62.5%; /* 1rem equals to 10px */
 }
