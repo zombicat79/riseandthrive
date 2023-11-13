@@ -2,6 +2,14 @@
   font-family: NotoSans-Regular;
   src: url("./../public/fonts/NotoSans-Regular.ttf"); }
 
+@font-face {
+  font-family: Raleway;
+  src: url("./../public/fonts/Raleway.ttf"); }
+
+@font-face {
+  font-family: Raleway-Dots;
+  src: url("./../public/fonts/RalewayDots.ttf"); }
+
 *,
 *::before,
 *::after {
@@ -23,8 +31,7 @@ a {
   text-decoration: none; }
 
 html, body {
-  background-color: #fff;
-  height: 200vh; }
+  background-color: #fff; }
 
 html {
   font-family: NotoSans-Regular;
@@ -43,10 +50,57 @@ html {
 .flex-start {
   justify-content: flex-start; }
 
+.flex-center {
+  justify-content: center; }
+
 .flex-between {
   justify-content: space-between; }
 
 .header {
   background-color: blue;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  padding: 1rem 2rem; }
+  .header__logo {
+    width: 100%;
+    max-width: 6rem; }
+  .header svg {
+    display: none; }
+  .header .nav__element:first-child {
+    margin-left: 3rem; }
+  .header .nav__element:not(.nav__element:last-child) {
+    margin-right: 3rem; }
+  .header .nav__link {
+    font-size: 1.75rem;
+    text-transform: uppercase; }
+  .header .nav__link:hover {
+    cursor: pointer; }
+
+.content-frame {
+  padding: 10rem 2rem 2rem;
+  max-width: 200rem;
+  margin: 0 auto; }
+
+.block-section {
+  background-color: orangered;
+  height: 40rem; }
+  .block-section:not(.block-section:last-child) {
+    margin-bottom: 2rem; }
+
+.home__heading {
+  margin: 0 -2rem;
+  height: calc(100vh - 10rem);
+  max-height: 80rem;
+  color: #fff; }
+
+.home__title {
+  font-family: "Raleway";
+  font-weight: 900;
+  font-size: 12rem; }
+
+.home__subtitle {
+  font-family: "Raleway-Dots";
+  font-weight: 500;
+  font-size: 2.5rem;
+  font-style: italic;
+  text-transform: uppercase; }

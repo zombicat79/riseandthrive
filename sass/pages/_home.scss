@@ -1,0 +1,22 @@
+.home {
+    &__heading {
+        margin: 0 -2rem;
+        height: calc(100vh - 10rem);
+        max-height: 80rem;
+        color: #fff;
+    }
+
+    &__title {
+        font-family: "Raleway";
+        font-weight: 900;
+        font-size: 12rem;
+    }
+
+    &__subtitle {
+        font-family: "Raleway-Dots";
+        font-weight: 500;
+        font-size: 2.5rem;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+}

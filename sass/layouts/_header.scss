@@ -2,4 +2,34 @@
     background-color: blue;
     position: fixed;
     width: 100%;
+    padding: 1rem 2rem;
+
+    &__logo {
+        width: 100%;
+        max-width: 6rem;
+    }
+
+    & svg {
+        display: none;
+    }
+
+
+    .nav {
+        &__element:first-child {
+            margin-left: 3rem;
+        }
+
+        &__element:not(.nav__element:last-child) {
+            margin-right: 3rem;
+        }
+
+        &__link {
+            font-size: 1.75rem;
+            text-transform: uppercase;
+        }
+        
+        &__link:hover {
+            cursor: pointer;
+        }
+    }
 }

@@ -1,0 +1,8 @@
+.block-section {
+    background-color: orangered;
+    height: 40rem; // remove after defining content
+
+    &:not(.block-section:last-child) {
+        margin-bottom: 2rem;
+    }
+}
