@@ -1,0 +1,9 @@
+.footer {
+    background: linear-gradient(to right, $color-dark-pink, $color-intense-red);
+    height: 20rem;
+
+    &__logo {
+        width: 100%;
+        max-width: 4rem;
+    }
+}

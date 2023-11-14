@@ -1,0 +1,15 @@
+@mixin regular-text-shadow-up($blur, $color) {
+    text-shadow: 0 -1rem $blur $color;
+}
+
+@mixin regular-text-shadow-down($blur, $color) {
+    text-shadow: 0 1rem $blur $color;
+}
+
+@mixin regular-text-shadow-left($blur, $color) {
+    text-shadow: -1rem 0 $blur $color;
+}
+
+@mixin regular-text-shadow-rigth($blur, $color) {
+    text-shadow: 1rem 0 $blur $color;
+}

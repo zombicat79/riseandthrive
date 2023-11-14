@@ -1,5 +1,5 @@
 .header {
-    background-color: blue;
+    background: linear-gradient(to right, $color-intense-red, $color-dark-pink);
     position: fixed;
     width: 100%;
     padding: 1rem 2rem;
@@ -26,6 +26,7 @@
         &__link {
             font-size: 1.75rem;
             text-transform: uppercase;
+            color: $color-dark-cream;
         }
         
         &__link:hover {
