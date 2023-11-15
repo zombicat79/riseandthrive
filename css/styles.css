@@ -31,7 +31,8 @@ a {
   text-decoration: none; }
 
 html, body {
-  background-color: #fff5e0; }
+  background-color: #faf8ed;
+  color: #141e46; }
 
 html {
   font-family: NotoSans-Regular;
@@ -57,13 +58,15 @@ html {
   justify-content: space-between; }
 
 .header {
-  background: linear-gradient(to right, #c70039, #ff6969);
+  background: linear-gradient(to right, #141e46, #faf8ed);
   position: fixed;
   width: 100%;
   padding: 1rem 2rem; }
   .header__logo {
     width: 100%;
-    max-width: 6rem; }
+    max-width: 8rem;
+    position: relative;
+    top: 2px; }
   .header svg {
     display: none; }
   .header .nav__element:first-child {
@@ -83,14 +86,14 @@ html {
   margin: 0 auto; }
 
 .footer {
-  background: linear-gradient(to right, #ff6969, #c70039);
+  background-color: #141e46;
   height: 20rem; }
   .footer__logo {
     width: 100%;
     max-width: 4rem; }
 
 .block-section {
-  background-color: #e1c78f;
+  background-color: #faf8ed;
   height: 40rem; }
   .block-section:not(.block-section:last-child) {
     margin-bottom: 2rem; }
@@ -100,7 +103,7 @@ html {
   height: calc(100vh - 10rem);
   max-height: 80rem;
   color: #faf8ed;
-  background-image: url("./../public/images/fondo-random.jpg");
+  background-image: url("./../public/images/cloudy-bg_big.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
@@ -113,7 +116,8 @@ html {
 
 .home__subtitle {
   font-family: "Raleway-Dots";
-  font-weight: 700;
-  font-size: 2.5rem;
+  font-weight: 900;
+  font-size: 3rem;
   font-style: italic;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #000; }

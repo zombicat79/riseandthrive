@@ -1,5 +1,6 @@
 .footer {
-    background: linear-gradient(to right, $color-dark-pink, $color-intense-red);
+    // background: linear-gradient(to bottom, $color-light-grey, $color-dark-blue 50%);
+    background-color: $color-dark-blue;
     height: 20rem;
 
     &__logo {

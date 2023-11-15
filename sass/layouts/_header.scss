@@ -1,12 +1,14 @@
 .header {
-    background: linear-gradient(to right, $color-intense-red, $color-dark-pink);
+    background: linear-gradient(to right, $color-dark-blue, $color-light-grey);
     position: fixed;
     width: 100%;
     padding: 1rem 2rem;
 
     &__logo {
         width: 100%;
-        max-width: 6rem;
+        max-width: 8rem;
+        position: relative;
+        top: 2px;
     }
 
     & svg {
