@@ -27,12 +27,38 @@
 
         &__link {
             font-size: 1.75rem;
+            font-family: "Raleway";
+            font-weight: 400;
             text-transform: uppercase;
-            color: $color-dark-cream;
+            color: #fff;
+            transition: all .5s;
         }
         
         &__link:hover {
             cursor: pointer;
+            font-size: 2.25rem;
+            font-weight: 800;
+            @include minimal-text-shadow-up(3px, #fff);
+            @include minimal-text-shadow-down(3px, #fff);
+            @include minimal-text-shadow-left(3px, #fff);
+            @include minimal-text-shadow-right(3px, #fff);
+        }
+    }
+
+    &__langSelector {
+        flex: .15;
+        
+        .langSelector {
+            &__icon {
+                width: 100%;
+                max-width: 3rem;
+                transition: all .2s;
+
+                &:hover {
+                    cursor: pointer;
+                    max-width: 4rem;
+                }
+            }
         }
     }
 }

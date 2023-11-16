@@ -1,8 +1,9 @@
 .block-section {
-    background-color: $color-light-grey;
+    background-color: $color-light-green;
     height: 40rem; // remove after defining content
+    margin-bottom: 5rem;
 
     &:not(.block-section:last-child) {
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
     }
 }

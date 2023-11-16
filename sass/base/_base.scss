@@ -21,9 +21,14 @@ a {
     text-decoration: none;
 }
 
+a:link, a:visited,
+a:hover, a:active {
+    color: #fff;
+}
+
 html, body {
-    background-color: $color-light-grey;
-    color: $color-dark-blue;
+    background-color: #fff;
+    color: #000;
 }
 
 html {
