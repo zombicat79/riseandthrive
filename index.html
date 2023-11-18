@@ -7,33 +7,47 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="header flex-container--row flex-between">
-        <div class="flex-container--row flex-start">
-            <img class="header__logo" src="./public/logos/rocket-logo.png" alt="Rise & Thrive logo"/>
-            <nav class="header__nav">
-                <ul class="nav__list flex-container--row flex-start">
-                    <li class="nav__element"><a class="nav__link">About</a></li>
-                    <li class="nav__element"><a class="nav__link">Services</a></li>
-                    <li class="nav__element"><a class="nav__link">Booking</a></li>
-                    <li class="nav__element"><a class="nav__link">Contact</a></li>
-                </ul>
-            </nav>
+    <header class="header flex-container--row flex-between" data-status="contracted">
+        <div class="flex-container--row flex-between">
+            <div class="flex-container--row flex-start">
+                <a href="./index.html">
+                    <img class="header__logo" src="./public/logos/rocket-logo.png" alt="Rise & Thrive logo"/>
+                </a>
+                <nav class="header__nav">
+                    <ul class="nav__list flex-container--row flex-start">
+                        <li class="nav__element"><a class="nav__link">About</a></li>
+                        <li class="nav__element"><a class="nav__link">Services</a></li>
+                        <li class="nav__element"><a class="nav__link">Booking</a></li>
+                        <li class="nav__element"><a class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__langSelector flex-container--row flex-between">
+                <button class="langSelector__btn">
+                    <img class="langSelector__icon" src="./public/icons/lang-english.png" data-status="selected" alt="English flag" />
+                </button>
+                <button class="langSelector__btn">
+                    <img class="langSelector__icon" src="./public/icons/lang-spanish.png" alt="Spanish flag" />
+                </button>
+                <button class="langSelector__btn">
+                    <img class="langSelector__icon" src="./public/icons/lang-catalan.png" alt="Catalan flag" />
+                </button>
+            </div>
         </div>
 
-        <div class="header__langSelector flex-container--row flex-between">
-            <img class="langSelector__icon" src="./public/icons/lang-english.png" alt="English flag" />
-            <img class="langSelector__icon" src="./public/icons/lang-spanish.png" alt="Spanish flag" />
-            <img class="langSelector__icon" src="./public/icons/lang-catalan.png" alt="Catalan flag" />
+        <div class="header__mobileManager">
+            <svg class="mobileManager__burgerMenu" data-status="active" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11066)"> <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#141e46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11066"> <rect width="24" height="24" fill="white" transform="translate(0 0.000915527)"></rect> </clipPath> </defs> </g></svg>
+            <svg class="mobileManager__xCloser" data-status="inactive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z" fill="#141e46"></path> </g></svg>
         </div>
-
-        <svg>
-
-        </svg>
     </header>
     <main class="content-frame home">
-        <section class="block-section home__heading flex-container--column flex-center">
-            <h1 class="home__title">Rise & Thrive</h1>
-            <h2 class="home__subtitle">Unleash your superpowers</h2>
+        <section class="block-section home__heading">
+            <div class="heading__background"></div>
+
+            <div class="heading__billboard">
+                <h1 class="home__title">Rise And Thrive</h1>
+                <h2 class="home__subtitle">Unleash your superpowers</h2>
+            </div>
         </section>
 
         <section class="block-section"></section>
@@ -75,5 +89,7 @@
             <p class="subfooter__text">This site has been designed and developed by <a class="subfooter__link" href="https://zombiecat.dev/" target="_blank"><span class="subfooter__maker">Zombiecat</span><img class="subfooter__makerLogo" src="./public/logos/zombiecat-trans-logo.png" alt="ZombieCat logo" /></a></p>
         </div>
     </footer>
+
+    <script type="application/javascript" src="./src/app.js"></script>
 </body>
 </html>

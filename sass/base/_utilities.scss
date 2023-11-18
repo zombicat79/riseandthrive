@@ -9,7 +9,6 @@
     align-items: center;
 }
 
-
 .flex-start {
     justify-content: flex-start;
 }
@@ -21,4 +20,9 @@
 }
 .flex-around {
     justify-content: space-around;
+}
+
+
+.scroll-block {
+    overflow: hidden;
 }

@@ -4,26 +4,43 @@
         height: calc(100vh - 10rem);
         max-height: 80rem;
         color: $color-light-grey;
-        background-image: url("./../public/images/cloudy-bg_big.jpg");
+        position: relative;
+    }
+
+    .heading__background {
+        background-image: 
+            linear-gradient(to right, rgba(20, 30, 70, 0.7), rgba(250, 248, 237, 0.7)), 
+            url("./../public/images/cloudy-bg_big.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .heading__billboard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
     &__title {
         font-family: "Raleway";
         font-weight: 900;
         font-size: 12rem;
+        text-transform: uppercase;
         
         @include regular-text-shadow-down(.75rem, #000);
     }
 
     &__subtitle {
-        font-family: "Raleway-Dots";
+        font-family: "Caveat-Bold";
         font-weight: 900;
-        font-size: 3rem;
+        font-size: 6rem;
         font-style: italic;
-        text-transform: uppercase;
         color: #000;
     }
 

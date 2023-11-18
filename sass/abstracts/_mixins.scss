@@ -10,7 +10,7 @@
     text-shadow: -.15rem 0 $blur $color;
 }
 
-@mixin minimal-text-shadow-rigth($blur, $color) {
+@mixin minimal-text-shadow-right($blur, $color) {
     text-shadow: .15rem 0 $blur $color;
 }
 
@@ -26,6 +26,6 @@
     text-shadow: -1rem 0 $blur $color;
 }
 
-@mixin regular-text-shadow-rigth($blur, $color) {
+@mixin regular-text-shadow-right($blur, $color) {
     text-shadow: 1rem 0 $blur $color;
 }

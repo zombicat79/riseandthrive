@@ -1,0 +1,16 @@
+// HEADER ANIMATIONS
+
+.header__logo {
+    &.liftoff {
+        transform: translateY(2px) rotate(0);
+
+        &--complete {
+            transform: translateY(2px) rotate(0);
+            transition: .5s;
+        }
+    }
+}
+
+.btn-pressed {
+    transform: scale(.65);
+}
