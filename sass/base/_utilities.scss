@@ -25,4 +25,9 @@
 
 .scroll-block {
     overflow: hidden;
+
+    &--dark {
+        filter: grayscale(1);
+        pointer-events: none;
+    }
 }

@@ -1,0 +1,73 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(0.2);  
+    height: 50rem;
+    width: 50rem;
+    overflow: auto;
+    padding: 5rem 4rem 5rem;
+    border: 5px solid $color-dark-blue;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: $color-light-grey;    
+    transition: all .75s;
+
+    &--appearing {
+        transform: translate(-50%, -40%) scale(1);
+    }
+
+    &--disappearing {
+        transform: translate(-50%, -40%) scale(0);
+    }
+
+    &__xCloser {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 5rem;
+        height: 5rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 15rem;
+    }
+
+    &__title {
+        width: 100%;
+        position: absolute;
+        top: 5.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    &__text, &__list {
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        &.bold span, & a {
+            font-family: "NotoSans-Bold";
+        }
+    }
+
+    &__list {
+        text-align: left;
+        margin-left: 4rem;
+        list-style-type: disc;
+    }
+
+    &__footnote {
+        font-family: "NotoSans-Bold";
+        margin-top: 4rem;
+    }
+}

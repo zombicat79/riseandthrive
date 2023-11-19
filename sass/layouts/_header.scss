@@ -94,8 +94,6 @@
         }
 
         & svg.mobileManager__xCloser {
-            transform: rotate(45deg);
-
             &.scale-up {
                 transform: scale(1) rotate(45deg);
             }
@@ -131,6 +129,12 @@
                 @include minimal-text-shadow-down(3px, #fff);
                 @include minimal-text-shadow-left(3px, #fff);
                 @include minimal-text-shadow-right(3px, #fff);
+            }
+
+            &:link, &:visited,
+            &:hover, &:active {
+                color: #fff;
+                text-decoration: none;
             }
         }
     }

@@ -1,5 +1,13 @@
 const body = document.querySelector("body");
 const header = document.querySelector(".header");
+const content = document.querySelector("main");
+const footer = document.querySelector(".footer");
+
+const ctaButtons = Array.from(document.querySelectorAll(".cta-button"));
+const appointmentButtons = Array.from(document.querySelectorAll(".appointment-btn"));
+const popup = document.querySelector(".popup");
+const popupClosers = document.querySelectorAll(".popup__xCloser");
+const popupContent = document.querySelector(".popup__content");
 
 // HEADER EVENT LISTENERS
 
@@ -13,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             headerLogo.classList.add("liftoff--complete");
         }, 1500);
     //}
-})
+});
 
 // -- Language selection buttons pressing --
 const langButtons = Array.from(document.querySelectorAll(".langSelector__btn .langSelector__icon"));
@@ -23,8 +31,8 @@ langButtons.forEach((btn) => {
         setTimeout(() => {
             btn.classList.remove("btn-pressed");
         }, 1500);
-    })
-})
+    });
+});
 
 // -- Mobile header menu management --
 const mobileIcons = Array.from(document.querySelectorAll(".header__mobileManager svg"));
@@ -47,6 +55,44 @@ mobileIcons.forEach((icon) => {
                     el.dataset.status = "active";
                 }, 500);
             }
-        })
+        });
+    });
+});
+
+
+// -- CTA BUTTONS PRESSING --
+ctaButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        btn.classList.add("pressed");
+        setTimeout(() => {
+            btn.classList.remove("pressed");
+        }, 1000)
+    });
+});
+
+appointmentButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        setTimeout(() => {
+            body.classList.add("scroll-block");
+            [header, content, footer].forEach((section) => section.classList.add("scroll-block--dark"));
+            popupContent.innerHTML = appointmentTemplate;
+            popup.style.display = "block";
+            popup.scrollIntoView({ block: "end", behavior: "smooth"});
+            popup.classList.remove("popup--disappearing");
+            popup.classList.add("popup--appearing");
+        }, 750);
     })
 })
+
+
+// -- POPUP CLOSERS --
+popupClosers.forEach((closer) => {
+    closer.addEventListener("click", () => {
+        closer.parentElement.classList.remove("popup--appearing");
+        closer.parentElement.classList.add("popup--disappearing");
+        [header, content, footer].forEach((section) => section.classList.remove("scroll-block--dark"));
+        body.classList.remove("scroll-block");
+    })
+})
+
+

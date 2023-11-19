@@ -29,3 +29,36 @@
 @mixin regular-text-shadow-right($blur, $color) {
     text-shadow: 1rem 0 $blur $color;
 }
+
+
+@mixin minimal-box-shadow-up($blur, $color) {
+    box-shadow: 0 -.15rem $blur $color;
+}
+
+@mixin minimal-box-shadow-down($blur, $color) {
+    box-shadow: 0 .15rem $blur $color;
+}
+
+@mixin minimal-box-shadow-left($blur, $color) {
+    box-shadow: -.15rem 0 $blur $color;
+}
+
+@mixin minimal-box-shadow-right($blur, $color) {
+    box-shadow: .15rem 0 $blur $color;
+}
+
+@mixin regular-box-shadow-up($blur, $color) {
+    box-shadow: 0 -1rem $blur $color;
+}
+
+@mixin regular-box-shadow-down($blur, $color) {
+    box-shadow: 0 1rem $blur $color;
+}
+
+@mixin regular-box-shadow-left($blur, $color) {
+    box-shadow: -1rem 0 $blur $color;
+}
+
+@mixin regular-box-shadow-right($blur, $color) {
+    box-shadow: 1rem 0 $blur $color;
+}

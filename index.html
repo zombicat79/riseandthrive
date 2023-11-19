@@ -19,6 +19,7 @@
                         <li class="nav__element"><a class="nav__link">Services</a></li>
                         <li class="nav__element"><a class="nav__link">Booking</a></li>
                         <li class="nav__element"><a class="nav__link">Contact</a></li>
+                        <li class="nav__element"><button class="cta-button appointment-btn">Free appointment</button></li>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +38,7 @@
 
         <div class="header__mobileManager">
             <svg class="mobileManager__burgerMenu" data-status="active" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11066)"> <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#141e46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11066"> <rect width="24" height="24" fill="white" transform="translate(0 0.000915527)"></rect> </clipPath> </defs> </g></svg>
-            <svg class="mobileManager__xCloser" data-status="inactive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z" fill="#141e46"></path> </g></svg>
+            <svg class="xCloser mobileManager__xCloser" data-status="inactive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z" fill="#141e46"></path> </g></svg>
         </div>
     </header>
     <main class="content-frame home">
@@ -47,6 +48,7 @@
             <div class="heading__billboard">
                 <h1 class="home__title">Rise And Thrive</h1>
                 <h2 class="home__subtitle">Unleash your superpowers</h2>
+                <button class="cta-button appointment-btn">Get your free appointment now!</button>
             </div>
         </section>
 
@@ -90,6 +92,14 @@
         </div>
     </footer>
 
+    <aside class="popup">
+        <svg class="xCloser popup__xCloser" data-status="inactive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z" fill="#141e46"></path> </g></svg>
+
+        <img class="popup__logo" src="./public/logos/rocket-logo.png" alt="Rise & Thrive logo"/>
+        <div class="popup__content"></div>
+    </aside>
+
+    <script type="application/javascript" src="./src/popupTemplates.js"></script>
     <script type="application/javascript" src="./src/app.js"></script>
 </body>
 </html>

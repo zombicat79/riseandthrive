@@ -1,3 +1,5 @@
+// CSS RESET
+
 *, 
 *::before, 
 *::after {
@@ -17,21 +19,28 @@ ol, ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
 a:link, a:visited,
 a:hover, a:active {
-    color: #fff;
+    color: $color-dark-blue;
+}
+
+a:hover {
+    @include minimal-text-shadow-up(2rem, $color-dark-blue);
 }
 
 html, body {
     background-color: #fff;
-    color: #000;
+    color: $color-dark-blue;
 }
 
 html {
     font-family: NotoSans-Regular;
     font-size: 62.5%; /* 1rem equals to 10px */
+}
+
+
+// COMMON MINIMAL COMPONENTS
+
+.xCloser {
+    transform: rotate(45deg);
 }

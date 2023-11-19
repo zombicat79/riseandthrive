@@ -41,7 +41,11 @@
         font-weight: 900;
         font-size: 6rem;
         font-style: italic;
-        color: #000;
+        color: $color-dark-blue;
+    }
+
+    & .cta-button {
+        margin-top: 4rem;
     }
 
     &__banner {

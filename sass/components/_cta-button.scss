@@ -1,0 +1,22 @@
+.cta-button {
+    background-color: $color-yellow-sun;
+    font-size: 1.75rem;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    transition: all .2s;
+
+    &:hover {
+        cursor: pointer;
+        animation-name: btn-pulsate;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    &.pressed {
+        transform: translateY(.25rem) scale(0.9);
+        box-shadow: 0 1rem 3rem $color-dark-blue;
+        animation-name: none;
+        filter: brightness(0.95);
+    }
+}

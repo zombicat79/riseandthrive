@@ -1,3 +1,36 @@
+// CTA-BUTTON ANIMATIONS
+
+@keyframes btn-pulsate {
+    0% {box-shadow: 0 0 0 $color-yellow-sun; 
+        box-shadow: 0 0 0 $color-yellow-sun; 
+        box-shadow: 0 0 0 $color-yellow-sun; 
+        box-shadow: 0 0 0 $color-yellow-sun;
+        box-shadow: 0 0 0 $color-dark-blue;
+        box-shadow: 0 0 0 $color-dark-blue;
+        box-shadow: 0 0 0 $color-dark-blue;
+        box-shadow: 0 0 0 $color-dark-blue;
+    }
+    50% {@include minimal-box-shadow-up(1rem, $color-yellow-sun); 
+        @include minimal-box-shadow-down(1rem, $color-yellow-sun); 
+        @include minimal-box-shadow-left(1rem, $color-yellow-sun); 
+        @include minimal-box-shadow-right(1rem, $color-yellow-sun);
+        @include minimal-text-shadow-up(2rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(2rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(2rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(2rem, rgba(20, 30, 70, 0.5));
+    }
+    100% {box-shadow: 0 0 0 $color-yellow-sun; 
+        box-shadow: 0 0 0 $color-yellow-sun; 
+        box-shadow: 0 0 0 $color-yellow-sun; 
+        box-shadow: 0 0 0 $color-yellow-sun;
+        box-shadow: 0 0 0 $color-dark-blue;
+        box-shadow: 0 0 0 $color-dark-blue;
+        box-shadow: 0 0 0 $color-dark-blue;
+        box-shadow: 0 0 0 $color-dark-blue;
+    }
+}
+
+
 // HEADER ANIMATIONS
 
 .header__logo {
@@ -14,3 +47,4 @@
 .btn-pressed {
     transform: scale(.65);
 }
+
