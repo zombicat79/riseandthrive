@@ -1,4 +1,4 @@
-// CSS RESET
+// CSS RESET & GENERAL STYLES
 
 *, 
 *::before, 
@@ -13,6 +13,17 @@
     font-weight: inherit;
     font-style: inherit;
     font-size: inherit;
+}
+
+*::-webkit-scrollbar {
+    background-color: $color-yellow-sun;
+}
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, transparent, $color-yellow-sun, $color-dark-blue, $color-yellow-sun, transparent);
+    border-radius: 45%;
+}
+*::-webkit-scrollbar-track {
+    margin: 1rem 0;
 }
 
 ol, ul {

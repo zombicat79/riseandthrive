@@ -36,6 +36,16 @@
   font-style: inherit;
   font-size: inherit; }
 
+*::-webkit-scrollbar {
+  background-color: #fee257; }
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, transparent, #fee257, #141e46, #fee257, transparent);
+  border-radius: 45%; }
+
+*::-webkit-scrollbar-track {
+  margin: 1rem 0; }
+
 ol, ul {
   list-style: none; }
 
@@ -139,7 +149,11 @@ html {
       flex-direction: column;
       align-items: flex-start;
       height: 100%; }
-    @media only screen and (max-width: 800px) {
+    .header[data-status="expanded"] .header__container--layer1 {
+      justify-content: flex-start; }
+    .header[data-status="expanded"] .header__container--layer2a {
+      flex: 0.85; }
+    @media only screen and (max-width: 950px) {
       .header[data-status="expanded"] .header__nav {
         display: flex; }
         .header[data-status="expanded"] .header__nav .nav__element {
@@ -147,13 +161,14 @@ html {
           transition: all .2s; }
           .header[data-status="expanded"] .header__nav .nav__element:first-child {
             margin-top: 3rem; }
-          .header[data-status="expanded"] .header__nav .nav__element:hover {
+          .header[data-status="expanded"] .header__nav .nav__element:not(.nav__element:last-child):hover {
             transform: translateX(2rem); }
           .header[data-status="expanded"] .header__nav .nav__element .nav__link {
             font-size: 3rem; }
       .header[data-status="expanded"] .header__langSelector {
-        display: flex; } }
-  @media only screen and (max-width: 800px) {
+        display: flex;
+        margin-left: 2rem; } }
+  @media only screen and (max-width: 950px) {
     .header[data-status="contracted"] .header__nav {
       display: none; }
     .header[data-status="contracted"] .header__langSelector {
@@ -169,7 +184,7 @@ html {
       transform: translateY(0) rotate(45deg); }
   .header svg {
     display: none; }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 950px) {
     .header svg[data-status="active"] {
       display: block;
       width: 5rem;
@@ -309,10 +324,31 @@ html {
   text-align: center;
   background-color: #faf8ed;
   transition: all .75s; }
+  .popup::-webkit-scrollbar {
+    background-color: #faf8ed;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem; }
+  .popup::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, transparent, #faf8ed, #141e46, #faf8ed, transparent); }
+  @media only screen and (max-width: 950px) {
+    .popup {
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0) scale(0.2);
+      border-radius: 0;
+      z-index: 20; } }
   .popup--appearing {
     transform: translate(-50%, -40%) scale(1); }
+  @media only screen and (max-width: 950px) {
+    .popup--appearing {
+      transform: translate(0, 0) scale(1); } }
   .popup--disappearing {
     transform: translate(-50%, -40%) scale(0); }
+  @media only screen and (max-width: 950px) {
+    .popup--disappearing {
+      transform: translate(0, 0) scale(0); } }
   .popup__xCloser {
     position: absolute;
     top: 2rem;
@@ -336,6 +372,9 @@ html {
     margin-bottom: 1rem; }
   .popup__text.bold span, .popup__text a {
     font-family: "NotoSans-Bold"; }
+  @media only screen and (max-width: 950px) {
+    .popup__text {
+      text-align: left; } }
   .popup__list {
     text-align: left;
     margin-left: 4rem;
