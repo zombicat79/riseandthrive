@@ -1,6 +1,6 @@
 .home {
     &__heading {
-        margin: 0 -2rem;
+        margin: 0 -6rem;
         height: calc(100vh - 10rem);
         max-height: 80rem;
         color: $color-light-grey;
@@ -10,7 +10,7 @@
     .heading__background {
         background-image: 
             linear-gradient(to right, rgba(20, 30, 70, 0.7), rgba(250, 248, 237, 0.7)), 
-            url("./../public/images/cloudy-bg_big.jpg");
+            url("./../public/images/cloudy-bg_bigger.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -51,5 +51,54 @@
     &__banner {
         text-align: center;
         margin: 0 auto 4rem;
+    }
+
+    .value-proposition {
+        text-align: center;
+
+        .introContainer {
+
+            &__textbox {
+                position: relative;
+                right: 5rem;
+                background-color: #fff;
+                border: 5px solid $color-dark-blue;
+                padding: 2rem 4rem;
+
+                &::before {
+                    content: "";
+                    background-color: #fff;
+                    border-left: 5px solid $color-dark-blue;
+                    border-bottom: 5px solid $color-dark-blue;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    position: absolute;
+                    top: 2rem;
+                    left: -1.6rem;
+                    transform: rotate(45deg);
+                }
+            }
+
+            &__title {
+                text-transform: uppercase;
+                font-size: 3rem;
+            }
+
+            .proposition {
+
+                &__container {
+                    background-color: rgba(20, 30, 70, 0.4);
+                    width: 30%;
+                    height: 40rem;
+                    border: 5px solid $color-dark-blue;
+                    border-radius: 2rem;
+                }
+
+                &__icon {
+                    width: 100%;
+                    max-width: 10rem;
+                }
+            }
+        }
     }
 }

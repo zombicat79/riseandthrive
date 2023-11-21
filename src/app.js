@@ -96,3 +96,8 @@ popupClosers.forEach((closer) => {
 })
 
 
+// -- SECTION UNFOLDING ON SCROLL --
+const positionFirst = document.querySelector(".block-section--1").clientTop;
+const positionSecond = document.querySelector(".block-section--2").getBoundingClientRect();
+const positionThird = document.querySelector(".block-section--3").getBoundingClientRect();
+

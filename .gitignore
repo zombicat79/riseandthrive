@@ -28,3 +28,6 @@ yarn-error.log*
 /public/fonts/Raleway
 /public/fonts/Raleway_Dots
 /public/fonts/Caveat
+
+# unused images
+/public/images/portraits
