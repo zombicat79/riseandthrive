@@ -13,14 +13,17 @@ const popupContent = document.querySelector(".popup__content");
 
 // -- Rocket logo liftoff on page load --
 document.addEventListener("DOMContentLoaded", () => {
-    const headerLogo = document.querySelector(".header__logo");
-    //if (window.location.href === "/index.html") {
+    const headerLogo = document.querySelector(".header__logo--home");
+    if (window.location.href.includes("/index.html")) {
         headerLogo.classList.add("liftoff");
         setTimeout(() => {
             headerLogo.classList.remove("liftoff");
             headerLogo.classList.add("liftoff--complete");
         }, 1500);
-    //}
+    } else {
+        const headerLogo = document.querySelector(".header__logo");
+        headerLogo.classList.add("liftoff--complete");
+    }
 });
 
 // -- Language selection buttons pressing --
@@ -94,6 +97,22 @@ popupClosers.forEach((closer) => {
         body.classList.remove("scroll-block");
     })
 })
+
+
+// HOME CONTENT EVENT LISTENERS
+
+// -- Cristina dialog content --
+const propositionItems = Array.from(document.querySelectorAll(".proposition__element"));
+
+propositionItems.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+        loadProposition(item.id);
+    });
+
+    item.addEventListener("click", () => {
+        loadProposition(item.id);
+    });
+});
 
 
 // -- SECTION UNFOLDING ON SCROLL --

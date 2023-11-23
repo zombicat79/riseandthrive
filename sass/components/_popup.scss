@@ -88,6 +88,8 @@
     &__text {
         &.bold span, & a {
             font-family: "NotoSans-Bold";
+            position: relative;
+            bottom: 2px;
         }
     }
     @media only screen and (max-width: 950px) {

@@ -27,7 +27,7 @@
     overflow: hidden;
 
     &--dark {
-        filter: grayscale(1);
+        filter: brightness(0.3);
         pointer-events: none;
     }
 }

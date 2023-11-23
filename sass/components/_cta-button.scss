@@ -13,6 +13,20 @@
         animation-iteration-count: infinite;
     }
 
+    &.social-button {
+        & img {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: 1rem;
+        }
+
+        &:hover {
+            animation-name: none;
+            text-shadow: none;
+            padding: 1rem 6rem;
+        }
+    }
+
     &.pressed {
         transform: translateY(.25rem) scale(0.9);
         box-shadow: 0 1rem 3rem $color-dark-blue;

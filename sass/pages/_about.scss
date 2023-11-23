@@ -1,0 +1,74 @@
+.about {
+    text-align: center;
+
+    &__title {
+        font-family: "Caveat-Bold";
+        font-size: 6rem;
+    }
+
+    .block-section--1 {
+        margin: 0 -4rem;
+        background-image: 
+            linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)),
+            url("./../public/images/rosy-skies.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        padding: 10rem 4rem;
+    }
+
+    .block-section--2 {
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/cristina-pro-2.jpeg");
+                height: 40vh;
+            }
+        }
+    }
+
+    .block-section--3 {
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/superpowers.jpg");
+                height: 40vh;
+            }
+        }
+    }
+
+    .block-section--4 {
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/teamwork.jpg");
+                height: 40vh;
+            }
+        }
+    }
+
+    .block-section--5 {
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/guidance.jpg");
+                height: 40vh;
+            }
+        }
+    }
+
+    .block-section--6 {
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/transformation.jpg");
+                height: 40vh;
+            }
+        }
+    }
+}

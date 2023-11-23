@@ -1,6 +1,6 @@
 .home {
     &__heading {
-        margin: 0 -6rem;
+        margin: 0 -4rem;
         height: calc(100vh - 10rem);
         max-height: 80rem;
         color: $color-light-grey;
@@ -57,13 +57,36 @@
         text-align: center;
 
         .introContainer {
+            align-items: stretch;
+            
+            &__figure {
+                // width: 30%;
+                background-image: url("./../public/images/cristina-pro.jpg");
+                /* background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 2rem; */
+            }
+
+            &__proposition {
+                width: 67.5%;
+                background-color: $color-dark-cream;
+                border-radius: 2rem;
+                padding: 2rem 0;
+            }
 
             &__textbox {
                 position: relative;
-                right: 5rem;
+                top: -4rem;
+                left: -10vw;
+                text-align: left;
                 background-color: #fff;
                 border: 5px solid $color-dark-blue;
                 padding: 2rem 4rem;
+                
+                & p:not(p:last-child) {
+                    margin-bottom: 1rem;
+                }
 
                 &::before {
                     content: "";
@@ -73,30 +96,56 @@
                     width: 2.5rem;
                     height: 2.5rem;
                     position: absolute;
-                    top: 2rem;
+                    top: 7.5rem;
                     left: -1.6rem;
                     transform: rotate(45deg);
                 }
             }
 
             &__title {
+                font-family: "Raleway";
                 text-transform: uppercase;
                 font-size: 3rem;
+                font-weight: 700;
             }
 
             .proposition {
+                flex: .95;
+                margin-top: 2rem;
+                width: 100%;
+                font-family: "Raleway";
+                font-weight: 700;
 
                 &__container {
-                    background-color: rgba(20, 30, 70, 0.4);
-                    width: 30%;
-                    height: 40rem;
+                    background-color: rgba(20, 30, 70, 0.5);
+                    padding: 2rem;
+                    font-size: 1.8rem;
                     border: 5px solid $color-dark-blue;
                     border-radius: 2rem;
+                    width: 40%;
+                    height: 100%;
+                }
+
+                &__title {
+                    text-transform: uppercase;
                 }
 
                 &__icon {
                     width: 100%;
                     max-width: 10rem;
+                    margin: 2rem 0;
+                }
+
+                &__element {
+                    
+                    &:not(.proposition__element:last-child) {
+                        margin-bottom: 1.5rem;
+                    }
+                    &:hover {
+                        color: $color-light-grey;
+                        cursor: pointer;
+                        @include minimal-text-shadow-up(.75rem, $color-light-grey);
+                    }
                 }
             }
         }

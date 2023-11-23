@@ -6,4 +6,36 @@
     &:not(.block-section:last-child) {
         margin-bottom: 5rem;
     }
+
+    &__band {
+        background: linear-gradient(to right, $color-dark-blue, $color-light-grey);
+        padding: 6rem;
+        margin: 0 -4rem;
+        margin-bottom: 5rem;
+    }
+
+    .articleContainer {
+        align-items: stretch;
+
+        &__figure {
+            width: 30%;
+            max-height: 40rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 2rem;
+        }
+
+        &__textContainer {
+            width: 67.5%;
+            background-color: $color-dark-cream;
+            border-radius: 2rem;
+            padding: 4rem;
+            font-size: 2rem;
+
+            & p:not(p:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
 }

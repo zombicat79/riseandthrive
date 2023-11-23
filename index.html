@@ -10,15 +10,15 @@
     <header class="header flex-container--row flex-between" data-status="contracted">
         <div class="header__container--layer1 flex-container--row flex-between">
             <div class="header__container--layer2a flex-container--row flex-start">
-                <a href="./index.html">
-                    <img class="header__logo" src="./public/logos/rocket-logo.png" alt="Rise & Thrive logo"/>
+                <a href="#">
+                    <img class="header__logo header__logo--home" src="./public/logos/rocket-logo.png" alt="Rise & Thrive logo"/>
                 </a>
                 <nav class="header__nav">
                     <ul class="nav__list flex-container--row flex-start">
-                        <li class="nav__element"><a class="nav__link">About</a></li>
-                        <li class="nav__element"><a class="nav__link">Services</a></li>
-                        <li class="nav__element"><a class="nav__link">Booking</a></li>
-                        <li class="nav__element"><a class="nav__link">Contact</a></li>
+                        <li class="nav__element nav__element--inactive"><a class="nav__link" href="./about.html">About</a></li>
+                        <li class="nav__element nav__element--inactive"><a class="nav__link" href="./services.html">Services</a></li>
+                        <li class="nav__element nav__element--inactive"><a class="nav__link">Booking</a></li>
+                        <li class="nav__element nav__element--inactive"><a class="nav__link">Contact</a></li>
                         <li class="nav__element"><button class="cta-button appointment-btn">Free appointment</button></li>
                     </ul>
                 </nav>
@@ -53,25 +53,36 @@
         </section>
 
         <section class="block-section block-section--1 value-proposition">
-            <div class="introContainer flex-container--row flex-around">
-                <figure class="introContainer__figure">
-                    <img class="introContainer__img" src="./public/images/cristina-pro.jpg" alt="Portrait of Cristina Solé"/>
-                    <figcaption class="introContainer__caption"></figcaption>  
+            <div class="articleContainer introContainer flex-container--row flex-between">
+                <figure class="articleContainer__figure introContainer__figure">
+                    <figcaption class="introContainer__caption"></figcaption>
                 </figure>
-                <div class="introContainer__proposition">
-                    <p class="introContainer__textbox">Welcome to Rise and Thrive, where the extraordinary journey of self-discovery and empowerment unfolds! I'm Cristina, your passionate advocate for unlocking the superpowers that reside within you. With a degree in business management and over a decade of experience in sales, NGO work, and team management, I am on a mission to inspire individuals and companies to reach new heights.</p>
+                <article class="introContainer__proposition flex-container--column flex-start">
+                    <div class="introContainer__textbox">
+                        <p>Welcome to <span class="bold-regular-text">Rise and Thrive</span>, where the extraordinary journey of self-discovery and empowerment unfolds!</p>
+                        <p>I'm <span class="bold-regular-text">Cristina</span>, your passionate advocate for unlocking the superpowers that reside within you. With a degree in business management and over a decade of experience in sales, NGO work, and team management, I am on a mission to inspire individuals and companies to reach new heights.</p>
+                    </div>
                     <h3 class="introContainer__title">What I have to offer</h3>
                     <div class="proposition flex-container--row flex-around">
                         <div class="proposition__container">
-                            <h4 class="proposition__title">To individuals</h4>
+                            <h4 class="proposition__title">To individuals:</h4>
                             <img class="proposition__icon" src="./public/icons/individual-target.svg" alt="Professional individual"/>
+                            <ul class="proposition__list">
+                                <li id="proposition-1" class="proposition__element">🌟 - Discover Your Extraordinary Self</li>
+                                <li id="proposition-2" class="proposition__element">🚀 - Ignite Your Path to Greatness</li>
+                            </ul>
                         </div>
                         <div class="proposition__container">
-                            <h4 class="proposition__title">To companies</h4>
-                            <img class="proposition__icon" src="./public/icons/corporate-target.svg" alt="Corporate business" />
+                            <h4 class="proposition__title">To companies:</h4>
+                            <img class="proposition__icon" src="./public/icons/corporate-target-2.svg" alt="Corporate business" />
+                            <ul class="proposition__list">
+                                <li id="proposition-3" class="proposition__element">🏆 - Elevate Your Collective Brilliance</li>
+                                <li id="proposition-4" class="proposition__element">🌐 - Unleash the Power of Collaboration</li>
+                                <li id="proposition-5" class="proposition__element">💡 - Shape Your Legacy, Conquer Your Future</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -121,6 +132,7 @@
     </aside>
 
     <script type="application/javascript" src="./src/popupTemplates.js"></script>
+    <script type="application/javascript" src="./src/propositionTemplates.js"></script>
     <script type="application/javascript" src="./src/app.js"></script>
 </body>
 </html>
