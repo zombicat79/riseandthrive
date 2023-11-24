@@ -285,6 +285,8 @@ html {
   font-size: 1.2rem;
   color: #fff;
   text-align: center; }
+  .subfooter__link:link, .subfooter__link:active, .subfooter__link:visited, .subfooter__link:hover {
+    color: #fff; }
   .subfooter__link:hover {
     cursor: pointer; }
   .subfooter__maker {
@@ -313,7 +315,7 @@ html {
     align-items: stretch; }
     .block-section .articleContainer__figure {
       width: 30%;
-      max-height: 40rem;
+      min-height: 40rem;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -326,6 +328,37 @@ html {
       font-size: 2rem; }
       .block-section .articleContainer__textContainer p:not(p:last-child) {
         margin-bottom: 1.5rem; }
+  .block-section .unfolding-content__header {
+    width: 100%; }
+    .block-section .unfolding-content__header .header__img {
+      width: 100%;
+      max-width: 20rem; }
+    .block-section .unfolding-content__header .header__title {
+      font-family: "Raleway";
+      font-size: 5rem;
+      font-weight: 900;
+      text-transform: uppercase; }
+  .block-section .unfolding-content__body {
+    padding: 4rem 2rem; }
+  .block-section .unfolding-content .body__list {
+    list-style-type: auto;
+    margin-left: 4rem;
+    margin-block: 2rem; }
+  .block-section .unfolding-content .body__title, .block-section .unfolding-content .body__subtitle {
+    bottom: 0; }
+  .block-section .unfolding-content .body__title {
+    text-transform: uppercase; }
+  .block-section .unfolding-content .body__paragraph {
+    margin-bottom: 1.5rem; }
+  .block-section .unfolding-content .body__btnContainer {
+    padding-top: 5rem; }
+    .block-section .unfolding-content .body__btnContainer .cta-button {
+      min-width: 35rem; }
+      .block-section .unfolding-content .body__btnContainer .cta-button:first-child {
+        margin-right: 4rem; }
+  .block-section .unfolding-content[data-status="contracted"]:hover {
+    cursor: pointer;
+    outline: 5px solid #141e46; }
 
 .cta-button {
   background-color: #fee257;
@@ -430,6 +463,10 @@ html {
     font-family: "NotoSans-Bold";
     margin-top: 4rem; }
 
+.banner {
+  text-align: center;
+  margin: 0 auto 3rem; }
+
 .home__heading {
   margin: 0 -4rem;
   height: calc(100vh - 10rem);
@@ -470,77 +507,65 @@ html {
 .home .cta-button {
   margin-top: 4rem; }
 
-.home__banner {
-  text-align: center;
-  margin: 0 auto 4rem; }
-
 .home .value-proposition {
   text-align: center; }
-  .home .value-proposition .introContainer {
-    align-items: stretch; }
-    .home .value-proposition .introContainer__figure {
-      background-image: url("./../public/images/cristina-pro.jpg");
-      /* background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                border-radius: 2rem; */ }
-    .home .value-proposition .introContainer__proposition {
-      width: 67.5%;
-      background-color: #fae7c9;
-      border-radius: 2rem;
-      padding: 2rem 0; }
-    .home .value-proposition .introContainer__textbox {
-      position: relative;
-      top: -4rem;
-      left: -10vw;
-      text-align: left;
+  .home .value-proposition .introContainer__figure {
+    background-image: url("./../public/images/cristina-pro.jpg"); }
+  .home .value-proposition .introContainer__proposition {
+    padding: 2rem 0;
+    font-size: 1.6rem; }
+  .home .value-proposition .introContainer__textbox {
+    position: relative;
+    top: -4rem;
+    left: -10vw;
+    text-align: left;
+    background-color: #fff;
+    border: 5px solid #141e46;
+    padding: 2rem 4rem; }
+    .home .value-proposition .introContainer__textbox p:not(p:last-child) {
+      margin-bottom: 1rem; }
+    .home .value-proposition .introContainer__textbox::before {
+      content: "";
       background-color: #fff;
+      border-left: 5px solid #141e46;
+      border-bottom: 5px solid #141e46;
+      width: 2.5rem;
+      height: 2.5rem;
+      position: absolute;
+      top: 7.5rem;
+      left: -1.6rem;
+      transform: rotate(45deg); }
+  .home .value-proposition .introContainer__title {
+    font-family: "Raleway";
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700; }
+  .home .value-proposition .introContainer .proposition {
+    flex: .95;
+    margin-top: 2rem;
+    width: 100%;
+    font-family: "Raleway";
+    font-weight: 700; }
+    .home .value-proposition .introContainer .proposition__container {
+      background-color: rgba(20, 30, 70, 0.5);
+      padding: 2rem;
+      font-size: 1.8rem;
       border: 5px solid #141e46;
-      padding: 2rem 4rem; }
-      .home .value-proposition .introContainer__textbox p:not(p:last-child) {
-        margin-bottom: 1rem; }
-      .home .value-proposition .introContainer__textbox::before {
-        content: "";
-        background-color: #fff;
-        border-left: 5px solid #141e46;
-        border-bottom: 5px solid #141e46;
-        width: 2.5rem;
-        height: 2.5rem;
-        position: absolute;
-        top: 7.5rem;
-        left: -1.6rem;
-        transform: rotate(45deg); }
-    .home .value-proposition .introContainer__title {
-      font-family: "Raleway";
-      text-transform: uppercase;
-      font-size: 3rem;
-      font-weight: 700; }
-    .home .value-proposition .introContainer .proposition {
-      flex: .95;
-      margin-top: 2rem;
+      border-radius: 2rem;
+      width: 40%;
+      height: 100%; }
+    .home .value-proposition .introContainer .proposition__title {
+      text-transform: uppercase; }
+    .home .value-proposition .introContainer .proposition__icon {
       width: 100%;
-      font-family: "Raleway";
-      font-weight: 700; }
-      .home .value-proposition .introContainer .proposition__container {
-        background-color: rgba(20, 30, 70, 0.5);
-        padding: 2rem;
-        font-size: 1.8rem;
-        border: 5px solid #141e46;
-        border-radius: 2rem;
-        width: 40%;
-        height: 100%; }
-      .home .value-proposition .introContainer .proposition__title {
-        text-transform: uppercase; }
-      .home .value-proposition .introContainer .proposition__icon {
-        width: 100%;
-        max-width: 10rem;
-        margin: 2rem 0; }
-      .home .value-proposition .introContainer .proposition__element:not(.proposition__element:last-child) {
-        margin-bottom: 1.5rem; }
-      .home .value-proposition .introContainer .proposition__element:hover {
-        color: #faf8ed;
-        cursor: pointer;
-        text-shadow: 0 -0.15rem 0.75rem #faf8ed; }
+      max-width: 10rem;
+      margin: 2rem 0; }
+    .home .value-proposition .introContainer .proposition__element:not(.proposition__element:last-child) {
+      margin-bottom: 1.5rem; }
+    .home .value-proposition .introContainer .proposition__element:hover {
+      color: #faf8ed;
+      cursor: pointer;
+      text-shadow: 0 -0.15rem 0.75rem #faf8ed; }
 
 .about {
   text-align: center; }
@@ -555,17 +580,22 @@ html {
     background-position: bottom;
     padding: 10rem 4rem; }
   .about .block-section--2 .introContainer__figure {
-    background-image: url("./../public/images/cristina-pro-2.jpeg");
-    height: 40vh; }
+    background-image: url("./../public/images/cristina-pro-2.jpeg"); }
   .about .block-section--3 .introContainer__figure {
-    background-image: url("./../public/images/superpowers.jpg");
-    height: 40vh; }
+    background-image: url("./../public/images/superpowers.jpg"); }
   .about .block-section--4 .introContainer__figure {
-    background-image: url("./../public/images/teamwork.jpg");
-    height: 40vh; }
+    background-image: url("./../public/images/teamwork.jpg"); }
   .about .block-section--5 .introContainer__figure {
-    background-image: url("./../public/images/guidance.jpg");
-    height: 40vh; }
+    background-image: url("./../public/images/guidance.jpg"); }
   .about .block-section--6 .introContainer__figure {
-    background-image: url("./../public/images/transformation.jpg");
-    height: 40vh; }
+    background-image: url("./../public/images/transformation.jpg"); }
+  .about .block-section--7 {
+    font-family: "Raleway";
+    font-size: 3rem;
+    font-weight: 650;
+    text-transform: uppercase; }
+    .about .block-section--7 h2:not(h2:last-child) {
+      margin-bottom: .5rem; }
+
+.services .articleContainer__textContainer {
+  width: 100%; }

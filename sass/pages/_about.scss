@@ -23,7 +23,6 @@
 
             &__figure {
                 background-image: url("./../public/images/cristina-pro-2.jpeg");
-                height: 40vh;
             }
         }
     }
@@ -34,7 +33,6 @@
 
             &__figure {
                 background-image: url("./../public/images/superpowers.jpg");
-                height: 40vh;
             }
         }
     }
@@ -45,7 +43,6 @@
 
             &__figure {
                 background-image: url("./../public/images/teamwork.jpg");
-                height: 40vh;
             }
         }
     }
@@ -56,7 +53,6 @@
 
             &__figure {
                 background-image: url("./../public/images/guidance.jpg");
-                height: 40vh;
             }
         }
     }
@@ -67,8 +63,18 @@
 
             &__figure {
                 background-image: url("./../public/images/transformation.jpg");
-                height: 40vh;
             }
+        }
+    }
+
+    .block-section--7 {
+        font-family: "Raleway";
+        font-size: 3rem;
+        font-weight: 650;
+        text-transform: uppercase;
+
+        & h2:not(h2:last-child) {
+            margin-bottom: .5rem;
         }
     }
 }

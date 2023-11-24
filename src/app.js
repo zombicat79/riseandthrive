@@ -5,6 +5,8 @@ const footer = document.querySelector(".footer");
 
 const ctaButtons = Array.from(document.querySelectorAll(".cta-button"));
 const appointmentButtons = Array.from(document.querySelectorAll(".appointment-btn"));
+const individualPricingButtons = Array.from(document.querySelectorAll(".individual-pricing-btn"));
+const corporatePricingButtons = Array.from(document.querySelectorAll(".corporate-pricing-btn"));
 const popup = document.querySelector(".popup");
 const popupClosers = document.querySelectorAll(".popup__xCloser");
 const popupContent = document.querySelector(".popup__content");
@@ -64,39 +66,75 @@ mobileIcons.forEach((icon) => {
 
 
 // -- CTA BUTTONS PRESSING --
-ctaButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        btn.classList.add("pressed");
-        setTimeout(() => {
-            btn.classList.remove("pressed");
-        }, 1000)
+if (ctaButtons) {
+    ctaButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            btn.classList.add("pressed");
+            setTimeout(() => {
+                btn.classList.remove("pressed");
+            }, 1000)
+        });
     });
-});
+}
 
-appointmentButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        setTimeout(() => {
-            body.classList.add("scroll-block");
-            [header, content, footer].forEach((section) => section.classList.add("scroll-block--dark"));
-            popupContent.innerHTML = appointmentTemplate;
-            popup.style.display = "block";
-            popup.scrollIntoView({ block: "end", behavior: "smooth"});
-            popup.classList.remove("popup--disappearing");
-            popup.classList.add("popup--appearing");
-        }, 750);
+if (appointmentButtons) {
+    appointmentButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                fillPopup(appointmentTemplate);
+                initiatePopup();
+            }, 750);
+        })
     })
-})
+}
+
+if (individualPricingButtons) {
+    individualPricingButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                fillPopup(individualPricingTemplate);
+                initiatePopup();
+            }, 750);
+        })
+    })
+}
+
+if (corporatePricingButtons) {
+    corporatePricingButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                fillPopup(corporatePricingTemplate);
+                initiatePopup();
+            }, 750);
+        })
+    })
+}
+
+function initiatePopup() {
+    body.classList.add("scroll-block");
+    [header, content, footer].forEach((section) => section.classList.add("scroll-block--dark"));
+    popup.style.display = "block";
+    popup.scrollIntoView({ block: "end", behavior: "smooth"});
+    popup.classList.remove("popup--disappearing");
+    popup.classList.add("popup--appearing");
+}
+
+function fillPopup(filling) {
+    popupContent.innerHTML = filling;
+}
 
 
 // -- POPUP CLOSERS --
-popupClosers.forEach((closer) => {
-    closer.addEventListener("click", () => {
-        closer.parentElement.classList.remove("popup--appearing");
-        closer.parentElement.classList.add("popup--disappearing");
-        [header, content, footer].forEach((section) => section.classList.remove("scroll-block--dark"));
-        body.classList.remove("scroll-block");
+if (popupClosers) {
+    popupClosers.forEach((closer) => {
+        closer.addEventListener("click", () => {
+            closer.parentElement.classList.remove("popup--appearing");
+            closer.parentElement.classList.add("popup--disappearing");
+            [header, content, footer].forEach((section) => section.classList.remove("scroll-block--dark"));
+            body.classList.remove("scroll-block");
+        })
     })
-})
+}
 
 
 // HOME CONTENT EVENT LISTENERS
@@ -104,15 +142,17 @@ popupClosers.forEach((closer) => {
 // -- Cristina dialog content --
 const propositionItems = Array.from(document.querySelectorAll(".proposition__element"));
 
-propositionItems.forEach((item) => {
-    item.addEventListener("mouseover", () => {
-        loadProposition(item.id);
+if (propositionItems) {
+    propositionItems.forEach((item) => {
+        item.addEventListener("mouseover", () => {
+            loadProposition(item.id);
+        });
+    
+        item.addEventListener("click", () => {
+            loadProposition(item.id);
+        });
     });
-
-    item.addEventListener("click", () => {
-        loadProposition(item.id);
-    });
-});
+}
 
 
 // -- SECTION UNFOLDING ON SCROLL --

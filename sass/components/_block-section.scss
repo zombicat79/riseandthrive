@@ -19,7 +19,7 @@
 
         &__figure {
             width: 30%;
-            max-height: 40rem;
+            min-height: 40rem;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -35,6 +35,76 @@
 
             & p:not(p:last-child) {
                 margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    .unfolding-content {
+
+        &__header {
+            width: 100%;
+
+            .header__img {
+                width: 100%;
+                max-width: 20rem;
+            }
+
+            .header__title {
+                font-family: "Raleway";
+                font-size: 5rem;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+        }
+
+        &__body {
+            padding: 4rem 2rem;
+        }
+
+        .body {
+
+            &__list {
+                list-style-type: auto;
+                margin-left: 4rem;
+                margin-block: 2rem;
+            }
+
+            &__title, &__subtitle {
+                bottom: 0;
+            }
+
+            &__title {
+                text-transform: uppercase;
+            }
+
+            &__paragraph {
+                margin-bottom: 1.5rem;
+            }
+
+            &__btnContainer {
+                padding-top: 5rem;
+
+                & .cta-button {
+                    min-width: 35rem;
+
+                    &:first-child {
+                        margin-right: 4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .unfolding-content {
+
+        &[data-status="contracted"] {
+            &:hover {
+                cursor: pointer;
+                outline: 5px solid $color-dark-blue;
+            }
+    
+            .unfolding-content__body {
+                // display: none;
             }
         }
     }

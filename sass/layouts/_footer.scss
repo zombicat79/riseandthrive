@@ -40,6 +40,11 @@
     color: #fff;
     text-align: center;
 
+    &__link:link, &__link:active, 
+    &__link:visited, &__link:hover {
+        color: #fff;
+    }
+
     &__link:hover {
         cursor: pointer;
     }

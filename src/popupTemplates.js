@@ -11,3 +11,32 @@ const appointmentTemplate = `
     </ul>
     <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
 `;
+
+const individualPricingTemplate = `
+    <h3 class="popup__title"><strong>Individuals (1:1 Sessions)</h3>
+    <ul class="popup__list">
+        <li class="list__element">
+            <p class="popup__text bold">Introductory Session</p>
+            <p class="popup__text">Price: <span>Free!</span></p>
+            <p class="popup__text">Duration: 30 minutes</p>
+        </li>
+        <li class="list__element">
+            <p class="popup__text bold">Single Session</p>
+            <p class="popup__text">Price: $75 per session</p>
+            <p class="popup__text">Duration: 60 minutes</p>
+        </li>
+        <li class="list__element">
+            <p class="popup__text bold">Package of 5 Sessions</p>
+            <p class="popup__text">$330 ($66 per session - 5.7% discount rate)</p>
+            <p class="popup__text">Duration: 60 minutes</p>
+        </li>
+        <li class="list__element">
+            <p class="popup__text bold">Package of 10 Sessions</p>
+            <p class="popup__text">$630 ($63 per session 10% further discount rate)</p>
+            <p class="popup__text">Duration: 60 minutes</p>
+        </li>
+    </ul>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+`;
+
+const corporatePricingTemplate = ``;
