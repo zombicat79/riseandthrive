@@ -7,6 +7,8 @@ const ctaButtons = Array.from(document.querySelectorAll(".cta-button"));
 const appointmentButtons = Array.from(document.querySelectorAll(".appointment-btn"));
 const individualPricingButtons = Array.from(document.querySelectorAll(".individual-pricing-btn"));
 const corporatePricingButtons = Array.from(document.querySelectorAll(".corporate-pricing-btn"));
+const studentOfferButtons = Array.from(document.querySelectorAll(".student-offer-btn"));
+const workModelButtons = Array.from(document.querySelectorAll(".work-model-btn"));
 const popup = document.querySelector(".popup");
 const popupClosers = document.querySelectorAll(".popup__xCloser");
 const popupContent = document.querySelector(".popup__content");
@@ -66,14 +68,37 @@ mobileIcons.forEach((icon) => {
 
 
 // -- CTA BUTTONS PRESSING --
+function addBtnFunctionality(btn) {
+    btn.addEventListener("click", () => {
+        btn.classList.add("pressed");
+        setTimeout(() => {
+            btn.classList.remove("pressed");
+            if (btn.dataset.link) window.location.href = btn.dataset.link;
+        }, 1000)
+    });
+}
+
+function addLiteralFunctionality(item) {
+    item.addEventListener("click", () => {
+        const parentContent = item.closest(".popup__content");
+        parentContent.classList.remove("popup__content--appearing");
+        parentContent.classList.add("popup__content--disappearing");
+        setTimeout(() => {
+            if (item.id === "student-offer") {
+                fillPopup(studentOfferTemplate);
+                const newCtaButtons = Array.from(parentContent.querySelectorAll(".cta-button"));
+                newCtaButtons.forEach((btn) => addBtnFunctionality(btn));
+                popup.scrollTo(0, 0);
+            }
+            parentContent.classList.remove("popup__content--disappearing");
+            parentContent.classList.add("popup__content--appearing");
+        }, 1000)
+    })
+}
+
 if (ctaButtons) {
     ctaButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            btn.classList.add("pressed");
-            setTimeout(() => {
-                btn.classList.remove("pressed");
-            }, 1000)
-        });
+        addBtnFunctionality(btn);
     });
 }
 
@@ -110,17 +135,58 @@ if (corporatePricingButtons) {
     })
 }
 
+if (studentOfferButtons) {
+    studentOfferButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                fillPopup(studentOfferTemplate);
+                initiatePopup();
+            }, 750);
+        })
+    })
+}
+
+if (workModelButtons) {
+    workModelButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                fillPopup(workModelTemplate);
+                initiatePopup();
+            }, 750);
+        })
+    })
+}
+
 function initiatePopup() {
     body.classList.add("scroll-block");
     [header, content, footer].forEach((section) => section.classList.add("scroll-block--dark"));
     popup.style.display = "block";
     popup.scrollIntoView({ block: "end", behavior: "smooth"});
+    popup.scrollTo(0, 0);
     popup.classList.remove("popup--disappearing");
     popup.classList.add("popup--appearing");
+
+    const popupInnerBtns = Array.from(document.querySelectorAll(".popup .cta-button"));
+    if (popupInnerBtns) {
+        popupInnerBtns.forEach((btn) => {
+            addBtnFunctionality(btn);
+        })
+    }
+
+    const clickableLiterals = Array.from(document.querySelectorAll(".popup__ad--clickable"));
+    if (clickableLiterals) {
+        clickableLiterals.forEach((item) => {
+            addLiteralFunctionality(item);
+        })
+    }
 }
 
 function fillPopup(filling) {
     popupContent.innerHTML = filling;
+}
+
+function emptyPopup() {
+    popupContent.innerHTML = "";
 }
 
 
@@ -132,6 +198,31 @@ if (popupClosers) {
             closer.parentElement.classList.add("popup--disappearing");
             [header, content, footer].forEach((section) => section.classList.remove("scroll-block--dark"));
             body.classList.remove("scroll-block");
+        })
+    })
+}
+
+
+// -- ACCORDION ELEMENTS --
+const unfoldingContainers = Array.from(document.querySelectorAll(".unfolding-content"));
+const shrinkIcons = Array.from(document.querySelectorAll(".body__shrink"));
+
+if (unfoldingContainers) {
+    unfoldingContainers.forEach((container) => {
+        container.addEventListener("click", () => {
+            container.dataset.status = "expanded";
+        })
+    })
+}
+
+if (shrinkIcons) {
+    shrinkIcons.forEach((icon) => {
+        icon.addEventListener("click", () => {
+            icon.classList.add("clicked");
+            setTimeout(() => {
+                icon.classList.remove("clicked");
+                icon.closest(".unfolding-content").dataset.status = "contracted";
+            }, 500)
         })
     })
 }

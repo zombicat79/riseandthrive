@@ -30,7 +30,6 @@
             width: 67.5%;
             background-color: $color-dark-cream;
             border-radius: 2rem;
-            padding: 4rem;
             font-size: 2rem;
 
             & p:not(p:last-child) {
@@ -40,9 +39,11 @@
     }
 
     .unfolding-content {
+        position: relative;
 
         &__header {
             width: 100%;
+            padding: 4rem 0;
 
             .header__img {
                 width: 100%;
@@ -58,10 +59,36 @@
         }
 
         &__body {
-            padding: 4rem 2rem;
+            padding: 4rem 6rem;
+            transition: max-height 2s, opacity 3s, padding 2s;
+            overflow: hidden;
         }
 
         .body {
+
+            &__shrink {
+                width: 5rem;
+                height: 5rem;
+                position: absolute;
+                top: -2rem;
+                right: 2rem;
+                transition: width .2s, height .2s, transform 1s, opacity 1s;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &.clicked {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+
+            &__band {
+                background-color: $color-dark-blue;
+                padding: 4rem 0;
+                margin: 4rem -6rem;
+            }
 
             &__list {
                 list-style-type: auto;
@@ -102,9 +129,51 @@
                 cursor: pointer;
                 outline: 5px solid $color-dark-blue;
             }
+
+            .unfolding-content__header {
+
+                &:hover {
+
+                    .header__img {
+                        animation-timing-function: linear;
+                        animation-iteration-count: infinite;
+    
+                        &#teamwork-icon {
+                            animation-name: complete-rotation;
+                            animation-duration: 2s;
+                        }
+    
+                        &#superhero-icon {
+                            animation-name: icon-pulsation;
+                            animation-duration: 1.25s;
+                        }
+                    }
+                }
+            }
     
             .unfolding-content__body {
-                // display: none;
+                max-height: 0;
+                opacity: 0;
+                padding: 0 6rem;
+            }
+
+            .body__shrink {
+                opacity: 0;
+                transform: translateY(-2rem);
+            }
+        }
+
+        &[data-status="expanded"] {
+
+            .unfolding-content__body {
+                max-height: 200rem;
+                opacity: 1;
+                padding: 4rem 6rem;
+            }
+
+            .body__shrink {
+                opacity: 1;
+                transform: translateY(4rem);
             }
         }
     }

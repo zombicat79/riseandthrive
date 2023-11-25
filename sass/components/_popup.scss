@@ -71,6 +71,22 @@
         max-width: 15rem;
     }
 
+    &__content {
+        transition: all 1s;
+
+        &--appearing {
+            opacity: 1;
+        }
+
+        &--disappearing {
+            opacity: 0;
+        }
+    }
+
+    &__block {
+        margin-top: 4rem;
+    }
+
     &__title {
         width: 100%;
         position: absolute;
@@ -79,6 +95,15 @@
         transform: translateX(-50%);
         font-size: 2rem;
         text-transform: uppercase;
+
+        & span {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        text-decoration: underline;
     }
 
     &__text, &__list {
@@ -98,14 +123,63 @@
         }
     }
 
+    &__ad {
+        text-transform: uppercase;
+        color: $color-dark-green;
+        animation-name: text-highlight;
+        animation-timing-function: linear;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+
+        &--clickable {
+            color: $color-intense-red;
+            background-color: transparent;
+            font-family: "NotoSans-Bold";
+
+            &:hover {
+                cursor: pointer;
+                @include minimal-text-shadow-up(1rem, $color-intense-red);
+                @include minimal-text-shadow-down(1rem, $color-intense-red);
+                @include minimal-text-shadow-left(1rem, $color-intense-red);
+                @include minimal-text-shadow-right(1rem, $color-intense-red);
+            }
+        }
+    }
+
+    &__disclaimer {
+        color: $color-intense-red;
+    }
+
     &__list {
         text-align: left;
         margin-left: 4rem;
         list-style-type: disc;
+
+        &--pricing {
+            text-align: center;
+            margin-left: 0;
+            list-style-type: none;
+        }
+
+        .list__element {
+
+            &--pricing {
+                margin: 4rem 0;
+            }
+        }
     }
 
     &__footnote {
         font-family: "NotoSans-Bold";
         margin-top: 4rem;
+    }
+
+    .cta-button {
+        text-decoration: none;
+        min-width: 27rem;
+
+        &.positioned {
+            margin: -4rem 0 0;
+        }
     }
 }

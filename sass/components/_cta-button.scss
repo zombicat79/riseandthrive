@@ -5,7 +5,7 @@
     border-radius: 2rem;
     transition: all .2s;
 
-    &:hover {
+    &:hover, &.pulsing {
         cursor: pointer;
         animation-name: btn-pulsate;
         animation-timing-function: linear;
@@ -32,5 +32,9 @@
         box-shadow: 0 1rem 3rem $color-dark-blue;
         animation-name: none;
         filter: brightness(0.95);
+
+        &.in-band {
+            box-shadow: 0 1rem 3rem #000;
+        }
     }
 }

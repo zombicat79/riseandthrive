@@ -1,3 +1,12 @@
+// TEXT ANIMATIONS
+
+@keyframes text-highlight {
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
+}
+
+
 // CTA-BUTTON ANIMATIONS
 
 @keyframes btn-pulsate {
@@ -47,5 +56,19 @@
 
 .btn-pressed {
     transform: scale(.65);
+}
+
+
+//
+
+@keyframes complete-rotation {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes icon-pulsation {
+    0% {transform: scale(1)}
+    50% {transform: scale(0.75)}
+    100% {transform: scale(1)}
 }
 

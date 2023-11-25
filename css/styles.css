@@ -67,11 +67,17 @@ html, body {
 
 html {
   font-family: NotoSans-Regular;
-  font-size: 62.5%;
-  /* 1rem equals to 10px */ }
+  font-size: 50%;
+  /* 1rem equals to 8px */ }
 
 .xCloser {
   transform: rotate(45deg); }
+
+.align-left {
+  text-align: left; }
+
+.margin-block20 {
+  margin: 2rem 0; }
 
 .flex-container--row {
   display: flex;
@@ -99,6 +105,14 @@ html {
   .scroll-block--dark {
     filter: brightness(0.3);
     pointer-events: none; }
+
+@keyframes text-highlight {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 @keyframes btn-pulsate {
   0% {
@@ -139,6 +153,20 @@ html {
 
 .btn-pressed {
   transform: scale(0.65); }
+
+@keyframes complete-rotation {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes icon-pulsation {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.75); }
+  100% {
+    transform: scale(1); } }
 
 .header {
   background: linear-gradient(to right, #141e46, #faf8ed);
@@ -258,7 +286,7 @@ html {
 .content-frame {
   background-color: #faf8ed;
   padding: 10rem 4rem 2rem;
-  max-width: 200rem;
+  max-width: 250rem;
   margin: 0 auto; }
 
 .footer {
@@ -324,41 +352,84 @@ html {
       width: 67.5%;
       background-color: #fae7c9;
       border-radius: 2rem;
-      padding: 4rem;
       font-size: 2rem; }
       .block-section .articleContainer__textContainer p:not(p:last-child) {
         margin-bottom: 1.5rem; }
-  .block-section .unfolding-content__header {
-    width: 100%; }
-    .block-section .unfolding-content__header .header__img {
+  .block-section .unfolding-content {
+    position: relative; }
+    .block-section .unfolding-content__header {
       width: 100%;
-      max-width: 20rem; }
-    .block-section .unfolding-content__header .header__title {
-      font-family: "Raleway";
-      font-size: 5rem;
-      font-weight: 900;
+      padding: 4rem 0; }
+      .block-section .unfolding-content__header .header__img {
+        width: 100%;
+        max-width: 20rem; }
+      .block-section .unfolding-content__header .header__title {
+        font-family: "Raleway";
+        font-size: 5rem;
+        font-weight: 900;
+        text-transform: uppercase; }
+    .block-section .unfolding-content__body {
+      padding: 4rem 6rem;
+      transition: max-height 2s, opacity 3s, padding 2s;
+      overflow: hidden; }
+    .block-section .unfolding-content .body__shrink {
+      width: 5rem;
+      height: 5rem;
+      position: absolute;
+      top: -2rem;
+      right: 2rem;
+      transition: width .2s, height .2s, transform 1s, opacity 1s; }
+      .block-section .unfolding-content .body__shrink:hover {
+        cursor: pointer; }
+      .block-section .unfolding-content .body__shrink.clicked {
+        width: 3rem;
+        height: 3rem; }
+    .block-section .unfolding-content .body__band {
+      background-color: #141e46;
+      padding: 4rem 0;
+      margin: 4rem -6rem; }
+    .block-section .unfolding-content .body__list {
+      list-style-type: auto;
+      margin-left: 4rem;
+      margin-block: 2rem; }
+    .block-section .unfolding-content .body__title, .block-section .unfolding-content .body__subtitle {
+      bottom: 0; }
+    .block-section .unfolding-content .body__title {
       text-transform: uppercase; }
-  .block-section .unfolding-content__body {
-    padding: 4rem 2rem; }
-  .block-section .unfolding-content .body__list {
-    list-style-type: auto;
-    margin-left: 4rem;
-    margin-block: 2rem; }
-  .block-section .unfolding-content .body__title, .block-section .unfolding-content .body__subtitle {
-    bottom: 0; }
-  .block-section .unfolding-content .body__title {
-    text-transform: uppercase; }
-  .block-section .unfolding-content .body__paragraph {
-    margin-bottom: 1.5rem; }
-  .block-section .unfolding-content .body__btnContainer {
-    padding-top: 5rem; }
-    .block-section .unfolding-content .body__btnContainer .cta-button {
-      min-width: 35rem; }
-      .block-section .unfolding-content .body__btnContainer .cta-button:first-child {
-        margin-right: 4rem; }
+    .block-section .unfolding-content .body__paragraph {
+      margin-bottom: 1.5rem; }
+    .block-section .unfolding-content .body__btnContainer {
+      padding-top: 5rem; }
+      .block-section .unfolding-content .body__btnContainer .cta-button {
+        min-width: 35rem; }
+        .block-section .unfolding-content .body__btnContainer .cta-button:first-child {
+          margin-right: 4rem; }
   .block-section .unfolding-content[data-status="contracted"]:hover {
     cursor: pointer;
     outline: 5px solid #141e46; }
+  .block-section .unfolding-content[data-status="contracted"] .unfolding-content__header:hover .header__img {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+    .block-section .unfolding-content[data-status="contracted"] .unfolding-content__header:hover .header__img#teamwork-icon {
+      animation-name: complete-rotation;
+      animation-duration: 2s; }
+    .block-section .unfolding-content[data-status="contracted"] .unfolding-content__header:hover .header__img#superhero-icon {
+      animation-name: icon-pulsation;
+      animation-duration: 1.25s; }
+  .block-section .unfolding-content[data-status="contracted"] .unfolding-content__body {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 6rem; }
+  .block-section .unfolding-content[data-status="contracted"] .body__shrink {
+    opacity: 0;
+    transform: translateY(-2rem); }
+  .block-section .unfolding-content[data-status="expanded"] .unfolding-content__body {
+    max-height: 200rem;
+    opacity: 1;
+    padding: 4rem 6rem; }
+  .block-section .unfolding-content[data-status="expanded"] .body__shrink {
+    opacity: 1;
+    transform: translateY(4rem); }
 
 .cta-button {
   background-color: #fee257;
@@ -366,7 +437,7 @@ html {
   padding: 1rem 4rem;
   border-radius: 2rem;
   transition: all .2s; }
-  .cta-button:hover {
+  .cta-button:hover, .cta-button.pulsing {
     cursor: pointer;
     animation-name: btn-pulsate;
     animation-timing-function: linear;
@@ -385,6 +456,8 @@ html {
     box-shadow: 0 1rem 3rem #141e46;
     animation-name: none;
     filter: brightness(0.95); }
+    .cta-button.pressed.in-band {
+      box-shadow: 0 1rem 3rem #000; }
 
 .popup {
   display: none;
@@ -438,6 +511,14 @@ html {
   .popup__logo {
     width: 100%;
     max-width: 15rem; }
+  .popup__content {
+    transition: all 1s; }
+    .popup__content--appearing {
+      opacity: 1; }
+    .popup__content--disappearing {
+      opacity: 0; }
+  .popup__block {
+    margin-top: 4rem; }
   .popup__title {
     width: 100%;
     position: absolute;
@@ -446,6 +527,11 @@ html {
     transform: translateX(-50%);
     font-size: 2rem;
     text-transform: uppercase; }
+    .popup__title span {
+      font-size: 1.5rem; }
+  .popup__subtitle {
+    text-transform: uppercase;
+    text-decoration: underline; }
   .popup__text, .popup__list {
     margin-bottom: 1rem; }
   .popup__text.bold span, .popup__text a {
@@ -455,13 +541,43 @@ html {
   @media only screen and (max-width: 950px) {
     .popup__text {
       text-align: left; } }
+  .popup__ad {
+    text-transform: uppercase;
+    color: #748e63;
+    animation-name: text-highlight;
+    animation-timing-function: linear;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite; }
+    .popup__ad--clickable {
+      color: #e83f3c;
+      background-color: transparent;
+      font-family: "NotoSans-Bold"; }
+      .popup__ad--clickable:hover {
+        cursor: pointer;
+        text-shadow: 0 -0.15rem 1rem #e83f3c;
+        text-shadow: 0 0.15rem 1rem #e83f3c;
+        text-shadow: -0.15rem 0 1rem #e83f3c;
+        text-shadow: 0.15rem 0 1rem #e83f3c; }
+  .popup__disclaimer {
+    color: #e83f3c; }
   .popup__list {
     text-align: left;
     margin-left: 4rem;
     list-style-type: disc; }
+    .popup__list--pricing {
+      text-align: center;
+      margin-left: 0;
+      list-style-type: none; }
+    .popup__list .list__element--pricing {
+      margin: 4rem 0; }
   .popup__footnote {
     font-family: "NotoSans-Bold";
     margin-top: 4rem; }
+  .popup .cta-button {
+    text-decoration: none;
+    min-width: 27rem; }
+    .popup .cta-button.positioned {
+      margin: -4rem 0 0; }
 
 .banner {
   text-align: center;
