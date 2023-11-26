@@ -13,17 +13,19 @@
         animation-iteration-count: infinite;
     }
 
-    &.social-button {
-        & img {
-            width: 2.5rem;
-            height: 2.5rem;
-            margin-left: 1rem;
-        }
+    &--success {
+        background-color: $color-dark-green;
 
-        &:hover {
-            animation-name: none;
-            text-shadow: none;
-            padding: 1rem 6rem;
+        &:hover, &.pulsing {
+            animation-name: btn-pulsate-success;
+        }
+    }
+
+    &--alert {
+        background-color: $color-intense-red;
+
+        &:hover, &.pulsing {
+            animation-name: btn-pulsate-alert;
         }
     }
 
@@ -35,6 +37,48 @@
 
         &.in-band {
             box-shadow: 0 1rem 3rem #000;
+        }
+    }
+
+    &.highlighted {
+        text-transform: uppercase;
+        font-family: "NotoSans-Bold";
+        animation-name: btn-pulsate;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+
+        &.cta-button--success {
+            animation-name: btn-pulsate-success;
+        }
+
+        &.cta-button--alert {
+            animation-name: btn-pulsate-alert;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.3;
+        filter: grayscale(1);
+        border: 1px solid $color-dark-blue;
+        animation-name: none;
+        
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &.social-button {
+        & img {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: 1rem;
+        }
+
+        &:hover {
+            animation-name: none;
+            text-shadow: none;
+            padding: 1rem 6rem;
         }
     }
 }

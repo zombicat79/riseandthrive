@@ -2,3 +2,11 @@
     text-align: center;
     margin: 0 auto 3rem;
 }
+@media only screen and (min-width: 1800px) {
+    .banner-horizontal {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

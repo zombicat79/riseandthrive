@@ -143,6 +143,64 @@ html {
     text-shadow: -0.15rem 0 1rem rgba(20, 30, 70, 0.5);
     text-shadow: 0.15rem 0 1rem rgba(20, 30, 70, 0.5); } }
 
+@keyframes btn-pulsate-success {
+  0% {
+    box-shadow: 0 0 0 #748e63;
+    box-shadow: 0 0 0 #748e63;
+    box-shadow: 0 0 0 #748e63;
+    box-shadow: 0 0 0 #748e63;
+    text-shadow: 0 -0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0 0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: -0.15rem 0 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0.15rem 0 1rem rgba(20, 30, 70, 0.5); }
+  50% {
+    box-shadow: 0 -0.15rem 1rem #748e63;
+    box-shadow: 0 0.15rem 1rem #748e63;
+    box-shadow: -0.15rem 0 1rem #748e63;
+    box-shadow: 0.15rem 0 1rem #748e63;
+    text-shadow: 0 -0.15rem 5rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0 0.15rem 5rem rgba(20, 30, 70, 0.5);
+    text-shadow: -0.15rem 0 5rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0.15rem 0 5rem rgba(20, 30, 70, 0.5); }
+  100% {
+    box-shadow: 0 0 0 #748e63;
+    box-shadow: 0 0 0 #748e63;
+    box-shadow: 0 0 0 #748e63;
+    box-shadow: 0 0 0 #748e63;
+    text-shadow: 0 -0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0 0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: -0.15rem 0 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0.15rem 0 1rem rgba(20, 30, 70, 0.5); } }
+
+@keyframes btn-pulsate-alert {
+  0% {
+    box-shadow: 0 0 0 #e83f3c;
+    box-shadow: 0 0 0 #e83f3c;
+    box-shadow: 0 0 0 #e83f3c;
+    box-shadow: 0 0 0 #e83f3c;
+    text-shadow: 0 -0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0 0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: -0.15rem 0 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0.15rem 0 1rem rgba(20, 30, 70, 0.5); }
+  50% {
+    box-shadow: 0 -0.15rem 1rem #e83f3c;
+    box-shadow: 0 0.15rem 1rem #e83f3c;
+    box-shadow: -0.15rem 0 1rem #e83f3c;
+    box-shadow: 0.15rem 0 1rem #e83f3c;
+    text-shadow: 0 -0.15rem 5rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0 0.15rem 5rem rgba(20, 30, 70, 0.5);
+    text-shadow: -0.15rem 0 5rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0.15rem 0 5rem rgba(20, 30, 70, 0.5); }
+  100% {
+    box-shadow: 0 0 0 #e83f3c;
+    box-shadow: 0 0 0 #e83f3c;
+    box-shadow: 0 0 0 #e83f3c;
+    box-shadow: 0 0 0 #e83f3c;
+    text-shadow: 0 -0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0 0.15rem 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: -0.15rem 0 1rem rgba(20, 30, 70, 0.5);
+    text-shadow: 0.15rem 0 1rem rgba(20, 30, 70, 0.5); } }
+
 .header__logo.liftoff,
 .header__logo--home.liftoff {
   transform: translateY(2px) rotate(0); }
@@ -250,6 +308,7 @@ html {
     font-weight: 400;
     text-transform: uppercase;
     color: #fff;
+    background-color: transparent;
     transition: all .5s;
     cursor: default; }
     .header .nav__link:not(.nav__link--active):hover {
@@ -287,7 +346,16 @@ html {
   background-color: #faf8ed;
   padding: 10rem 4rem 2rem;
   max-width: 250rem;
+  position: relative;
   margin: 0 auto; }
+  .content-frame__buffer {
+    height: 7.5vh; }
+
+@media only screen and (min-width: 1800px) {
+  .content-frame {
+    min-height: 100vh; }
+    .content-frame__buffer {
+      height: 7.5vh; } }
 
 .footer {
   background: linear-gradient(to right, #141e46, #faf8ed);
@@ -352,6 +420,7 @@ html {
       width: 67.5%;
       background-color: #fae7c9;
       border-radius: 2rem;
+      padding: 4rem;
       font-size: 2rem; }
       .block-section .articleContainer__textContainer p:not(p:last-child) {
         margin-bottom: 1.5rem; }
@@ -443,6 +512,39 @@ html {
     animation-timing-function: linear;
     animation-duration: 1s;
     animation-iteration-count: infinite; }
+  .cta-button--success {
+    background-color: #748e63; }
+    .cta-button--success:hover, .cta-button--success.pulsing {
+      animation-name: btn-pulsate-success; }
+  .cta-button--alert {
+    background-color: #e83f3c; }
+    .cta-button--alert:hover, .cta-button--alert.pulsing {
+      animation-name: btn-pulsate-alert; }
+  .cta-button.pressed {
+    transform: translateY(0.25rem) scale(0.9);
+    box-shadow: 0 1rem 3rem #141e46;
+    animation-name: none;
+    filter: brightness(0.95); }
+    .cta-button.pressed.in-band {
+      box-shadow: 0 1rem 3rem #000; }
+  .cta-button.highlighted {
+    text-transform: uppercase;
+    font-family: "NotoSans-Bold";
+    animation-name: btn-pulsate;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+    .cta-button.highlighted.cta-button--success {
+      animation-name: btn-pulsate-success; }
+    .cta-button.highlighted.cta-button--alert {
+      animation-name: btn-pulsate-alert; }
+  .cta-button.disabled {
+    opacity: 0.3;
+    filter: grayscale(1);
+    border: 1px solid #141e46;
+    animation-name: none; }
+    .cta-button.disabled:hover {
+      cursor: not-allowed; }
   .cta-button.social-button img {
     width: 2.5rem;
     height: 2.5rem;
@@ -451,13 +553,6 @@ html {
     animation-name: none;
     text-shadow: none;
     padding: 1rem 6rem; }
-  .cta-button.pressed {
-    transform: translateY(0.25rem) scale(0.9);
-    box-shadow: 0 1rem 3rem #141e46;
-    animation-name: none;
-    filter: brightness(0.95); }
-    .cta-button.pressed.in-band {
-      box-shadow: 0 1rem 3rem #000; }
 
 .popup {
   display: none;
@@ -537,7 +632,10 @@ html {
   .popup__text.bold span, .popup__text a {
     font-family: "NotoSans-Bold";
     position: relative;
-    bottom: 2px; }
+    bottom: 1.5px; }
+  .popup__text.contact-detail {
+    margin-bottom: 0;
+    display: block; }
   @media only screen and (max-width: 950px) {
     .popup__text {
       text-align: left; } }
@@ -560,6 +658,20 @@ html {
         text-shadow: 0.15rem 0 1rem #e83f3c; }
   .popup__disclaimer {
     color: #e83f3c; }
+  .popup__figure:not(.popup__figure:last-child) {
+    margin-bottom: 1rem; }
+  .popup__figure .popup__socialLink {
+    height: 100%;
+    display: inline-block; }
+    .popup__figure .popup__socialLink .socialLink__icon {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 2rem; }
+      .popup__figure .popup__socialLink .socialLink__icon:active {
+        transform: scale(0.5); }
+      .popup__figure .popup__socialLink .socialLink__icon:hover {
+        cursor: pointer;
+        box-shadow: 0 -0.15rem 1rem #141e46; }
   .popup__list {
     text-align: left;
     margin-left: 4rem;
@@ -582,6 +694,13 @@ html {
 .banner {
   text-align: center;
   margin: 0 auto 3rem; }
+
+@media only screen and (min-width: 1800px) {
+  .banner-horizontal {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%); } }
 
 .home__heading {
   margin: 0 -4rem;

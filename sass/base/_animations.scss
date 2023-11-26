@@ -39,6 +39,66 @@
     }
 }
 
+@keyframes btn-pulsate-success {
+    0% {box-shadow: 0 0 0 $color-dark-green; 
+        box-shadow: 0 0 0 $color-dark-green; 
+        box-shadow: 0 0 0 $color-dark-green; 
+        box-shadow: 0 0 0 $color-dark-green;
+        @include minimal-text-shadow-up(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(1rem, rgba(20, 30, 70, 0.5));
+    }
+    50% {@include minimal-box-shadow-up(1rem, $color-dark-green); 
+        @include minimal-box-shadow-down(1rem, $color-dark-green); 
+        @include minimal-box-shadow-left(1rem, $color-dark-green); 
+        @include minimal-box-shadow-right(1rem, $color-dark-green);
+        @include minimal-text-shadow-up(5rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(5rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(5rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(5rem, rgba(20, 30, 70, 0.5));
+    }
+    100% {box-shadow: 0 0 0 $color-dark-green; 
+        box-shadow: 0 0 0 $color-dark-green; 
+        box-shadow: 0 0 0 $color-dark-green; 
+        box-shadow: 0 0 0 $color-dark-green;
+        @include minimal-text-shadow-up(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(1rem, rgba(20, 30, 70, 0.5));
+    }
+}
+
+@keyframes btn-pulsate-alert {
+    0% {box-shadow: 0 0 0 $color-intense-red; 
+        box-shadow: 0 0 0 $color-intense-red; 
+        box-shadow: 0 0 0 $color-intense-red; 
+        box-shadow: 0 0 0 $color-intense-red;
+        @include minimal-text-shadow-up(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(1rem, rgba(20, 30, 70, 0.5));
+    }
+    50% {@include minimal-box-shadow-up(1rem, $color-intense-red); 
+        @include minimal-box-shadow-down(1rem, $color-intense-red); 
+        @include minimal-box-shadow-left(1rem, $color-intense-red); 
+        @include minimal-box-shadow-right(1rem, $color-intense-red);
+        @include minimal-text-shadow-up(5rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(5rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(5rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(5rem, rgba(20, 30, 70, 0.5));
+    }
+    100% {box-shadow: 0 0 0 $color-intense-red; 
+        box-shadow: 0 0 0 $color-intense-red; 
+        box-shadow: 0 0 0 $color-intense-red; 
+        box-shadow: 0 0 0 $color-intense-red;
+        @include minimal-text-shadow-up(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-down(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-left(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-right(1rem, rgba(20, 30, 70, 0.5));
+    }
+}
+
 
 // HEADER ANIMATIONS
 

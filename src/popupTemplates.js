@@ -205,3 +205,50 @@ const workModelTemplate = `
 
     <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
 `;
+
+const contactTemplate = `
+    <h3 class="popup__title"><strong>Follow up!</strong></h3>
+    <p class="popup__text bold">Ready to uncover your path to success? Then move on to the next stage and embark on a transformative journey with <span>Rise and Thrive</span>, where clarity meets purpose and success becomes a tangible reality.</p>
+    
+    <button class="cta-button" data-link="./booking.html">Book now!</button>
+    
+    <p class="popup__text popup__block">If otherwise you still have any questions or doubts about our services or just want to give us your feedback, please use any of the following channels to share your thoughts:</p>
+
+    <div class="popup__block">
+        <figure class="popup__figure">
+            <a class="popup__socialLink" href="mailto:riseandtrhive@whatever.com">
+                <img class="socialLink__icon" src="./public/icons/email-blue.svg" />
+                <figcaption class="socialLink__caption"></figcaption>
+            </a>
+        </figure>
+
+        <figure class="popup__figure">
+            <a class="popup__socialLink" href="https://wa.me/34667231827" target="_blank">
+                <img class="socialLink__icon" src="./public/icons/whatsapp-blue.svg" />
+                <figcaption class="socialLink__caption"></figcaption>
+            </a>
+        </figure>
+
+        <figure class="popup__figure">
+            <a class="popup__socialLink" href="https://www.linkedin.com/company/you-rise-thrive/" target="_blank">
+                <img class="socialLink__icon" src="./public/icons/linkedin-blue.svg" />
+                <figcaption class="socialLink__caption"></figcaption>
+            </a>
+        </figure>
+
+        <figure class="popup__figure">
+            <a class="popup__socialLink" href="https://www.instagram.com/youriseandthrive/" target="_blank">
+                <img class="socialLink__icon" src="./public/icons/instagram-blue.svg" />
+                <figcaption class="socialLink__caption"></figcaption>
+            </a>
+        </figure>
+    </div>
+
+    <div class="popup__block">
+        <p class="popup__text bold">Contact directly with our Success & Prosperity specialist, <span>Cristina</span>:</p>
+        <a class="popup__text contact-detail" href="tel:+34667231827">+34 667 231 827</a>
+        <a class="popup__text contact-detail" href="mailto:riseandtrhive@whatever.com">riseandtrhive@whatever.com</a>
+    </div>
+
+    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+`

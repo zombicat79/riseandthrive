@@ -4,6 +4,7 @@ const content = document.querySelector("main");
 const footer = document.querySelector(".footer");
 
 const ctaButtons = Array.from(document.querySelectorAll(".cta-button"));
+const contactButtons = Array.from(document.querySelectorAll(".contact-btn"));
 const appointmentButtons = Array.from(document.querySelectorAll(".appointment-btn"));
 const individualPricingButtons = Array.from(document.querySelectorAll(".individual-pricing-btn"));
 const corporatePricingButtons = Array.from(document.querySelectorAll(".corporate-pricing-btn"));
@@ -102,6 +103,19 @@ if (ctaButtons) {
     });
 }
 
+if (contactButtons) {
+    contactButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            btn.classList.add("nav__link--active");
+            setTimeout(() => {
+                fillPopup(contactTemplate);
+                initiatePopup();
+                btn.classList.remove("nav__link--active");
+            }, 750);
+        })
+    });
+}
+
 if (appointmentButtons) {
     appointmentButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -185,10 +199,6 @@ function fillPopup(filling) {
     popupContent.innerHTML = filling;
 }
 
-function emptyPopup() {
-    popupContent.innerHTML = "";
-}
-
 
 // -- POPUP CLOSERS --
 if (popupClosers) {
@@ -250,4 +260,3 @@ if (propositionItems) {
 const positionFirst = document.querySelector(".block-section--1").clientTop;
 const positionSecond = document.querySelector(".block-section--2").getBoundingClientRect();
 const positionThird = document.querySelector(".block-section--3").getBoundingClientRect();
-

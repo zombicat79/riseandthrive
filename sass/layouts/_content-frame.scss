@@ -2,5 +2,19 @@
     background-color: $color-light-grey;
     padding: 10rem 4rem 2rem;
     max-width: 250rem;
+    position: relative;
     margin: 0 auto;
+
+    &__buffer {
+        height: 7.5vh;
+    }
+}
+@media only screen and (min-width: 1800px) {
+    .content-frame {
+        min-height: 100vh;
+
+        &__buffer {
+            height: 7.5vh;
+        }
+    }
 }

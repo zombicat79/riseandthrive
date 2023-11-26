@@ -114,7 +114,12 @@
         &.bold span, & a {
             font-family: "NotoSans-Bold";
             position: relative;
-            bottom: 2px;
+            bottom: 1.5px;
+        }
+
+        &.contact-detail {
+            margin-bottom: 0;
+            display: block;
         }
     }
     @media only screen and (max-width: 950px) {
@@ -148,6 +153,33 @@
 
     &__disclaimer {
         color: $color-intense-red;
+    }
+
+    &__figure {
+        
+        &:not(.popup__figure:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        .popup__socialLink {
+            height: 100%;
+            display: inline-block;
+
+            .socialLink__icon {
+                width: 12rem;
+                height: 12rem;
+                border-radius: 2rem;
+
+                &:active {
+                    transform: scale(0.5);
+                }
+    
+                &:hover {
+                    cursor: pointer;
+                    @include minimal-box-shadow-up(1rem, $color-dark-blue);
+                }
+            }
+        }
     }
 
     &__list {
