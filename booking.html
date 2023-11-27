@@ -41,35 +41,137 @@
             <svg class="xCloser mobileManager__xCloser" data-status="inactive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z" fill="#141e46"></path> </g></svg>
         </div>
     </header>
-    <main class="content-frame services">
+    <main class="content-frame booking">
         <section class="block-section block-section--1 flex-container--column flex-center">
-            <!-- h1 class="about__title">Welcome to Rise and Thrive,<br>where the extraordinary journey of self-discovery and empowerment unfolds!</h1 -->
+            <h1 class="about__title">Unlock Your Potential with Rise and Thrive!</h1>
         </section>
 
         <section class="block-section block-section--2">
-            <article class="articleContainer__textContainer flex-container--column flex-center">
-                <div class="body__table indivudual-table">
-                    <div class="table__element product1">Introductory Session</div>
-                    <div class="table__element product2">Single Session</div>
-                    <div class="table__element product3">Package of 5 Sessions</div>
-                    <div class="table__element product4">Package of 10 Sessions</div>
-                    <div class="table__element feature1">Price</div>
-                    <div class="table__element feature2">Duration</div>
-                    <div class="table__element price1">Free!</div>
-                    <div class="table__element price2">$75 per session</div>
-                    <div class="table__element price3">$330 ($66 per session - 5.7% discount rate)</div>
-                    <div class="table__element price4">$630 ($63 per session 10% further discount rate)</div>
-                    <div class="table__element duration1">30 minutes</div>
-                    <div class="table__element duration2">60 minutes</div>
-                    <div class="table__element duration3">60 minutes</div>
-                    <div class="table__element duration4">60 minutes</div>
-                </div>
-            </article>
+            <div class="articleContainer introContainer flex-container--row flex-between">
+                <figure class="articleContainer__figure introContainer__figure">
+                    <figcaption class="introContainer__caption"></figcaption>
+                </figure>
+                <article class="articleContainer__textContainer flex-container--column flex-center">
+                    <div class="regular-content__body">
+                        <h2 class="body__title body__title--bigger bold-regular-text">Why Choose Rise and Thrive</h2>
+                        <ol class="body__list align-left">
+                            <li>
+                                <h3 class="body__subtitle bold-regular-text">Practical Solutions:</h3>
+                                <p class="body__paragraph">We believe in actionable strategies that deliver tangible results. Our approach is rooted in practicality and geared towards driving real, measurable success.</p>
+                            </li>
+                            <li>
+                                <h3 class="body__subtitle bold-regular-text">Tailored Guidance:</h3>
+                                <p class="body__paragraph">Every session is personalized to your unique needs, ensuring that you receive the guidance necessary to overcome challenges and seize opportunities.</p>
+                            </li>
+                            <li>
+                                <h3 class="body__subtitle bold-regular-text">Empowerment and Alignment:</h3>
+                                <p class="body__paragraph">For individuals and companies alike, our goal is to empower you and align your strengths with your goals. Together, we create an environment where success is not just a destination but a journey of continuous growth.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="block-section__band flex-container--column flex-center">
+            <button class="cta-button appointment-btn">Get your free appointment now!</button>
         </section>
 
         <section class="block-section block-section--3">
-            <article class="articleContainer__textContainer flex-container--column flex-center">
-                
+            <article class="articleContainer introContainer flex-container--column flex-center">
+                <div class="regular-content__body flex-container--row flex-between">
+                    <div class="articleContainer__textContainer">
+                        <div class="regular-content__header flex-container--row flex-center">
+                            <img id="superhero-icon" class="header__img header__img--booking" src="./public/icons/individual-superhero.svg" alt="Professional individual" />
+                            <h2 class="body__title body__title--bigger bold-regular-text">Discover Your Professional Purpose</h2>
+                        </div>
+                        <p>Are you navigating a career crossroads or seeking a deeper sense of purpose in your professional journey? Our 1:1 mentoring sessions are tailored to illuminate your unique strengths, passions, and untapped potential.</p>
+                        <p>Let us guide you toward a fulfilling and purpose-driven career. It's time to rise to your fullest potential.</p>
+                    </div>
+                    <figure class="articleContainer__figure introContainer__figure">
+                        <figcaption class="introContainer__caption"></figcaption>
+                    </figure>
+                </div>
+                <figure class="regular-content__body">
+                    <figcaption class="table__caption align-left">Our plans for individuals <span>(1:1 Sessions)</span></figcaption>
+
+                    <div class="body__table body__table--individual">
+                        <div class="table__element table__element--category product1">Introductory Session</div>
+                        <div class="table__element table__element--category product2">Single Session</div>
+                        <div class="table__element table__element--category product3">Package of 5 Sessions</div>
+                        <div class="table__element table__element--category product4">Package of 10 Sessions</div>
+                        <div class="table__element table__element--feature feature1">Price</div>
+                        <div class="table__element table__element--feature feature2">Duration</div>
+                        <div class="table__element table__element--thick price1">
+                            <p class="table__text table__ad">Free!</p>
+                            <button id="individual-intro" class="cta-button table-btn">Get your appointment!</button>
+                        </div>
+                        <div class="table__element table__element--thick price2">
+                            <p class="table__text">$75 per session</p>
+                            <button id="individual-single" class="cta-button table-btn">Book now!</button>
+                        </div>
+                        <div class="table__element table__element--thick price3">
+                            <p class="table__text">$330 ($66 per session - 5.7% discount rate)</p>
+                            <button id="individual-pack5" class="cta-button table-btn">Book now!</button>
+                        </div>
+                        <div class="table__element table__element--thick price4">
+                            <p class="table__text">$630 ($63 per session 10% further discount rate)</p>
+                            <button id="individual-pack10" class="cta-button table-btn">Book now!</button>
+                        </div>
+                        <div class="table__element duration1">30 minutes</div>
+                        <div class="table__element duration2">60 minutes</div>
+                        <div class="table__element duration3">60 minutes</div>
+                        <div class="table__element duration4">60 minutes</div>
+                    </div>
+                </figure>
+            </article>
+        </section>
+
+        <section class="block-section__band flex-container--column flex-center">
+            <button class="cta-button appointment-btn">Book now!</button>
+        </section>
+
+        <section class="block-section block-section--4">
+            <article class="articleContainer introContainer flex-container--column flex-center">
+                <div class="regular-content__body flex-container--row flex-between">
+                    <figure class="articleContainer__figure introContainer__figure">
+                        <figcaption class="introContainer__caption"></figcaption>
+                    </figure>
+                    <div class="articleContainer__textContainer">
+                        <div class="regular-content__header flex-container--row flex-center">
+                            <img id="teamwork-icon" class="header__img header__img--booking" src="./public/icons/corporate-teamwork.svg" alt="Corporate business" />
+                            <h2 class="body__title body__title--bigger bold-regular-text">Unleash Your Team's Superpowers</h2>
+                        </div>
+                        <p>Your company is a powerhouse of talent waiting to be fully harnessed. Our expertise lies in identifying the key players within your team who possess the superpowers needed to drive success. Through in-depth analysis, we align strengths with strategic goals, empowering your team to thrive collectively.</p>
+                        <p>It's time for your company to rise above the competition.</p>
+                    </div>
+                </div>
+                <figure class="regular-content__body">
+                    <figcaption class="table__caption align-right">Our plans for companies <span>(minimum 3-Month commitment)</span></figcaption>
+                    
+                    <div class="body__table body__table--corporate">
+                        <div class="table__element table__element--category product1">Introductory Session</div>
+                        <div class="table__element table__element--category product2">Initial Consultation</div>
+                        <div class="table__element table__element--category product3">Monthly Retainer for Ongoing Services</div>
+                        <div class="table__element table__element--feature feature1">Price</div>
+                        <div class="table__element table__element--feature feature2">Duration</div>
+                        <div class="table__element table__element--thick price1">
+                            <p class="table__text table__ad">Free!</p>
+                            <button id="corporate-intro" class="cta-button table-btn">Get your appointment!</button>
+                        </div>
+                        <div class="table__element table__element--thick price2">
+                            <p class="table__text">$750 (one-time fee)</p>
+                            <button id="corporate-single" class="cta-button table-btn">Book now!</button>
+                        </div>
+                        <div class="table__element table__element--thick price3">
+                            <p class="table__text">$850 per month</p>
+                            <button id="corporate-monthly" class="cta-button table-btn">Book now!</button>
+                        </div>
+                        <div class="table__element duration1">N/A</div>
+                        <div class="table__element duration2">N/A</div>
+                        <div class="table__element duration3">3 months</div>
+                    </div>
+                </figure>
             </article>
         </section>
 
@@ -104,7 +206,7 @@
         </div>
 
         <div class="subfooter">
-            <span>Rise & Thrive 2023 - &copy All rights reserved</span>
+            <p>Rise & Thrive <span id="current-year">2023</span> - &copy All rights reserved</p>
             <p class="subfooter__text">This site has been designed and developed by <a class="subfooter__link" href="https://zombiecat.dev/" target="_blank"><span class="subfooter__maker">Zombiecat</span><img class="subfooter__makerLogo" src="./public/logos/zombiecat-trans-logo.png" alt="ZombieCat logo" /></a></p>
         </div>
     </footer>

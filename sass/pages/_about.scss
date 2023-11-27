@@ -1,6 +1,10 @@
 .about {
     text-align: center;
 
+    .articleContainer__textContainer {
+        padding: 4rem;
+    }
+
     &__title {
         font-family: "Caveat-Bold";
         font-size: 6rem;
@@ -15,6 +19,7 @@
         background-size: cover;
         background-position: bottom;
         padding: 10rem 4rem;
+        min-height: 35rem;
     }
 
     .block-section--2 {

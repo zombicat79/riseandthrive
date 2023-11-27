@@ -30,7 +30,6 @@
             width: 67.5%;
             background-color: $color-dark-cream;
             border-radius: 2rem;
-            padding: 4rem;
             font-size: 2rem;
 
             & p:not(p:last-child) {
@@ -39,7 +38,7 @@
         }
     }
 
-    .unfolding-content {
+    .unfolding-content, .regular-content {
         position: relative;
 
         &__header {
@@ -49,6 +48,10 @@
             .header__img {
                 width: 100%;
                 max-width: 20rem;
+
+                &--booking {
+                    max-width: 10rem;
+                }
             }
 
             .header__title {
@@ -63,61 +66,126 @@
             padding: 4rem 6rem;
             transition: max-height 2s, opacity 3s, padding 2s;
             overflow: hidden;
-        }
 
-        .body {
+            .body {
 
-            &__shrink {
-                width: 5rem;
-                height: 5rem;
-                position: absolute;
-                top: -2rem;
-                right: 2rem;
-                transition: width .2s, height .2s, transform 1s, opacity 1s;
-
-                &:hover {
-                    cursor: pointer;
-                }
-
-                &.clicked {
-                    width: 3rem;
-                    height: 3rem;
-                }
-            }
-
-            &__band {
-                background-color: $color-dark-blue;
-                padding: 4rem 0;
-                margin: 4rem -6rem;
-            }
-
-            &__list {
-                list-style-type: auto;
-                margin-left: 4rem;
-                margin-block: 2rem;
-            }
-
-            &__title, &__subtitle {
-                bottom: 0;
-            }
-
-            &__title {
-                text-transform: uppercase;
-            }
-
-            &__paragraph {
-                margin-bottom: 1.5rem;
-            }
-
-            &__btnContainer {
-                padding-top: 5rem;
-
-                & .cta-button {
-                    min-width: 35rem;
-
-                    &:first-child {
-                        margin-right: 4rem;
+                &__shrink {
+                    width: 5rem;
+                    height: 5rem;
+                    position: absolute;
+                    top: -2rem;
+                    right: 2rem;
+                    transition: width .2s, height .2s, transform 1s, opacity 1s;
+    
+                    &:hover {
+                        cursor: pointer;
                     }
+    
+                    &.clicked {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+    
+                &__band {
+                    background-color: $color-dark-blue;
+                    padding: 4rem 0;
+                    margin: 4rem -6rem;
+                }
+
+                &__table {
+                    background-color: rgba(20, 30, 70, 0.7);
+                    border-radius: 2rem;
+                    padding: 2rem;
+                    display: grid;
+                    gap: 1rem;
+
+                    .table__element {
+                        border-radius: 2rem;
+                        min-height: 12.5rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        &--thick {
+                            justify-content: space-between;
+                        }
+
+                        &--category {
+                            background-color: $color-light-green;
+                            text-transform: uppercase;
+                            font-family: "NotoSans-Bold";
+                        }
+
+                        &--feature {
+                            background-color: $color-desert-dune;
+                            font-family: "NotoSans-Bold";
+                        }
+
+                        .table__ad {
+                            text-transform: uppercase;
+                            font-family: "NotoSans-Bold";
+                            color: $color-dark-green;
+                            animation-name: text-highlight;
+                            animation-timing-function: linear;
+                            animation-duration: 1s;
+                            animation-iteration-count: infinite;
+                        }
+                    }
+
+                    .table-btn {
+                        font-size: 1.25rem;
+                        padding: 1rem 2rem;
+                        margin-top: 1rem;
+                    }
+                }
+    
+                &__list {
+                    list-style-type: auto;
+                    margin-left: 4rem;
+                    margin-block: 2rem;
+                }
+    
+                &__title, &__subtitle {
+                    bottom: 0;
+                }
+    
+                &__title {
+                    text-transform: uppercase;
+
+                    &--bigger {
+                        font-size: 3rem;
+                    }
+                }
+    
+                &__paragraph {
+                    margin-bottom: 1.5rem;
+                }
+    
+                &__btnContainer {
+                    padding-top: 5rem;
+    
+                    & .cta-button {
+                        min-width: 35rem;
+    
+                        &:first-child {
+                            margin-right: 4rem;
+                        }
+                    }
+                }
+            }
+
+            .table__caption {
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+                font-size: 2.5rem;
+                font-family: "NotoSans-Bold";
+
+                span {
+                    font-size: 1.75rem;
+                    font-family: "NotoSans-Regular";
+                    position: relative;
+                    bottom: 2px;
                 }
             }
         }

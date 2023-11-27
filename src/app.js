@@ -260,3 +260,17 @@ if (propositionItems) {
 const positionFirst = document.querySelector(".block-section--1").clientTop;
 const positionSecond = document.querySelector(".block-section--2").getBoundingClientRect();
 const positionThird = document.querySelector(".block-section--3").getBoundingClientRect();
+
+
+// -- COMMON PAGE LOAD EVENT LISTENERS --
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // -- Topmost scroll on page load --
+    content.scrollIntoView({ block: "start", behavior: "smooth"});
+
+    // -- Automatic updating of current year to be shown in the footer --
+    const yearPlaceholder = document.getElementById("current-year");
+
+    const currentDate = new Date().getFullYear();
+    yearPlaceholder.innerHTML = currentDate;
+})

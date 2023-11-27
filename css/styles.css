@@ -76,6 +76,9 @@ html {
 .align-left {
   text-align: left; }
 
+.align-right {
+  text-align: right; }
+
 .margin-block20 {
   margin: 2rem 0; }
 
@@ -420,59 +423,105 @@ html {
       width: 67.5%;
       background-color: #fae7c9;
       border-radius: 2rem;
-      padding: 4rem;
       font-size: 2rem; }
       .block-section .articleContainer__textContainer p:not(p:last-child) {
         margin-bottom: 1.5rem; }
-  .block-section .unfolding-content {
+  .block-section .unfolding-content, .block-section .regular-content {
     position: relative; }
-    .block-section .unfolding-content__header {
+    .block-section .unfolding-content__header, .block-section .regular-content__header {
       width: 100%;
       padding: 4rem 0; }
-      .block-section .unfolding-content__header .header__img {
+      .block-section .unfolding-content__header .header__img, .block-section .regular-content__header .header__img {
         width: 100%;
         max-width: 20rem; }
-      .block-section .unfolding-content__header .header__title {
+        .block-section .unfolding-content__header .header__img--booking, .block-section .regular-content__header .header__img--booking {
+          max-width: 10rem; }
+      .block-section .unfolding-content__header .header__title, .block-section .regular-content__header .header__title {
         font-family: "Raleway";
         font-size: 5rem;
         font-weight: 900;
         text-transform: uppercase; }
-    .block-section .unfolding-content__body {
+    .block-section .unfolding-content__body, .block-section .regular-content__body {
       padding: 4rem 6rem;
       transition: max-height 2s, opacity 3s, padding 2s;
       overflow: hidden; }
-    .block-section .unfolding-content .body__shrink {
-      width: 5rem;
-      height: 5rem;
-      position: absolute;
-      top: -2rem;
-      right: 2rem;
-      transition: width .2s, height .2s, transform 1s, opacity 1s; }
-      .block-section .unfolding-content .body__shrink:hover {
-        cursor: pointer; }
-      .block-section .unfolding-content .body__shrink.clicked {
-        width: 3rem;
-        height: 3rem; }
-    .block-section .unfolding-content .body__band {
-      background-color: #141e46;
-      padding: 4rem 0;
-      margin: 4rem -6rem; }
-    .block-section .unfolding-content .body__list {
-      list-style-type: auto;
-      margin-left: 4rem;
-      margin-block: 2rem; }
-    .block-section .unfolding-content .body__title, .block-section .unfolding-content .body__subtitle {
-      bottom: 0; }
-    .block-section .unfolding-content .body__title {
-      text-transform: uppercase; }
-    .block-section .unfolding-content .body__paragraph {
-      margin-bottom: 1.5rem; }
-    .block-section .unfolding-content .body__btnContainer {
-      padding-top: 5rem; }
-      .block-section .unfolding-content .body__btnContainer .cta-button {
-        min-width: 35rem; }
-        .block-section .unfolding-content .body__btnContainer .cta-button:first-child {
-          margin-right: 4rem; }
+      .block-section .unfolding-content__body .body__shrink, .block-section .regular-content__body .body__shrink {
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        top: -2rem;
+        right: 2rem;
+        transition: width .2s, height .2s, transform 1s, opacity 1s; }
+        .block-section .unfolding-content__body .body__shrink:hover, .block-section .regular-content__body .body__shrink:hover {
+          cursor: pointer; }
+        .block-section .unfolding-content__body .body__shrink.clicked, .block-section .regular-content__body .body__shrink.clicked {
+          width: 3rem;
+          height: 3rem; }
+      .block-section .unfolding-content__body .body__band, .block-section .regular-content__body .body__band {
+        background-color: #141e46;
+        padding: 4rem 0;
+        margin: 4rem -6rem; }
+      .block-section .unfolding-content__body .body__table, .block-section .regular-content__body .body__table {
+        background-color: rgba(20, 30, 70, 0.7);
+        border-radius: 2rem;
+        padding: 2rem;
+        display: grid;
+        gap: 1rem; }
+        .block-section .unfolding-content__body .body__table .table__element, .block-section .regular-content__body .body__table .table__element {
+          border-radius: 2rem;
+          min-height: 12.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          .block-section .unfolding-content__body .body__table .table__element--thick, .block-section .regular-content__body .body__table .table__element--thick {
+            justify-content: space-between; }
+          .block-section .unfolding-content__body .body__table .table__element--category, .block-section .regular-content__body .body__table .table__element--category {
+            background-color: #99b080;
+            text-transform: uppercase;
+            font-family: "NotoSans-Bold"; }
+          .block-section .unfolding-content__body .body__table .table__element--feature, .block-section .regular-content__body .body__table .table__element--feature {
+            background-color: #e1c78f;
+            font-family: "NotoSans-Bold"; }
+          .block-section .unfolding-content__body .body__table .table__element .table__ad, .block-section .regular-content__body .body__table .table__element .table__ad {
+            text-transform: uppercase;
+            font-family: "NotoSans-Bold";
+            color: #748e63;
+            animation-name: text-highlight;
+            animation-timing-function: linear;
+            animation-duration: 1s;
+            animation-iteration-count: infinite; }
+        .block-section .unfolding-content__body .body__table .table-btn, .block-section .regular-content__body .body__table .table-btn {
+          font-size: 1.25rem;
+          padding: 1rem 2rem;
+          margin-top: 1rem; }
+      .block-section .unfolding-content__body .body__list, .block-section .regular-content__body .body__list {
+        list-style-type: auto;
+        margin-left: 4rem;
+        margin-block: 2rem; }
+      .block-section .unfolding-content__body .body__title, .block-section .unfolding-content__body .body__subtitle, .block-section .regular-content__body .body__title, .block-section .regular-content__body .body__subtitle {
+        bottom: 0; }
+      .block-section .unfolding-content__body .body__title, .block-section .regular-content__body .body__title {
+        text-transform: uppercase; }
+        .block-section .unfolding-content__body .body__title--bigger, .block-section .regular-content__body .body__title--bigger {
+          font-size: 3rem; }
+      .block-section .unfolding-content__body .body__paragraph, .block-section .regular-content__body .body__paragraph {
+        margin-bottom: 1.5rem; }
+      .block-section .unfolding-content__body .body__btnContainer, .block-section .regular-content__body .body__btnContainer {
+        padding-top: 5rem; }
+        .block-section .unfolding-content__body .body__btnContainer .cta-button, .block-section .regular-content__body .body__btnContainer .cta-button {
+          min-width: 35rem; }
+          .block-section .unfolding-content__body .body__btnContainer .cta-button:first-child, .block-section .regular-content__body .body__btnContainer .cta-button:first-child {
+            margin-right: 4rem; }
+      .block-section .unfolding-content__body .table__caption, .block-section .regular-content__body .table__caption {
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-family: "NotoSans-Bold"; }
+        .block-section .unfolding-content__body .table__caption span, .block-section .regular-content__body .table__caption span {
+          font-size: 1.75rem;
+          font-family: "NotoSans-Regular";
+          position: relative;
+          bottom: 2px; }
   .block-section .unfolding-content[data-status="contracted"]:hover {
     cursor: pointer;
     outline: 5px solid #141e46; }
@@ -804,6 +853,8 @@ html {
 
 .about {
   text-align: center; }
+  .about .articleContainer__textContainer {
+    padding: 4rem; }
   .about__title {
     font-family: "Caveat-Bold";
     font-size: 6rem; }
@@ -813,7 +864,8 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    padding: 10rem 4rem; }
+    padding: 10rem 4rem;
+    min-height: 35rem; }
   .about .block-section--2 .introContainer__figure {
     background-image: url("./../public/images/cristina-pro-2.jpeg"); }
   .about .block-section--3 .introContainer__figure {
@@ -834,3 +886,71 @@ html {
 
 .services .articleContainer__textContainer {
   width: 100%; }
+
+.booking {
+  text-align: center; }
+  .booking .block-section--1 {
+    margin: 0 -4rem;
+    background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/corn-seeds.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 4rem;
+    min-height: 35rem; }
+  .booking .block-section--2 .introContainer__figure {
+    background-image: url("./../public/images/laptop-signalling.jpg"); }
+  .booking .block-section--3 .articleContainer {
+    background-color: #fae7c9;
+    padding: 4rem;
+    border-radius: 2rem; }
+  .booking .block-section--3 .introContainer__figure {
+    background-image: url("./../public/images/duck-king.jpg"); }
+  .booking .block-section--4 .articleContainer {
+    background-color: #fae7c9;
+    padding: 4rem;
+    border-radius: 2rem; }
+  .booking .block-section--4 .introContainer__figure {
+    background-image: url("./../public/images/collective-victory.jpg"); }
+  .booking .body__table {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: ". p1 p2 p3 p4" "f2 d1 d2 d3 d4" "f1 pri1 pri2 pri3 pri4"; }
+    .booking .body__table .table__element {
+      padding: 4rem;
+      background-color: #fff; }
+    .booking .body__table .product1 {
+      grid-area: p1; }
+    .booking .body__table .product2 {
+      grid-area: p2; }
+    .booking .body__table .product3 {
+      grid-area: p3; }
+    .booking .body__table .product4 {
+      grid-area: p4; }
+    .booking .body__table .feature1 {
+      grid-area: f1; }
+    .booking .body__table .feature2 {
+      grid-area: f2; }
+    .booking .body__table .duration1 {
+      grid-area: d1; }
+    .booking .body__table .duration2 {
+      grid-area: d2; }
+    .booking .body__table .duration3 {
+      grid-area: d3; }
+    .booking .body__table .duration4 {
+      grid-area: d4; }
+    .booking .body__table .price1 {
+      grid-area: pri1; }
+    .booking .body__table .price2 {
+      grid-area: pri2; }
+    .booking .body__table .price3 {
+      grid-area: pri3; }
+    .booking .body__table .price4 {
+      grid-area: pri4; }
+    .booking .body__table--individual {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: ". p1 p2 p3 p4" "f2 d1 d2 d3 d4" "f1 pri1 pri2 pri3 pri4"; }
+    .booking .body__table--corporate {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: ". p1 p2 p3" "f2 d1 d2 d3" "f1 pri1 pri2 pri3"; }

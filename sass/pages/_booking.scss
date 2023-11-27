@@ -1,0 +1,132 @@
+.booking {
+    text-align: center;
+
+    .block-section--1 {
+        margin: 0 -4rem;
+        background-image: 
+            linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)),
+            url("./../public/images/corn-seeds.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 10rem 4rem;
+        min-height: 35rem;
+    }
+
+    .block-section--2 {
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/laptop-signalling.jpg");
+            }
+        }
+    }
+
+    .block-section--3 {
+
+        .articleContainer {
+            background-color: $color-dark-cream;
+            padding: 4rem;
+            border-radius: 2rem;
+        }
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/duck-king.jpg");
+            }
+        }
+    }
+
+    .block-section--4 {
+
+        .articleContainer {
+            background-color: $color-dark-cream;
+            padding: 4rem;
+            border-radius: 2rem;
+        }
+
+        .introContainer {
+
+            &__figure {
+                background-image: url("./../public/images/collective-victory.jpg");
+            }
+        }
+    }
+
+    .body__table {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            ". p1 p2 p3 p4"
+            "f2 d1 d2 d3 d4"
+            "f1 pri1 pri2 pri3 pri4";
+
+        .table__element {
+            padding: 4rem;
+            background-color: #fff;
+        }
+
+        .product1 {
+            grid-area: p1;
+        }
+        .product2 {
+            grid-area: p2;
+        }
+        .product3 {
+            grid-area: p3;
+        }
+        .product4 {
+            grid-area: p4;
+        }
+        .feature1 {
+            grid-area: f1;
+        }
+        .feature2 {
+            grid-area: f2;
+        }
+        .duration1 {
+            grid-area: d1;
+        }
+        .duration2 {
+            grid-area: d2;
+        }
+        .duration3 {
+            grid-area: d3;
+        }
+        .duration4 {
+            grid-area: d4;
+        }
+        .price1 {
+            grid-area: pri1;
+        }
+        .price2 {
+            grid-area: pri2;
+        }
+        .price3 {
+            grid-area: pri3;
+        }
+        .price4 {
+            grid-area: pri4;
+        }
+
+        &--individual {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                ". p1 p2 p3 p4"
+                "f2 d1 d2 d3 d4"
+                "f1 pri1 pri2 pri3 pri4";
+        }
+
+        &--corporate {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                ". p1 p2 p3"
+                "f2 d1 d2 d3"
+                "f1 pri1 pri2 pri3";
+        }
+    }
+}
