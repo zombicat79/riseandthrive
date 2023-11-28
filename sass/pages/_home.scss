@@ -58,7 +58,7 @@
             }
 
             &__proposition {
-                padding: 2rem 0;
+                padding: 4rem 0;
                 font-size: 1.6rem;
             }
 
@@ -104,7 +104,7 @@
                 font-weight: 700;
 
                 &__container {
-                    background-color: rgba(20, 30, 70, 0.5);
+                    background-color: $color-desert-dune;
                     padding: 2rem;
                     font-size: 1.8rem;
                     border: 5px solid $color-dark-blue;
@@ -135,6 +135,13 @@
                     }
                 }
             }
+        }
+    }
+
+    .block-section--2 {
+
+        .articleContainer__standard {
+            background-color: rgba(20, 30, 70, 0.7);
         }
     }
 }

@@ -410,8 +410,15 @@ html {
     padding: 6rem;
     margin: 0 -4rem;
     margin-bottom: 5rem; }
+    .block-section__band .cta-button {
+      min-width: 35rem; }
   .block-section .articleContainer {
     align-items: stretch; }
+    .block-section .articleContainer__standard {
+      width: 100%;
+      background-color: #fae7c9;
+      border-radius: 2rem;
+      font-size: 2rem; }
     .block-section .articleContainer__figure {
       width: 30%;
       min-height: 40rem;
@@ -426,6 +433,55 @@ html {
       font-size: 2rem; }
       .block-section .articleContainer__textContainer p:not(p:last-child) {
         margin-bottom: 1.5rem; }
+  .block-section .form {
+    background-color: rgba(20, 30, 70, 0.7);
+    color: #faf8ed;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    padding: 4rem; }
+    .block-section .form div {
+      width: 100%; }
+    .block-section .form__title {
+      text-transform: uppercase;
+      font-family: "Raleway";
+      font-weight: 700;
+      font-size: 5rem; }
+    .block-section .form__note {
+      font-size: 1.5rem; }
+    .block-section .form__container {
+      width: 37.5%;
+      margin-top: 4rem; }
+    .block-section .form__column:not(.form__column:last-child) {
+      margin-right: 2rem; }
+    .block-section .form__label {
+      margin-bottom: 1rem; }
+    .block-section .form__input, .block-section .form__select {
+      width: 100%;
+      background-color: #faf8ed;
+      color: #141e46;
+      border-radius: 1.5rem;
+      padding: .5rem 2rem;
+      font-size: 2rem;
+      margin-bottom: 2rem; }
+      .block-section .form__input::placeholder, .block-section .form__select::placeholder {
+        font-size: 1.5rem; }
+      .block-section .form__input--textarea, .block-section .form__select--textarea {
+        width: 100%;
+        resize: none; }
+        .block-section .form__input--textarea::-webkit-scrollbar, .block-section .form__select--textarea::-webkit-scrollbar {
+          background-color: #faf8ed;
+          border-top-right-radius: 1.5rem;
+          border-bottom-right-radius: 1.5rem; }
+        .block-section .form__input--textarea::-webkit-scrollbar-thumb, .block-section .form__select--textarea::-webkit-scrollbar-thumb {
+          background: linear-gradient(to right, transparent, #faf8ed, #141e46, #faf8ed, transparent); }
+    .block-section .form__select {
+      padding: .35rem 2rem; }
+    .block-section .form__button {
+      width: 48%; }
+    .block-section .form__footnote {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      font-style: italic; }
   .block-section .unfolding-content, .block-section .regular-content {
     position: relative; }
     .block-section .unfolding-content__header, .block-section .regular-content__header {
@@ -588,9 +644,7 @@ html {
     .cta-button.highlighted.cta-button--alert {
       animation-name: btn-pulsate-alert; }
   .cta-button.disabled {
-    opacity: 0.3;
-    filter: grayscale(1);
-    border: 1px solid #141e46;
+    opacity: 0.5;
     animation-name: none; }
     .cta-button.disabled:hover {
       cursor: not-allowed; }
@@ -733,7 +787,8 @@ html {
       margin: 4rem 0; }
   .popup__footnote {
     font-family: "NotoSans-Bold";
-    margin-top: 4rem; }
+    margin-top: 4rem;
+    font-style: italic; }
   .popup .cta-button {
     text-decoration: none;
     min-width: 27rem; }
@@ -796,7 +851,7 @@ html {
   .home .value-proposition .introContainer__figure {
     background-image: url("./../public/images/cristina-pro.jpg"); }
   .home .value-proposition .introContainer__proposition {
-    padding: 2rem 0;
+    padding: 4rem 0;
     font-size: 1.6rem; }
   .home .value-proposition .introContainer__textbox {
     position: relative;
@@ -831,7 +886,7 @@ html {
     font-family: "Raleway";
     font-weight: 700; }
     .home .value-proposition .introContainer .proposition__container {
-      background-color: rgba(20, 30, 70, 0.5);
+      background-color: #e1c78f;
       padding: 2rem;
       font-size: 1.8rem;
       border: 5px solid #141e46;
@@ -850,6 +905,9 @@ html {
       color: #faf8ed;
       cursor: pointer;
       text-shadow: 0 -0.15rem 0.75rem #faf8ed; }
+
+.home .block-section--2 .articleContainer__standard {
+  background-color: rgba(20, 30, 70, 0.7); }
 
 .about {
   text-align: center; }
@@ -897,19 +955,19 @@ html {
     background-position: center;
     padding: 10rem 4rem;
     min-height: 35rem; }
-  .booking .block-section--2 .introContainer__figure {
-    background-image: url("./../public/images/laptop-signalling.jpg"); }
-  .booking .block-section--3 .articleContainer {
-    background-color: #fae7c9;
-    padding: 4rem;
-    border-radius: 2rem; }
   .booking .block-section--3 .introContainer__figure {
-    background-image: url("./../public/images/duck-king.jpg"); }
+    background-image: url("./../public/images/laptop-signalling.jpg"); }
   .booking .block-section--4 .articleContainer {
     background-color: #fae7c9;
     padding: 4rem;
     border-radius: 2rem; }
   .booking .block-section--4 .introContainer__figure {
+    background-image: url("./../public/images/duck-king.jpg"); }
+  .booking .block-section--5 .articleContainer {
+    background-color: #fae7c9;
+    padding: 4rem;
+    border-radius: 2rem; }
+  .booking .block-section--5 .introContainer__figure {
     background-image: url("./../public/images/collective-victory.jpg"); }
   .booking .body__table {
     grid-template-columns: repeat(5, 1fr);

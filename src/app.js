@@ -241,7 +241,7 @@ if (shrinkIcons) {
 // HOME CONTENT EVENT LISTENERS
 
 // -- Cristina dialog content --
-const propositionItems = Array.from(document.querySelectorAll(".proposition__element"));
+/*const propositionItems = Array.from(document.querySelectorAll(".proposition__element"));
 
 if (propositionItems) {
     propositionItems.forEach((item) => {
@@ -253,7 +253,7 @@ if (propositionItems) {
             loadProposition(item.id);
         });
     });
-}
+} */
 
 
 // -- SECTION UNFOLDING ON SCROLL --

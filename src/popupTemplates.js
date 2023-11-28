@@ -9,7 +9,7 @@ const appointmentTemplate = `
         <li class="list__element">Type of service required: individual or corporate </li>
         <li class="list__element">Expected topics or goals for the session</li>
     </ul>
-    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `;
 
 const individualPricingTemplate = `
@@ -39,10 +39,10 @@ const individualPricingTemplate = `
             <p class="popup__text bold"><span>Duration:</span> 60 minutes</p>
         </li>
 
-        <button class="cta-button positioned" data-link="./booking.html">Book now!</button>
+        <button class="cta-button positioned" data-link="./booking.html#form-anchor">Book now!</button>
     </ul>
     <button id="student-offer" class="popup__disclaimer popup__ad popup__ad--clickable"><strong>Check out our special offer for students</button></p>
-    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `;
 
 const corporatePricingTemplate = `
@@ -67,7 +67,7 @@ const corporatePricingTemplate = `
         <button class="cta-button positioned" data-link="./booking.html">Book now!</button>
     </ul>
     <p class="popup__disclaimer popup__ad"><strong>Minimum 3-Month Commitment</strong></p>
-    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `;
 
 const studentOfferTemplate = `
@@ -203,7 +203,7 @@ const workModelTemplate = `
         <button class="cta-button" data-link="./booking.html">Book now!</button>
     </div>
 
-    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `;
 
 const contactTemplate = `
@@ -250,5 +250,5 @@ const contactTemplate = `
         <a class="popup__text contact-detail" href="mailto:riseandtrhive@whatever.com">riseandtrhive@whatever.com</a>
     </div>
 
-    <h4 class="popup__footnote"><strong>Your journey to success starts here.<br>Rise And Thrive - Where Potential Becomes Power.</strong></h4>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `

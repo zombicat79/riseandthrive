@@ -43,10 +43,60 @@
     </header>
     <main class="content-frame booking">
         <section class="block-section block-section--1 flex-container--column flex-center">
-            <h1 class="about__title">Unlock Your Potential with Rise and Thrive!</h1>
+            <h2 class="about__title">Unlock Your Potential with Rise and Thrive!</h2>
         </section>
 
-        <section class="block-section block-section--2">
+        <section id="booking-form" class="block-section block-section--2">
+            <div class="form flex-container--column flex-center">
+                <h1 class="form__title">Book your session</h1>
+                <p class="form__note">Please note that all fields marked with an asterisk* are mandatory</p>
+                
+                <form class="form__container flex-container--column flex-center">
+                    <div class="form__row flex-container--row flex-between">
+                        <div class="form__column flex-container--column flex-center align-left">
+                            <label class="form__label">Name *</label>
+                            <input class="form__input" type="text" placeholder="Please type your name..." />
+
+                            <label class="form__label">Email *</label>
+                            <input class="form__input" type="email" placeholder="Please type your email address..."/>
+                        </div>
+                        <div class="form__column flex-container--column flex-center">
+                            <label class="form__label">Type of service *</label>
+                            <select class="form__select" placeholder="shit">
+                                <option disabled selected>Select one...</option>
+                                <option>Individual</option>
+                                <option>Company</option>
+                            </select>
+
+                            <label class="form__label">Type of session</label>
+                            <select class="form__select">
+                                <option disabled selected>Select one...</option>
+                                <option>Introductory</option>
+                                <option>Single</option>
+                                <option>Package 5</option>
+                                <option>Package 10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form__row flex-container--column flex-center">
+                        <label class="form__label">Phone number *</label>
+                        <input class="form__input" type="email" placeholder="Please type your contact phone..."/>
+
+                        <label class="form__label">Session topics / goals</label>
+                        <textarea class="form__input form__input--textarea" rows="5" cols="5" placeholder="Please state the topics you want to cover or the goals you plan to achieve during the session you are about to book..."></textarea>
+
+                        <div class="flex-container--row flex-between">
+                            <button class="form__button cta-button cta-button--success disabled" type="submit" disabled>Process booking!</button>
+                            <button class="form__button cta-button cta-button--alert">Clear form</button>
+                        </div>
+                    </div>
+                </form>
+
+                <h4 class="form__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
+            </div>
+        </section>
+
+        <section class="block-section block-section--3">
             <div class="articleContainer introContainer flex-container--row flex-between">
                 <figure class="articleContainer__figure introContainer__figure">
                     <figcaption class="introContainer__caption"></figcaption>
@@ -77,7 +127,7 @@
             <button class="cta-button appointment-btn">Get your free appointment now!</button>
         </section>
 
-        <section class="block-section block-section--3">
+        <section class="block-section block-section--4">
             <article class="articleContainer introContainer flex-container--column flex-center">
                 <div class="regular-content__body flex-container--row flex-between">
                     <div class="articleContainer__textContainer">
@@ -128,10 +178,10 @@
         </section>
 
         <section class="block-section__band flex-container--column flex-center">
-            <button class="cta-button appointment-btn">Book now!</button>
+            <button class="cta-button table-btn">Book now!</button>
         </section>
 
-        <section class="block-section block-section--4">
+        <section class="block-section block-section--5">
             <article class="articleContainer introContainer flex-container--column flex-center">
                 <div class="regular-content__body flex-container--row flex-between">
                     <figure class="articleContainer__figure introContainer__figure">
@@ -219,7 +269,7 @@
     </aside>
 
     <script type="application/javascript" src="./src/popupTemplates.js"></script>
-    <script type="application/javascript" src="./src/propositionTemplates.js"></script>
+    <script type="application/javascript" src="./src/bookingForm.js"></script>
     <script type="application/javascript" src="./src/app.js"></script>
 </body>
 </html>

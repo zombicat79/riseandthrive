@@ -58,9 +58,7 @@
     }
 
     &.disabled {
-        opacity: 0.3;
-        filter: grayscale(1);
-        border: 1px solid $color-dark-blue;
+        opacity: 0.5;
         animation-name: none;
         
         &:hover {
