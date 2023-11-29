@@ -20,9 +20,11 @@
 
     .articleContainer {
         align-items: stretch;
+        text-align: center;
 
         &__standard {
             width: 100%;
+            padding: 4rem;
             background-color: $color-dark-cream;
             border-radius: 2rem;
             font-size: 2rem;
@@ -39,6 +41,7 @@
 
         &__textContainer {
             width: 67.5%;
+            padding: 4rem;
             background-color: $color-dark-cream;
             border-radius: 2rem;
             font-size: 2rem;
@@ -46,6 +49,13 @@
             & p:not(p:last-child) {
                 margin-bottom: 1.5rem;
             }
+        }
+
+        &__title {
+            font-family: "Raleway";
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: 700;
         }
     }
 

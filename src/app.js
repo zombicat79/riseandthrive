@@ -240,20 +240,22 @@ if (shrinkIcons) {
 
 // HOME CONTENT EVENT LISTENERS
 
-// -- Cristina dialog content --
-/*const propositionItems = Array.from(document.querySelectorAll(".proposition__element"));
+// -- Value proposition unfolding texts --
+const propositionItems = Array.from(document.querySelectorAll(".proposition__element"));
 
 if (propositionItems) {
     propositionItems.forEach((item) => {
-        item.addEventListener("mouseover", () => {
-            loadProposition(item.id);
-        });
-    
         item.addEventListener("click", () => {
-            loadProposition(item.id);
+            propositionItems.forEach((el) => {
+                if (el !== item) {
+                    el.dataset.status = "contracted";
+                }
+            })
+
+            item.dataset.status === "contracted" ? item.dataset.status = "expanded" : item.dataset.status = "contracted";
         });
     });
-} */
+}
 
 
 // -- SECTION UNFOLDING ON SCROLL --

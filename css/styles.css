@@ -27,6 +27,12 @@
   position: relative;
   bottom: 2px; }
 
+.bold-italic-text {
+  font-family: "NotoSans-Bold";
+  position: relative;
+  bottom: 2px;
+  font-style: italic; }
+
 *,
 *::before,
 *::after {
@@ -413,9 +419,11 @@ html {
     .block-section__band .cta-button {
       min-width: 35rem; }
   .block-section .articleContainer {
-    align-items: stretch; }
+    align-items: stretch;
+    text-align: center; }
     .block-section .articleContainer__standard {
       width: 100%;
+      padding: 4rem;
       background-color: #fae7c9;
       border-radius: 2rem;
       font-size: 2rem; }
@@ -428,11 +436,17 @@ html {
       border-radius: 2rem; }
     .block-section .articleContainer__textContainer {
       width: 67.5%;
+      padding: 4rem;
       background-color: #fae7c9;
       border-radius: 2rem;
       font-size: 2rem; }
       .block-section .articleContainer__textContainer p:not(p:last-child) {
         margin-bottom: 1.5rem; }
+    .block-section .articleContainer__title {
+      font-family: "Raleway";
+      text-transform: uppercase;
+      font-size: 3rem;
+      font-weight: 700; }
   .block-section .form {
     background-color: rgba(20, 30, 70, 0.7);
     color: #faf8ed;
@@ -607,7 +621,9 @@ html {
 
 .cta-button {
   background-color: #fee257;
+  color: #141e46;
   font-size: 1.75rem;
+  text-decoration: none;
   padding: 1rem 4rem;
   border-radius: 2rem;
   transition: all .2s; }
@@ -828,6 +844,8 @@ html {
   width: 100%;
   transform: translate(-50%, -50%);
   text-align: center; }
+  .home .heading__billboard .cta-button {
+    margin-top: 4rem; }
 
 .home__title {
   font-family: "Raleway";
@@ -843,17 +861,11 @@ html {
   font-style: italic;
   color: #141e46; }
 
-.home .cta-button {
-  margin-top: 4rem; }
-
 .home .value-proposition {
   text-align: center; }
-  .home .value-proposition .introContainer__figure {
-    background-image: url("./../public/images/cristina-pro.jpg"); }
-  .home .value-proposition .introContainer__proposition {
-    padding: 4rem 0;
+  .home .value-proposition .articleContainer__proposition {
     font-size: 1.6rem; }
-  .home .value-proposition .introContainer__textbox {
+  .home .value-proposition .articleContainer__textbox {
     position: relative;
     top: -4rem;
     left: -10vw;
@@ -861,9 +873,9 @@ html {
     background-color: #fff;
     border: 5px solid #141e46;
     padding: 2rem 4rem; }
-    .home .value-proposition .introContainer__textbox p:not(p:last-child) {
+    .home .value-proposition .articleContainer__textbox p:not(p:last-child) {
       margin-bottom: 1rem; }
-    .home .value-proposition .introContainer__textbox::before {
+    .home .value-proposition .articleContainer__textbox::before {
       content: "";
       background-color: #fff;
       border-left: 5px solid #141e46;
@@ -874,45 +886,61 @@ html {
       top: 7.5rem;
       left: -1.6rem;
       transform: rotate(45deg); }
-  .home .value-proposition .introContainer__title {
-    font-family: "Raleway";
-    text-transform: uppercase;
-    font-size: 3rem;
-    font-weight: 700; }
-  .home .value-proposition .introContainer .proposition {
+  .home .value-proposition .articleContainer .proposition {
     flex: .95;
-    margin-top: 2rem;
+    margin-top: 4rem;
     width: 100%;
     font-family: "Raleway";
     font-weight: 700; }
-    .home .value-proposition .introContainer .proposition__container {
-      background-color: #e1c78f;
-      padding: 2rem;
-      font-size: 1.8rem;
-      border: 5px solid #141e46;
+    .home .value-proposition .articleContainer .proposition__container {
+      background-color: #141e46;
+      padding: 4rem;
+      font-size: 2rem;
       border-radius: 2rem;
-      width: 40%;
+      width: 45%;
       height: 100%; }
-    .home .value-proposition .introContainer .proposition__title {
+    .home .value-proposition .articleContainer .proposition__target {
       text-transform: uppercase; }
-    .home .value-proposition .introContainer .proposition__icon {
+    .home .value-proposition .articleContainer .proposition__icon {
       width: 100%;
-      max-width: 10rem;
+      max-width: 12.5rem;
       margin: 2rem 0; }
-    .home .value-proposition .introContainer .proposition__element:not(.proposition__element:last-child) {
-      margin-bottom: 1.5rem; }
-    .home .value-proposition .introContainer .proposition__element:hover {
-      color: #faf8ed;
-      cursor: pointer;
-      text-shadow: 0 -0.15rem 0.75rem #faf8ed; }
+    .home .value-proposition .articleContainer .proposition__element {
+      transition: all .5s;
+      overflow: hidden; }
+      .home .value-proposition .articleContainer .proposition__element:not(.proposition__element:last-child) {
+        margin-bottom: 1.5rem; }
+      .home .value-proposition .articleContainer .proposition__element[data-status="contracted"] {
+        max-height: 3rem; }
+      .home .value-proposition .articleContainer .proposition__element[data-status="expanded"] {
+        max-height: 50rem; }
+    .home .value-proposition .articleContainer .proposition__title {
+      text-transform: capitalize; }
+      .home .value-proposition .articleContainer .proposition__title:hover {
+        color: #fee257;
+        cursor: pointer;
+        text-shadow: 0 -0.15rem 0.75rem #fee257; }
+    .home .value-proposition .articleContainer .proposition__paragraph {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-top: 1.5rem; }
+
+.home .block-section--1 .articleContainer__figure {
+  background-image: url("./../public/images/cristina-pro.jpg"); }
+
+.home .block-section--1 .articleContainer__textContainer {
+  background-image: url("./../public/logos/rocket-logo-faint.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 60rem; }
 
 .home .block-section--2 .articleContainer__standard {
-  background-color: rgba(20, 30, 70, 0.7); }
+  background-color: rgba(20, 30, 70, 0.7);
+  color: #faf8ed; }
 
 .about {
   text-align: center; }
-  .about .articleContainer__textContainer {
-    padding: 4rem; }
   .about__title {
     font-family: "Caveat-Bold";
     font-size: 6rem; }
@@ -943,10 +971,13 @@ html {
       margin-bottom: .5rem; }
 
 .services .articleContainer__textContainer {
-  width: 100%; }
+  width: 100%;
+  padding: 0; }
 
 .booking {
   text-align: center; }
+  .booking .articleContainer__textContainer {
+    padding: 0; }
   .booking .block-section--1 {
     margin: 0 -4rem;
     background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/corn-seeds.jpg");
