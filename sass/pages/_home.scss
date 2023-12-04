@@ -25,10 +25,6 @@
         width: 100%;
         transform: translate(-50%, -50%);
         text-align: center;
-
-        & .cta-button {
-            margin-top: 4rem;
-        }
     }
 
     &__title {
@@ -40,12 +36,22 @@
         @include regular-text-shadow-down(.75rem, #000);
     }
 
+    &__midtitle {
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 2rem;
+        text-transform: uppercase;
+        
+        @include regular-text-shadow-down(1rem, #000);
+    }
+
     &__subtitle {
         font-family: "Caveat-Bold";
         font-weight: 900;
         font-size: 6rem;
         font-style: italic;
         color: $color-dark-blue;
+        margin: 4rem 0;
     }
 
     .value-proposition {

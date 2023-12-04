@@ -814,6 +814,9 @@ html {
 .banner {
   text-align: center;
   margin: 0 auto 3rem; }
+  .banner-horizontal {
+    width: 100%;
+    max-width: 80rem; }
 
 @media only screen and (min-width: 1800px) {
   .banner-horizontal {
@@ -821,6 +824,39 @@ html {
     bottom: 3rem;
     left: 50%;
     transform: translateX(-50%); } }
+
+.carousel__container {
+  position: relative; }
+  .carousel__container:hover, .carousel__container:focus {
+    cursor: not-allowed;
+    filter: brightness(0.75); }
+    .carousel__container:hover .carousel__alert, .carousel__container:focus .carousel__alert {
+      display: inline; }
+
+.carousel__alert {
+  position: absolute;
+  color: #e83f3c;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 3rem;
+  font-style: italic;
+  text-transform: uppercase;
+  display: none; }
+
+.carousel__unit {
+  text-align: center; }
+
+.carousel__img {
+  width: 100%;
+  max-width: 20rem;
+  margin: 0 auto; }
+
+.carousel__text {
+  text-transform: uppercase;
+  font-family: "Raleway";
+  font-size: 1.5rem;
+  font-weight: 700; }
 
 .home__heading {
   margin: 0 -4rem;
@@ -844,8 +880,6 @@ html {
   width: 100%;
   transform: translate(-50%, -50%);
   text-align: center; }
-  .home .heading__billboard .cta-button {
-    margin-top: 4rem; }
 
 .home__title {
   font-family: "Raleway";
@@ -854,12 +888,20 @@ html {
   text-transform: uppercase;
   text-shadow: 0 1rem 0.75rem #000; }
 
+.home__midtitle {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 0 1rem 1rem #000; }
+
 .home__subtitle {
   font-family: "Caveat-Bold";
   font-weight: 900;
   font-size: 6rem;
   font-style: italic;
-  color: #141e46; }
+  color: #141e46;
+  margin: 4rem 0; }
 
 .home .value-proposition {
   text-align: center; }

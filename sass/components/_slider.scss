@@ -1,0 +1,45 @@
+.carousel {
+
+    &__container {
+        position: relative;
+
+        &:hover, 
+        &:focus {
+            cursor: not-allowed;
+            filter: brightness(0.75);
+
+            & .carousel__alert {
+                display: inline;
+            }
+        }
+    }
+
+    &__alert {
+        position: absolute;
+        color: $color-intense-red;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        font-size: 3rem;
+        font-style: italic;
+        text-transform: uppercase;
+        display: none;
+    }
+
+    &__unit {
+        text-align: center;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+    &__text {
+        text-transform: uppercase;
+        font-family: "Raleway";
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
