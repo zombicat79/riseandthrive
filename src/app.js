@@ -259,13 +259,17 @@ if (propositionItems) {
 
 // -- Home sliders initialization --
 document.addEventListener("DOMContentLoaded", () => {
-    $("#feature-carousel").slick({
-        infinite: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 500
-      });
+    const featureSlider = document.getElementById("feature-carousel");
+
+    if (featureSlider) {
+        $("#feature-carousel").slick({
+            infinite: true,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 500
+          });
+    }
 })
 
 
@@ -286,9 +290,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentDate = new Date().getFullYear();
     yearPlaceholder.innerHTML = currentDate;
-
-    $("#feature-carousel").slick({
-        dots: true,
-        speed: 500
-      });
 })

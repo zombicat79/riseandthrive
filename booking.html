@@ -51,39 +51,50 @@
                 <h1 class="form__title">Book your session</h1>
                 <p class="form__note">Please note that all fields marked with an asterisk* are mandatory</p>
                 
-                <form class="form__container flex-container--column flex-center">
+                <form action="http://localhost:3000/" class="form__container flex-container--column flex-center" method="POST">
                     <div class="form__row flex-container--row flex-between">
                         <div class="form__column flex-container--column flex-center align-left">
-                            <label class="form__label">Name *</label>
-                            <input class="form__input" type="text" placeholder="Please type your name..." />
+                            <label for="name" class="form__label">Name *</label>
+                            <input id="name" name="name" class="form__input" type="text" 
+                                   placeholder="Please type your name..." data-hint="You must enter your name" />
 
-                            <label class="form__label">Email *</label>
-                            <input class="form__input" type="email" placeholder="Please type your email address..."/>
+                            <label for="email" class="form__label">Email *</label>
+                            <input id="email" name="email" class="form__input" type="email" 
+                                   placeholder="Please type your email address..." data-hint="You must enter a valid email" />
                         </div>
                         <div class="form__column flex-container--column flex-center">
-                            <label class="form__label">Type of service *</label>
-                            <select class="form__select" placeholder="shit">
-                                <option disabled selected>Select one...</option>
-                                <option>Individual</option>
-                                <option>Company</option>
+                            <label for="service" class="form__label">Type of service *</label>
+                            <select id="service" name="service" class="form__select" data-hint="You must select an option">
+                                <option value="0" disabled selected>Select one...</option>
+                                <option value="1">Individual</option>
+                                <option value="2">Company</option>
                             </select>
 
-                            <label class="form__label">Type of session</label>
-                            <select class="form__select">
-                                <option disabled selected>Select one...</option>
-                                <option>Introductory</option>
-                                <option>Single</option>
-                                <option>Package 5</option>
-                                <option>Package 10</option>
+                            <label for="session" class="form__label">Type of session</label>
+                            <select id="session" name="session" class="form__select">
+                                <optgroup id="session-individual" class="select__group">
+                                    <option class="select__placeholder" value="0" disabled selected>Select one...</option>
+                                    <option value="1">Introductory</option>
+                                    <option value="2">Single</option>
+                                    <option value="3">Package 5</option>
+                                    <option value="4">Package 10</option>
+                                </optgroup>
+                                <optgroup id="session-corporate" class="select__group select__group--hidden">
+                                    <option class="select__placeholder" value="0" disabled>Select one...</option>
+                                    <option value="5">Introductory</option>
+                                    <option value="6">Initial Consultation</option>
+                                    <option value="7">Ongoing Services</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>
                     <div class="form__row flex-container--column flex-center">
-                        <label class="form__label">Phone number *</label>
-                        <input class="form__input" type="email" placeholder="Please type your contact phone..."/>
+                        <label for="phone" class="form__label">Phone number *</label>
+                        <input id="phone" name="phone" class="form__input" type="text" 
+                               placeholder="Please type your contact phone..." data-hint="You must enter a phone number"/>
 
-                        <label class="form__label">Session topics / goals</label>
-                        <textarea class="form__input form__input--textarea" rows="5" cols="5" placeholder="Please state the topics you want to cover or the goals you plan to achieve during the session you are about to book..."></textarea>
+                        <label for="goals" class="form__label">Session topics / goals</label>
+                        <textarea id="goals" name="goals" class="form__input form__input--textarea" rows="5" cols="5" placeholder="Please state the topics you want to cover or the goals you plan to achieve during the session you are about to book..."></textarea>
 
                         <div class="flex-container--row flex-between">
                             <button class="form__button cta-button cta-button--success disabled" type="submit" disabled>Process booking!</button>

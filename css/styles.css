@@ -490,6 +490,10 @@ html {
           background: linear-gradient(to right, transparent, #faf8ed, #141e46, #faf8ed, transparent); }
     .block-section .form__select {
       padding: .35rem 2rem; }
+      .block-section .form__select .select__group {
+        display: block; }
+        .block-section .form__select .select__group--hidden {
+          display: none; }
     .block-section .form__button {
       width: 48%; }
     .block-section .form__footnote {

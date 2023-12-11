@@ -127,6 +127,14 @@
 
         &__select {
             padding: .35rem 2rem;
+
+            .select__group {
+                display: block;
+
+                &--hidden {
+                    display: none;
+                }
+            }
         }
 
         &__button {
