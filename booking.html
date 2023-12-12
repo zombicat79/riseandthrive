@@ -56,7 +56,7 @@
                         <div class="form__column flex-container--column flex-center align-left">
                             <label for="name" class="form__label">Name *</label>
                             <input id="name" name="name" class="form__input" type="text" 
-                                   placeholder="Please type your name..." data-hint="You must enter your name" />
+                                   placeholder="Please type your name..." />
 
                             <label for="email" class="form__label">Email *</label>
                             <input id="email" name="email" class="form__input" type="email" 
@@ -95,10 +95,15 @@
 
                         <label for="goals" class="form__label">Session topics / goals</label>
                         <textarea id="goals" name="goals" class="form__input form__input--textarea" rows="5" cols="5" placeholder="Please state the topics you want to cover or the goals you plan to achieve during the session you are about to book..."></textarea>
+                        
+                        <div class="form__alert form__alert--inactive">
+                            <p class="alert__msg"></p>
+                            <ul class="alert__list"></ul>
+                        </div>
 
                         <div class="flex-container--row flex-between">
                             <button class="form__button cta-button cta-button--success disabled" type="submit" disabled>Process booking!</button>
-                            <button class="form__button cta-button cta-button--alert">Clear form</button>
+                            <button class="form__button cta-button cta-button--alert" type="button">Clear form</button>
                         </div>
                     </div>
                 </form>

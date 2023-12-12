@@ -182,6 +182,72 @@
         }
     }
 
+    .form {
+        &__container {
+            margin-top: 4rem;
+        }
+
+        &__label{
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        &__input, &__select {
+            width: 75%;
+            background-color: $color-dark-cream;
+            color: $color-dark-blue;
+            border: 1.5px solid $color-light-grey;
+            border-radius: 1.5rem;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+
+            &--highlighted {
+                border: 1.5px solid $color-intense-red;
+            }
+
+            &::placeholder {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__select {
+            padding: .8rem 2rem;
+        }
+
+        &__alert {
+            background-color: $color-desert-dune;
+            color: $color-dark-blue;
+            font-size: 1.6rem;
+            border-radius: 1.5rem;
+            text-align: left;
+            padding: 2rem;
+            margin-bottom: 2rem;
+
+            &--success {
+                border: 1.5px solid $color-dark-green;
+            }
+
+            &--error {
+                border: 1.5px solid $color-intense-red;
+            }
+
+            &--inactive {
+                display: none;
+            }
+
+            .alert__list {
+                list-style: inside;
+                margin-left: 2rem;
+                margin-top: 1rem;
+
+                li .bold-regular-text {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
     &__list {
         text-align: left;
         margin-left: 4rem;

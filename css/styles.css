@@ -473,10 +473,13 @@ html {
       width: 100%;
       background-color: #faf8ed;
       color: #141e46;
+      border: 3px solid rgba(20, 30, 70, 0.7);
       border-radius: 1.5rem;
       padding: .5rem 2rem;
       font-size: 2rem;
       margin-bottom: 2rem; }
+      .block-section .form__input--highlighted, .block-section .form__select--highlighted {
+        border: 3px solid #e83f3c; }
       .block-section .form__input::placeholder, .block-section .form__select::placeholder {
         font-size: 1.5rem; }
       .block-section .form__input--textarea, .block-section .form__select--textarea {
@@ -494,6 +497,26 @@ html {
         display: block; }
         .block-section .form__select .select__group--hidden {
           display: none; }
+    .block-section .form__alert {
+      background-color: #fff5e0;
+      color: #141e46;
+      font-size: 1.6rem;
+      border-radius: 1.5rem;
+      text-align: left;
+      padding: 2rem;
+      margin-bottom: 2rem; }
+      .block-section .form__alert--success {
+        border: 3px solid #748e63; }
+      .block-section .form__alert--error {
+        border: 3px solid #e83f3c; }
+      .block-section .form__alert--inactive {
+        display: none; }
+      .block-section .form__alert .alert__list {
+        list-style: inside;
+        margin-left: 2rem;
+        margin-top: 1rem; }
+        .block-section .form__alert .alert__list li .bold-regular-text {
+          text-transform: uppercase; }
     .block-section .form__button {
       width: 48%; }
     .block-section .form__footnote {
@@ -795,6 +818,46 @@ html {
       .popup__figure .popup__socialLink .socialLink__icon:hover {
         cursor: pointer;
         box-shadow: 0 -0.15rem 1rem #141e46; }
+  .popup .form__container {
+    margin-top: 4rem; }
+  .popup .form__label {
+    margin-bottom: 1rem;
+    font-size: 2rem; }
+  .popup .form__input, .popup .form__select {
+    width: 75%;
+    background-color: #fae7c9;
+    color: #141e46;
+    border: 1.5px solid #faf8ed;
+    border-radius: 1.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem; }
+    .popup .form__input--highlighted, .popup .form__select--highlighted {
+      border: 1.5px solid #e83f3c; }
+    .popup .form__input::placeholder, .popup .form__select::placeholder {
+      font-size: 1.5rem; }
+  .popup .form__select {
+    padding: .8rem 2rem; }
+  .popup .form__alert {
+    background-color: #e1c78f;
+    color: #141e46;
+    font-size: 1.6rem;
+    border-radius: 1.5rem;
+    text-align: left;
+    padding: 2rem;
+    margin-bottom: 2rem; }
+    .popup .form__alert--success {
+      border: 1.5px solid #748e63; }
+    .popup .form__alert--error {
+      border: 1.5px solid #e83f3c; }
+    .popup .form__alert--inactive {
+      display: none; }
+    .popup .form__alert .alert__list {
+      list-style: inside;
+      margin-left: 2rem;
+      margin-top: 1rem; }
+      .popup .form__alert .alert__list li .bold-regular-text {
+        text-transform: uppercase; }
   .popup__list {
     text-align: left;
     margin-left: 4rem;

@@ -1,4 +1,4 @@
-const appointmentTemplate = `
+/* const appointmentTemplate = `
     <h3 class="popup__title"><strong>Get your appointment!</strong></h3>
     <p class="popup__text bold">Ready to uncover your path to success? Whether you're an individual searching for purpose or a company poised for greatness, it all begins with a free preliminary session at <span>Rise and Thrive.</span><br>Let's rise, thrive, and achieve greatness together.</p>
     <p class="popup__text">In order to book your preliminary session and meet each other, please send an email to <a href="mailto:#">riseandtrhive@whatever.com</a> specifying the following details:</p>
@@ -9,6 +9,40 @@ const appointmentTemplate = `
         <li class="list__element">Type of service required: individual or corporate </li>
         <li class="list__element">Expected topics or goals for the session</li>
     </ul>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
+`; */
+
+const appointmentTemplate = `
+    <h3 class="popup__title"><strong>Get your appointment!</strong></h3>
+    <p class="popup__text bold">Ready to uncover your path to success? Whether you're an individual searching for purpose or a company poised for greatness, it all begins with a free preliminary session at <span>Rise and Thrive.</span><br>Let's rise, thrive, and achieve greatness together.</p>
+    <p class="popup__text">In order to book your preliminary session and meet each other, please fill out the following form:</p>
+    <form action="http://localhost:3000/" class="form form__container flex-container--column flex-center" method="POST">
+        <label for="name" class="form__label">Name</label>
+        <input id="name" name="name" class="form__input" type="text" 
+                placeholder="Please type your name..." />
+
+        <label for="email" class="form__label">Email</label>
+        <input id="email" name="email" class="form__input" type="email" 
+                placeholder="Please type your email address..." data-hint="You must enter a valid email" />
+            
+        <label for="service" class="form__label">Type of service</label>
+        <select id="service" name="service" class="form__select" data-hint="You must select an option">
+            <option value="0" disabled selected>Select one...</option>
+            <option value="1">Individual</option>
+            <option value="2">Company</option>
+        </select>
+
+        <label for="phone" class="form__label">Phone number</label>
+        <input id="phone" name="phone" class="form__input" type="text" 
+                placeholder="Please type your contact phone..." data-hint="You must enter a phone number"/>
+            
+        <div class="form__alert form__alert--inactive">
+            <p class="alert__msg"></p>
+            <ul class="alert__list"></ul>
+        </div>
+
+        <button class="form__button cta-button cta-button--success disabled" type="submit" disabled>Process booking!</button>
+    </form>
     <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `;
 

@@ -101,10 +101,15 @@
             width: 100%;
             background-color: $color-light-grey;
             color: $color-dark-blue;
+            border: 3px solid rgba(20, 30, 70, 0.7);
             border-radius: 1.5rem;
             padding: .5rem 2rem;
             font-size: 2rem;
             margin-bottom: 2rem;
+
+            &--highlighted {
+                border: 3px solid $color-intense-red;
+            }
 
             &::placeholder {
                 font-size: 1.5rem;
@@ -133,6 +138,38 @@
 
                 &--hidden {
                     display: none;
+                }
+            }
+        }
+
+        &__alert {
+            background-color: $color-light-cream;
+            color: $color-dark-blue;
+            font-size: 1.6rem;
+            border-radius: 1.5rem;
+            text-align: left;
+            padding: 2rem;
+            margin-bottom: 2rem;
+
+            &--success {
+                border: 3px solid $color-dark-green;
+            }
+
+            &--error {
+                border: 3px solid $color-intense-red;
+            }
+
+            &--inactive {
+                display: none;
+            }
+
+            .alert__list {
+                list-style: inside;
+                margin-left: 2rem;
+                margin-top: 1rem;
+
+                li .bold-regular-text {
+                    text-transform: uppercase;
                 }
             }
         }
