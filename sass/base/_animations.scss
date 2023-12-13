@@ -14,7 +14,7 @@
         box-shadow: 0 0 0 $color-yellow-sun; 
         box-shadow: 0 0 0 $color-yellow-sun; 
         box-shadow: 0 0 0 $color-yellow-sun;
-        @include minimal-text-shadow-up(1rem, rgba(20, 30, 70, 0.5)); 
+        @include minimal-text-shadow-up(1rem, rgba(20, 30, 70, 0.5));
         @include minimal-text-shadow-down(1rem, rgba(20, 30, 70, 0.5)); 
         @include minimal-text-shadow-left(1rem, rgba(20, 30, 70, 0.5)); 
         @include minimal-text-shadow-right(1rem, rgba(20, 30, 70, 0.5));

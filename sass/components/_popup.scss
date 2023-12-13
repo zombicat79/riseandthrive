@@ -196,18 +196,29 @@
             width: 75%;
             background-color: $color-dark-cream;
             color: $color-dark-blue;
-            border: 1.5px solid $color-light-grey;
+            border: 3px solid $color-light-grey;
             border-radius: 1.5rem;
             padding: 1rem 2rem;
             font-size: 1.5rem;
             margin-bottom: 2rem;
 
+            &:focus {
+                border: 3px solid $color-dark-blue;
+            }
+
             &--highlighted {
-                border: 1.5px solid $color-intense-red;
+                border: 3px solid $color-intense-red;
             }
 
             &::placeholder {
                 font-size: 1.5rem;
+            }
+
+            &:-webkit-autofill, &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus {
+                background-color: $color-dark-cream;
+                -webkit-text-fill-color: $color-dark-blue;
+                transition: background-color 5000s ease-in-out 0s;
             }
         }
 
@@ -219,17 +230,17 @@
             background-color: $color-desert-dune;
             color: $color-dark-blue;
             font-size: 1.6rem;
-            border-radius: 1.5rem;
+            border-radius: 3rem;
             text-align: left;
             padding: 2rem;
             margin-bottom: 2rem;
 
             &--success {
-                border: 1.5px solid $color-dark-green;
+                border: 3px solid $color-dark-green;
             }
 
             &--error {
-                border: 1.5px solid $color-intense-red;
+                border: 3px solid $color-intense-red;
             }
 
             &--inactive {

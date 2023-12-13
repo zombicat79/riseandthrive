@@ -16,25 +16,27 @@ const appointmentTemplate = `
     <h3 class="popup__title"><strong>Get your appointment!</strong></h3>
     <p class="popup__text bold">Ready to uncover your path to success? Whether you're an individual searching for purpose or a company poised for greatness, it all begins with a free preliminary session at <span>Rise and Thrive.</span><br>Let's rise, thrive, and achieve greatness together.</p>
     <p class="popup__text">In order to book your preliminary session and meet each other, please fill out the following form:</p>
-    <form action="http://localhost:3000/" class="form form__container flex-container--column flex-center" method="POST">
+    <form id="popup-form" action="http://localhost:3000/" class="form form__container flex-container--column flex-center" method="POST">
         <label for="name" class="form__label">Name</label>
         <input id="name" name="name" class="form__input" type="text" 
-                placeholder="Please type your name..." />
+                placeholder="Please type your name..." tabindex="1" />
 
         <label for="email" class="form__label">Email</label>
         <input id="email" name="email" class="form__input" type="email" 
-                placeholder="Please type your email address..." data-hint="You must enter a valid email" />
+                placeholder="Please type your email address..." tabindex="2" />
             
         <label for="service" class="form__label">Type of service</label>
-        <select id="service" name="service" class="form__select" data-hint="You must select an option">
+        <select id="service" name="service" class="form__select" tabindex="3" >
             <option value="0" disabled selected>Select one...</option>
             <option value="1">Individual</option>
             <option value="2">Company</option>
         </select>
 
+        <input id="session" name="session" type="hidden" value="1" />
+
         <label for="phone" class="form__label">Phone number</label>
         <input id="phone" name="phone" class="form__input" type="text" 
-                placeholder="Please type your contact phone..." data-hint="You must enter a phone number"/>
+                placeholder="Please type your contact phone..." tabindex="4" />
             
         <div class="form__alert form__alert--inactive">
             <p class="alert__msg"></p>

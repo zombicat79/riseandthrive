@@ -478,10 +478,16 @@ html {
       padding: .5rem 2rem;
       font-size: 2rem;
       margin-bottom: 2rem; }
+      .block-section .form__input:focus, .block-section .form__select:focus {
+        border: 3px solid #fee257; }
       .block-section .form__input--highlighted, .block-section .form__select--highlighted {
         border: 3px solid #e83f3c; }
       .block-section .form__input::placeholder, .block-section .form__select::placeholder {
         font-size: 1.5rem; }
+      .block-section .form__input:-webkit-autofill, .block-section .form__input:-webkit-autofill:hover, .block-section .form__input:-webkit-autofill:focus, .block-section .form__select:-webkit-autofill, .block-section .form__select:-webkit-autofill:hover, .block-section .form__select:-webkit-autofill:focus {
+        background-color: #faf8ed;
+        -webkit-text-fill-color: #141e46;
+        transition: background-color 5000s ease-in-out 0s; }
       .block-section .form__input--textarea, .block-section .form__select--textarea {
         width: 100%;
         resize: none; }
@@ -827,29 +833,35 @@ html {
     width: 75%;
     background-color: #fae7c9;
     color: #141e46;
-    border: 1.5px solid #faf8ed;
+    border: 3px solid #faf8ed;
     border-radius: 1.5rem;
     padding: 1rem 2rem;
     font-size: 1.5rem;
     margin-bottom: 2rem; }
+    .popup .form__input:focus, .popup .form__select:focus {
+      border: 3px solid #141e46; }
     .popup .form__input--highlighted, .popup .form__select--highlighted {
-      border: 1.5px solid #e83f3c; }
+      border: 3px solid #e83f3c; }
     .popup .form__input::placeholder, .popup .form__select::placeholder {
       font-size: 1.5rem; }
+    .popup .form__input:-webkit-autofill, .popup .form__input:-webkit-autofill:hover, .popup .form__input:-webkit-autofill:focus, .popup .form__select:-webkit-autofill, .popup .form__select:-webkit-autofill:hover, .popup .form__select:-webkit-autofill:focus {
+      background-color: #fae7c9;
+      -webkit-text-fill-color: #141e46;
+      transition: background-color 5000s ease-in-out 0s; }
   .popup .form__select {
     padding: .8rem 2rem; }
   .popup .form__alert {
     background-color: #e1c78f;
     color: #141e46;
     font-size: 1.6rem;
-    border-radius: 1.5rem;
+    border-radius: 3rem;
     text-align: left;
     padding: 2rem;
     margin-bottom: 2rem; }
     .popup .form__alert--success {
-      border: 1.5px solid #748e63; }
+      border: 3px solid #748e63; }
     .popup .form__alert--error {
-      border: 1.5px solid #e83f3c; }
+      border: 3px solid #e83f3c; }
     .popup .form__alert--inactive {
       display: none; }
     .popup .form__alert .alert__list {

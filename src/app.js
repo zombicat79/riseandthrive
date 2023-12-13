@@ -171,6 +171,8 @@ if (workModelButtons) {
     })
 }
 
+
+// -- POPUP LAUNCHERS --
 function initiatePopup() {
     body.classList.add("scroll-block");
     [header, content, footer].forEach((section) => section.classList.add("scroll-block--dark"));
@@ -179,6 +181,86 @@ function initiatePopup() {
     popup.scrollTo(0, 0);
     popup.classList.remove("popup--disappearing");
     popup.classList.add("popup--appearing");
+
+    const popupForm = document.querySelector("#popup-form");
+    
+    /* Popup booking form manager */
+    if (popupForm) {
+        const popupInputs = Array.from(document.querySelectorAll("#popup-form .form__input"));
+        const popupSelects = Array.from(document.querySelectorAll("#popup-form .form__select"));
+        const allPopupFields = popupInputs.concat(popupSelects);
+        const serviceInput = document.querySelector("#popup-form #service");
+        const hiddenInput = document.querySelector("#popup-form #session");
+        const popupAlertPanel = document.querySelector("#popup-form .form__alert");
+        const popupAlertMsg = document.querySelector("#popup-form .alert__msg");
+        const popupAlertList = document.querySelector("#popup-form .alert__list");
+        const popupProceedBtn = document.querySelector("#popup-form .cta-button--success");
+        const popupCloser = document.querySelector(".popup .xCloser");
+
+        const firstFormInput = document.querySelector(".popup form #name");
+        firstFormInput.focus();
+
+        const popupFormOBJ = {
+            alertList: popupAlertList,
+            alertPanel: popupAlertPanel,
+            proceedBtn: popupProceedBtn,
+            alertMsg: popupAlertMsg
+        }
+
+        allPopupFields.forEach((input) => {
+            input.addEventListener("change", () => {       
+                validateForm("popup", popupFormOBJ);
+            });
+        });
+
+        serviceInput.addEventListener("change", (event) => {
+            const value = event.target.value;
+    
+            if (value === "1") {
+                hiddenInput.value = "1";
+            }
+    
+            if (value === "2") {
+                hiddenInput.value = "5";
+            }
+        })
+
+        popupForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const data = new FormData(popupForm);
+            const serializedData = Object.fromEntries(data);
+            popupAlertPanel.classList.remove("form__alert--success", "form__alert--error");
+        
+            fetch("http://localhost:3000/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(serializedData)
+            })
+            .then((response) => {
+                if (response.ok && (response.status >= 200 && response.status < 300)) {
+                    popupAlertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
+                    popupAlertList.innerHTML = "";
+                    popupAlertPanel.classList.add("form__alert--success");
+                    popupProceedBtn.disabled = true;
+                    popupProceedBtn.classList.remove("pulsing");
+                    popupProceedBtn.classList.add("disabled");
+                    setTimeout(() => {
+                        closePopup(popupCloser);
+                    }, 3000);
+                }
+            })
+            .catch(() => {
+                popupAlertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+                popupAlertList.innerHTML = "";
+                popupAlertPanel.classList.add("form__alert--error");
+                throw new Error("Server unavailable!")
+            })
+            popupAlertPanel.classList.remove("form__alert--inactive");
+        })
+    }
+    /* End of popup booking form manager */
 
     const popupInnerBtns = Array.from(document.querySelectorAll(".popup .cta-button"));
     if (popupInnerBtns) {
@@ -201,13 +283,17 @@ function fillPopup(filling) {
 
 
 // -- POPUP CLOSERS --
+function closePopup(closer) {
+    closer.parentElement.classList.remove("popup--appearing");
+    closer.parentElement.classList.add("popup--disappearing");
+    [header, content, footer].forEach((section) => section.classList.remove("scroll-block--dark"));
+    body.classList.remove("scroll-block");
+}
+
 if (popupClosers) {
     popupClosers.forEach((closer) => {
         closer.addEventListener("click", () => {
-            closer.parentElement.classList.remove("popup--appearing");
-            closer.parentElement.classList.add("popup--disappearing");
-            [header, content, footer].forEach((section) => section.classList.remove("scroll-block--dark"));
-            body.classList.remove("scroll-block");
+            closePopup(closer);
         })
     })
 }

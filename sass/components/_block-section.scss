@@ -107,12 +107,23 @@
             font-size: 2rem;
             margin-bottom: 2rem;
 
+            &:focus {
+                border: 3px solid $color-yellow-sun;
+            }
+
             &--highlighted {
                 border: 3px solid $color-intense-red;
             }
 
             &::placeholder {
                 font-size: 1.5rem;
+            }
+
+            &:-webkit-autofill, &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus {
+                background-color: $color-light-grey;
+                -webkit-text-fill-color: $color-dark-blue;
+                transition: background-color 5000s ease-in-out 0s;
             }
 
             &--textarea {

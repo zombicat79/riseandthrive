@@ -56,22 +56,22 @@
                         <div class="form__column flex-container--column flex-center align-left">
                             <label for="name" class="form__label">Name *</label>
                             <input id="name" name="name" class="form__input" type="text" 
-                                   placeholder="Please type your name..." />
+                                   placeholder="Please type your name..." tabindex="1"/>
 
                             <label for="email" class="form__label">Email *</label>
                             <input id="email" name="email" class="form__input" type="email" 
-                                   placeholder="Please type your email address..." data-hint="You must enter a valid email" />
+                                   placeholder="Please type your email address..." tabindex="3" />
                         </div>
                         <div class="form__column flex-container--column flex-center">
                             <label for="service" class="form__label">Type of service *</label>
-                            <select id="service" name="service" class="form__select" data-hint="You must select an option">
+                            <select id="service" name="service" class="form__select" tabindex="2" >
                                 <option value="0" disabled selected>Select one...</option>
                                 <option value="1">Individual</option>
                                 <option value="2">Company</option>
                             </select>
 
                             <label for="session" class="form__label">Type of session</label>
-                            <select id="session" name="session" class="form__select">
+                            <select id="session" name="session" class="form__select" tabindex="4">
                                 <optgroup id="session-individual" class="select__group">
                                     <option class="select__placeholder" value="0" disabled selected>Select one...</option>
                                     <option value="1">Introductory</option>
@@ -91,10 +91,11 @@
                     <div class="form__row flex-container--column flex-center">
                         <label for="phone" class="form__label">Phone number *</label>
                         <input id="phone" name="phone" class="form__input" type="text" 
-                               placeholder="Please type your contact phone..." data-hint="You must enter a phone number"/>
+                               placeholder="Please type your contact phone..." tabindex="5" />
 
                         <label for="goals" class="form__label">Session topics / goals</label>
-                        <textarea id="goals" name="goals" class="form__input form__input--textarea" rows="5" cols="5" placeholder="Please state the topics you want to cover or the goals you plan to achieve during the session you are about to book..."></textarea>
+                        <textarea id="goals" name="goals" class="form__input form__input--textarea" rows="5" cols="5" tabindex="6"
+                                  placeholder="Please state the topics you want to cover or the goals you plan to achieve during the session you are about to book..."></textarea>
                         
                         <div class="form__alert form__alert--inactive">
                             <p class="alert__msg"></p>
