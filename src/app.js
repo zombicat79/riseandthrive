@@ -346,6 +346,7 @@ if (propositionItems) {
 // -- Home sliders initialization --
 document.addEventListener("DOMContentLoaded", () => {
     const featureSlider = document.getElementById("feature-carousel");
+    const referralsSlider = document.getElementById("referrals-slider");
 
     if (featureSlider) {
         $("#feature-carousel").slick({
@@ -354,6 +355,17 @@ document.addEventListener("DOMContentLoaded", () => {
             autoplay: true,
             autoplaySpeed: 3000,
             speed: 500
+          });
+    }
+
+    if (referralsSlider) {
+        $("#referrals-slider").slick({
+            infinite: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplaySpeed: 3000,
+            speed: 500,
+            appendArrows: $("#advance-btn-container")
           });
     }
 })

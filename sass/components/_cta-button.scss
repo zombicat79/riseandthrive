@@ -37,6 +37,11 @@
         animation-name: none;
         filter: brightness(0.95);
 
+        &.referrals__button {
+            transform: translateX(-50%) translateY(.25rem) scale(0.9);
+            box-shadow: 0 1rem 3rem #000;
+        }
+
         &.in-band {
             box-shadow: 0 1rem 3rem #000;
         }

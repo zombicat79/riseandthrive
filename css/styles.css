@@ -679,6 +679,9 @@ html {
     box-shadow: 0 1rem 3rem #141e46;
     animation-name: none;
     filter: brightness(0.95); }
+    .cta-button.pressed.referrals__button {
+      transform: translateX(-50%) translateY(0.25rem) scale(0.9);
+      box-shadow: 0 1rem 3rem #000; }
     .cta-button.pressed.in-band {
       box-shadow: 0 1rem 3rem #000; }
   .cta-button.highlighted {
@@ -1046,6 +1049,53 @@ html {
       font-weight: 300;
       margin-top: 1.5rem; }
 
+.home .referrals__item {
+  background-color: #141e46;
+  min-height: 50rem;
+  padding: 4rem;
+  margin: 0 4rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  position: relative; }
+
+.home .referrals__author {
+  cursor: pointer; }
+  .home .referrals__author:hover .referrals__img {
+    transform: rotate(45deg); }
+  .home .referrals__author:hover .referrals__name {
+    color: #fee257;
+    text-shadow: 0 0.15rem 0.75rem #fee257; }
+
+.home .referrals__img {
+  width: 100%;
+  max-width: 10rem;
+  transition: all .5s; }
+
+.home .referrals__name {
+  text-transform: uppercase; }
+
+.home .referrals__excerpt {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  margin: 2rem 0; }
+
+.home .referrals__button {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.home .referrals__control {
+  position: relative;
+  width: 5%;
+  margin: 0 auto;
+  height: 10rem; }
+  .home .referrals__control .slick-prev:before,
+  .home .referrals__control .slick-next:before {
+    font-size: 4rem;
+    color: #faf8ed; }
+
 .home .block-section--1 .articleContainer__figure {
   background-image: url("./../public/images/cristina-pro.jpg"); }
 
@@ -1056,7 +1106,8 @@ html {
   background-size: contain;
   min-height: 60rem; }
 
-.home .block-section--2 .articleContainer__standard {
+.home .block-section--2 .articleContainer__standard,
+.home .block-section--5 .articleContainer__standard {
   background-color: rgba(20, 30, 70, 0.7);
   color: #faf8ed; }
 

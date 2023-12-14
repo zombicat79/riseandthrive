@@ -152,6 +152,72 @@
         }
     }
 
+    .referrals {
+
+        &__item {
+            background-color: $color-dark-blue;
+            min-height: 50rem;
+            padding: 4rem;
+            margin: 0 4rem;
+            font-size: 2rem;
+            border-radius: 2rem;
+            position: relative;
+        }
+
+        &__author {
+            cursor: pointer;
+
+            &:hover {
+                
+                .referrals__img {
+                    transform: rotate(45deg);
+                }
+
+                .referrals__name {
+                    color: $color-yellow-sun;
+                    @include minimal-text-shadow-down(.75rem, $color-yellow-sun);
+                }
+            }
+        }
+
+        &__img {
+            width: 100%;
+            max-width: 10rem;
+            transition: all .5s;
+        }
+
+        &__name {
+            text-transform: uppercase;
+        }
+
+        &__excerpt {
+            font-size: 1.8rem;
+            font-weight: 300;
+            font-style: italic;
+            margin: 2rem 0;
+        }
+
+        &__button {
+            position: absolute;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__control {
+            position: relative;
+            width: 5%;
+            margin: 0 auto;
+            height: 10rem;
+
+            .slick-prev:before, 
+            .slick-next:before {
+                font-size: 4rem;
+                color: $color-light-grey;
+            }
+        }
+    }
+
     .block-section--1 {
 
         .articleContainer {
@@ -170,7 +236,8 @@
         }
     }
 
-    .block-section--2 {
+    .block-section--2, 
+    .block-section--5 {
 
         .articleContainer__standard {
             background-color: rgba(20, 30, 70, 0.7);
