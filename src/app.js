@@ -10,6 +10,7 @@ const individualPricingButtons = Array.from(document.querySelectorAll(".individu
 const corporatePricingButtons = Array.from(document.querySelectorAll(".corporate-pricing-btn"));
 const studentOfferButtons = Array.from(document.querySelectorAll(".student-offer-btn"));
 const workModelButtons = Array.from(document.querySelectorAll(".work-model-btn"));
+const referralButtons = Array.from(document.querySelectorAll(".referrals__button"));
 const popup = document.querySelector(".popup");
 const popupClosers = document.querySelectorAll(".popup__xCloser");
 const popupContent = document.querySelector(".popup__content");
@@ -171,9 +172,22 @@ if (workModelButtons) {
     })
 }
 
+if (referralButtons) {
+    referralButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const btnId = btn.dataset.id;
+            setTimeout(() => {
+                fillPopup(referralTemplate);
+                initiatePopup(loadReferral, btnId);
+            }, 750);
+        })
+    })
+}
+
 
 // -- POPUP LAUNCHERS --
-function initiatePopup() {
+function initiatePopup(callback, referralId) {
+    // function parameters only apply to referral popup loads!!!
     body.classList.add("scroll-block");
     [header, content, footer].forEach((section) => section.classList.add("scroll-block--dark"));
     popup.style.display = "block";
@@ -261,6 +275,12 @@ function initiatePopup() {
         })
     }
     /* End of popup booking form manager */
+
+    /* Referral popup manager */
+    if (callback) {
+        loadReferral(referralId);
+    }
+    /* End of referral popup manager */
 
     const popupInnerBtns = Array.from(document.querySelectorAll(".popup .cta-button"));
     if (popupInnerBtns) {

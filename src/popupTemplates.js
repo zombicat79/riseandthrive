@@ -288,3 +288,77 @@ const contactTemplate = `
 
     <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
 `
+
+// Referrals templates
+
+function loadReferral(referralId) {
+    let referralName = document.querySelector(".popup__title");
+    let referralContent = document.querySelector(".popup__text");
+
+    switch(referralId) {
+        case "1":
+            referralName.innerHTML = "Itziar Coflent";
+            referralContent.innerHTML = `
+                "I had the immense luck to coincide with Cristina for about a year in my professional career, and it was then that I understood the difference between having a boss and having a leader. Cristina is the best leader and person I have ever known. She combines rationality and emotionality, offering resolute and efficient leadership with empathy and motivation.<br>
+                <br>
+                As the Brands Leader at Prat Brands, particularly at Greencut, Cristina was admired for her proactivity, decisiveness, and strategic thinking. She allowed for mistakes, working with individuals to teach and guide them in the improvement process. Beyond her analytical and efficient side, Cristina prioritized the well-being and unity of her team, creating a special bond among professionals from different areas.<br>
+                <br>
+                As a natural motivator and mentor, Cristina emphasized the importance of teamwork and shared successes. She instilled a sense of belonging in her team, making each member feel special and indispensable. Cristina's ability to see beyond what people show on the surface, coupled with her creativity and dreamer's spirit, made her a leader who influenced us to bring out our best.<br>
+                <br>
+                To this day, I have not encountered a leader like her, one who builds such a strong, united, and competent team that they no longer need her to continue achieving their goals. I wish her much success and happiness in everything life offers her."
+            `;
+            break;
+        case "2":
+            referralName.innerHTML = "Albert Martínez";
+            referralContent.innerHTML = `
+                "I learned a lot, both personally and in terms of teamwork. The key takeaway was to believe in myself, recognize my potential, and showcase it to the rest of the team. I overcame the fear of what others might think and gained confidence in myself and my work. Regarding teamwork, I learned to trust the team and, secondly, to identify individuals whose character and mindset drive a project forward.<br>
+                <br>
+                The journey of personal and professional growth began from the moment I received the first call to join your team. Initially, it was personal growth, identifying strengths, discovering preferences, and overcoming fears and mental barriers. From there, you guided me to enhance strengths and address weaknesses. This process led to professional evolution, aligning my profile within the team to contribute maximally. For me, it was like completing a master's degree, a revolution both personally and professionally, shaping me into the professional and person I am now."
+            `;
+            break;
+        case "3":
+            referralName.innerHTML = "Alba López";
+            referralContent.innerHTML = `
+                "I have learned to value my work and myself, to say no when something doesn't feel right or overwhelms me. I analyze situations to make informed decisions, listen to my colleagues' opinions, and assert my own when I believe it's right. I've become adept at working in a team while maintaining autonomy in decision-making. Celebrating small victories and progressing in what I believe in is now a joy. Ultimately, you've helped me shine and unleash my full potential. You've empowered me to trust myself, assert my decisions, stand up when needed, and say no when something doesn't align. You've made me believe in myself, feel more professional and a better person, and equipped me to analyze people and surround myself with those who contribute positively."
+            `;
+            break;
+        case "4":
+            referralName.innerHTML = "Juan José Estévez";
+            referralContent.innerHTML = `
+                "I crossed paths with Cristina, representing different companies in the e-commerce world, and if there's one thing I can highlight, it's her professionalism, ability to secure agreements, and tenacity in achieving goals. Thanks to her excellent work, we successfully expanded the brand I represented to various European countries, exponentially multiplying our business volume—all while maintaining a constant smile. She's a rare find, and having her on any team is truly appreciated. I would undoubtedly recommend having her as part of any team."
+            `;
+            break;
+        case "5":
+            referralName.innerHTML = "Maria Barberà";
+            referralContent.innerHTML = `
+                "I've had the great fortune of working alongside Cristina in my professional journey, and her energy and enthusiasm to drive any project forward are extraordinary. She possesses excellent organizational and managerial skills and, above all, is a natural leader. Cristina's leadership abilities motivate teams under her coordination in every task.<br>
+                <br>
+                She dedicates 200% to everything she does, injecting passion and motivation into her work. Cristina always finds ways to enhance any task or process, and her constant drive for improvement is infectious, positively influencing the entire team.<br>
+                <br>
+                For me, Cristina is a role model in the professional realm, excelling not only in her daily tasks but also radiating positive energy to those around her. She empowers everyone working with her to improve in all aspects of their work."
+            `;
+            break;
+        case "6":
+            referralName.innerHTML = "Lídia Vives";
+            referralContent.innerHTML = `
+                "I've had the immense fortune of knowing Cristina and working with her for almost 4 years at Prat Brands. Her extraordinary ability to prioritize the happiness and well-being of those around her stands out. Cristina's instinct for identifying opportunities and her business development skills, spanning customer service to sales, marketing, and logistics, have been instrumental in the company's growth.<br>
+                <br>
+                Her empathy, leadership, and willingness to assist in any capacity have cultivated an autonomous and united team, poised to be a driving force for the company in the years to come. Any team fortunate enough to have her will undoubtedly experience great success."
+            `;
+            break;
+        case "7":
+            referralName.innerHTML = "Jessica Gavaldà";
+            referralContent.innerHTML = `
+                “Passionate, unstoppable, empathetic, fully committed— a true #superwoman who empowers the team! Over the past few months, I've had the great fortune of having Cristina Solé closer, guiding and training me within Prat Brands to lead one of our brands. The experience has been incredibly rewarding. I feel fortunate to have shared this journey with her. Working alongside her is a pleasure, and I am truly grateful 💚.<br>
+                <br>
+                Everything she does and says comes from the heart, and it shows. Her level of performance is exceptionally high. Cristina is a fundamental pillar within the team, empowering everyone around her. She contributes and infuses her energy, which reflects in the individual and team results. With colleagues like her, you can achieve incredible things."
+            `;
+            break;
+    }
+}
+
+const referralTemplate = `
+    <h3 class="popup__title"><strong></strong></h3>
+    <p class="popup__text italic-text"></p>
+    <h4 class="popup__footnote"><strong>Your journey to success starts here<br>Rise And Thrive - Where Potential Becomes Power</strong></h4>
+`;
