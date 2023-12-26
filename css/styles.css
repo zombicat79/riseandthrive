@@ -600,6 +600,8 @@ html {
           font-size: 1.25rem;
           padding: 1rem 2rem;
           margin-top: 1rem; }
+      .block-section .unfolding-content__body .body__block:not(.body__block:last-child), .block-section .regular-content__body .body__block:not(.body__block:last-child) {
+        margin-bottom: 3rem; }
       .block-section .unfolding-content__body .body__list, .block-section .regular-content__body .body__list {
         list-style-type: auto;
         margin-left: 4rem;
@@ -965,6 +967,10 @@ html {
   width: 100%;
   transform: translate(-50%, -50%);
   text-align: center; }
+  .home .heading__billboard .billboard__block {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto; }
 
 .home__title {
   font-family: "Raleway";
@@ -972,6 +978,16 @@ html {
   font-size: 12rem;
   text-transform: uppercase;
   text-shadow: 0 1rem 0.75rem #000; }
+
+.home__owner {
+  position: absolute;
+  top: -2rem;
+  right: -5rem;
+  font-family: "Caveat-Bold";
+  font-weight: 900;
+  font-size: 3rem;
+  font-style: italic;
+  color: #141e46; }
 
 .home__midtitle {
   font-family: "Raleway";
@@ -1155,12 +1171,12 @@ html {
     padding: 0; }
   .booking .block-section--1 {
     margin: 0 -4rem;
-    background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/corn-seeds.jpg");
+    background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/coffee-talk.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 10rem 4rem;
-    min-height: 35rem; }
+    min-height: 50rem; }
   .booking .block-section--3 .introContainer__figure {
     background-image: url("./../public/images/laptop-signalling.jpg"); }
   .booking .block-section--4 .articleContainer {
@@ -1218,3 +1234,23 @@ html {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 1fr);
       grid-template-areas: ". p1 p2 p3" "f2 d1 d2 d3" "f1 pri1 pri2 pri3"; }
+
+.resources .articleContainer__textContainer {
+  width: 47.5%;
+  align-self: flex-start; }
+  .resources .articleContainer__textContainer[data-status="expanded"] {
+    min-height: 150rem; }
+    .resources .articleContainer__textContainer[data-status="expanded"] .cta-button {
+      position: absolute;
+      bottom: 5rem; }
+  .resources .articleContainer__textContainer .header__title {
+    font-size: 4rem; }
+
+.resources .block-section--1 {
+  margin: 0 -4rem;
+  background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/corn-seeds.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 4rem;
+  min-height: 35rem; }

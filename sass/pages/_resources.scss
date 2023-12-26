@@ -1,0 +1,32 @@
+.resources {
+
+    .articleContainer__textContainer {
+        width: 47.5%;
+        align-self: flex-start;
+
+        &[data-status="expanded"] {
+            min-height: 150rem;
+
+            .cta-button {
+                position: absolute;
+                bottom: 5rem;
+            }
+        }
+
+        .header__title {
+            font-size: 4rem;
+        }
+    }
+
+    .block-section--1 {
+        margin: 0 -4rem;
+        background-image: 
+            linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)),
+            url("./../public/images/corn-seeds.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 10rem 4rem;
+        min-height: 35rem;
+    }
+}

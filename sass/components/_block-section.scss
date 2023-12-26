@@ -297,6 +297,13 @@
                         margin-top: 1rem;
                     }
                 }
+
+                &__block {
+
+                    &:not(.body__block:last-child) {
+                        margin-bottom: 3rem;
+                    }
+                }
     
                 &__list {
                     list-style-type: auto;
