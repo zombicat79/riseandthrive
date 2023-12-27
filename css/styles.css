@@ -382,8 +382,13 @@ html {
   .footer__link:hover {
     cursor: pointer; }
   .footer .link__icon {
-    height: 6rem;
-    width: 6rem; }
+    width: 100%;
+    max-width: 7.5rem;
+    transition: all .5s; }
+    .footer .link__icon:hover {
+      transform: scale(1.5); }
+  .footer .cta-button {
+    min-width: 25rem; }
 
 .subfooter {
   background-color: #000;

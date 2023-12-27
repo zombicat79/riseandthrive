@@ -21,13 +21,22 @@
 
     .link {
         &__icon {
-            height: 6rem;
-            width: 6rem;
+            width: 100%;
+            max-width: 7.5rem;
+            transition: all .5s;
+
+            &:hover {
+                transform: scale(1.5);
+            }
         }
 
         &__name {
 
         }
+    }
+
+    .cta-button {
+        min-width: 25rem;
     }
 }
 

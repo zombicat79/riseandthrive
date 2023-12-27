@@ -5,6 +5,7 @@ const footer = document.querySelector(".footer");
 
 const ctaButtons = Array.from(document.querySelectorAll(".cta-button"));
 const contactButtons = Array.from(document.querySelectorAll(".contact-btn"));
+const subscribeButtons = Array.from(document.querySelectorAll(".subscribe-btn"));
 const appointmentButtons = Array.from(document.querySelectorAll(".appointment-btn"));
 const individualPricingButtons = Array.from(document.querySelectorAll(".individual-pricing-btn"));
 const corporatePricingButtons = Array.from(document.querySelectorAll(".corporate-pricing-btn"));
@@ -112,6 +113,17 @@ if (contactButtons) {
                 fillPopup(contactTemplate);
                 initiatePopup();
                 btn.classList.remove("nav__link--active");
+            }, 750);
+        })
+    });
+}
+
+if (subscribeButtons) {
+    subscribeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                fillPopup(subscribeTemplate);
+                initiatePopup();
             }, 750);
         })
     });
@@ -227,25 +239,36 @@ function initiatePopup(callback, referralId) {
             });
         });
 
-        serviceInput.addEventListener("change", (event) => {
-            const value = event.target.value;
-    
-            if (value === "1") {
-                hiddenInput.value = "1";
-            }
-    
-            if (value === "2") {
-                hiddenInput.value = "5";
-            }
-        })
+        if (serviceInput) {
+            serviceInput.addEventListener("change", (event) => {
+                const value = event.target.value;
+        
+                if (value === "1") {
+                    hiddenInput.value = "1";
+                }
+        
+                if (value === "2") {
+                    hiddenInput.value = "5";
+                }
+            })
+        }
 
         popupForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const data = new FormData(popupForm);
             const serializedData = Object.fromEntries(data);
             popupAlertPanel.classList.remove("form__alert--success", "form__alert--error");
+
+            let url = "";
+            if (popupForm.classList.contains("subscribe-form")) {
+                url = "http://localhost:3000/subscribe/";
+                delete serializedData.service;
+                delete serializedData.phone;
+            } else {
+                url = "http://localhost:3000/";
+            }
         
-            fetch("http://localhost:3000/", {
+            fetch(url, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -254,7 +277,11 @@ function initiatePopup(callback, referralId) {
             })
             .then((response) => {
                 if (response.ok && (response.status >= 200 && response.status < 300)) {
-                    popupAlertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
+                    if (popupForm.classList.contains("subscribe-form")) {
+                        popupAlertMsg.innerHTML = "Your subscription to <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will keep in touch with you.";
+                    } else {
+                        popupAlertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
+                    }
                     popupAlertList.innerHTML = "";
                     popupAlertPanel.classList.add("form__alert--success");
                     popupProceedBtn.disabled = true;
@@ -266,7 +293,11 @@ function initiatePopup(callback, referralId) {
                 }
             })
             .catch(() => {
-                popupAlertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+                if (popupForm.classList.contains("subscribe-form")) {
+                    popupAlertMsg.innerHTML = "Your subscription could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+                } else {
+                    popupAlertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+                }
                 popupAlertList.innerHTML = "";
                 popupAlertPanel.classList.add("form__alert--error");
                 throw new Error("Server unavailable!")
