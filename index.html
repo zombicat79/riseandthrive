@@ -266,10 +266,31 @@
             </div>
         </section>
 
-        <section class="block-section block-section--6">
-            <div class="articleContainer flex-container--row flex-between">
-                <article class="articleContainer__standard">
-                    
+        <section id="subscribe-form" class="block-section block-section--6">
+            <div class="articleContainer">
+                <article class="articleContainer__standard flex-container--column flex-between">
+                    <p class="articleContainer__title">Subscribe to Rise & Thrive</p>
+                    <p>Share your name and email in the fields below and keep yourself posted about our latest offers, news and updates.</p>
+
+                    <form action="http://localhost:3000/subscribe/" class="form__container flex-container--column flex-center" method="POST">
+                        <label for="name" class="form__label">Name</label>
+                        <input id="name" name="name" class="form__input" type="text" 
+                                placeholder="Please type your name..." />
+
+                        <label for="email" class="form__label">Email</label>
+                        <input id="email" name="email" class="form__input" type="email" 
+                                placeholder="Please type your email address..." />
+
+                        <input id="service" name="service" type="hidden" value="1" />
+                        <input id="phone" name="phone" type="hidden" value="654954559" />
+
+                        <div class="form__alert form__alert--inactive">
+                            <p class="alert__msg"></p>
+                            <ul class="alert__list"></ul>
+                        </div>
+                        
+                        <button class="form__button cta-button cta-button--success disabled" type="submit" disabled>Subscribe!</button>
+                    </form>
                 </article>
             </div>
         </section>

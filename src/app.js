@@ -6,6 +6,7 @@ const footer = document.querySelector(".footer");
 const ctaButtons = Array.from(document.querySelectorAll(".cta-button"));
 const contactButtons = Array.from(document.querySelectorAll(".contact-btn"));
 const subscribeButtons = Array.from(document.querySelectorAll(".subscribe-btn"));
+const resourceButtons = Array.from(document.querySelectorAll(".resource-btn"));
 const appointmentButtons = Array.from(document.querySelectorAll(".appointment-btn"));
 const individualPricingButtons = Array.from(document.querySelectorAll(".individual-pricing-btn"));
 const corporatePricingButtons = Array.from(document.querySelectorAll(".corporate-pricing-btn"));
@@ -124,6 +125,23 @@ if (subscribeButtons) {
             setTimeout(() => {
                 fillPopup(subscribeTemplate);
                 initiatePopup();
+            }, 750);
+        })
+    });
+}
+
+if (resourceButtons) {
+    resourceButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            setTimeout(() => {
+                const hasCookie = Cookies.get("r&t-resources");
+                if (hasCookie) {
+                    window.open(btn.dataset.resource, "_blank");
+                } else {
+                    fillPopup(resourceTemplate);
+                    attachExternalLink(btn.dataset.resource);
+                    initiatePopup();
+                }
             }, 750);
         })
     });
@@ -264,6 +282,10 @@ function initiatePopup(callback, referralId) {
                 url = "http://localhost:3000/subscribe/";
                 delete serializedData.service;
                 delete serializedData.phone;
+            } else if (popupForm.classList.contains("resource-form")) {
+                url = "http://localhost:3000/access-resource/";
+                delete serializedData.service;
+                delete serializedData.phone;
             } else {
                 url = "http://localhost:3000/";
             }
@@ -279,6 +301,9 @@ function initiatePopup(callback, referralId) {
                 if (response.ok && (response.status >= 200 && response.status < 300)) {
                     if (popupForm.classList.contains("subscribe-form")) {
                         popupAlertMsg.innerHTML = "Your subscription to <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will keep in touch with you.";
+                    } else if (popupForm.classList.contains("resource-form")) {
+                        Cookies.set("r&t-resources", "true", {expires: 7});
+                        popupAlertMsg.innerHTML = "Thank you very much. A new tab is now opening with the selected resource.";
                     } else {
                         popupAlertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
                     }
@@ -288,6 +313,10 @@ function initiatePopup(callback, referralId) {
                     popupProceedBtn.classList.remove("pulsing");
                     popupProceedBtn.classList.add("disabled");
                     setTimeout(() => {
+                        if (popupForm.classList.contains("resource-form")) {
+                            const externalResource = popupContent.querySelector(".cta-button").dataset.resource;
+                            window.open(externalResource, "_blank");
+                        }
                         closePopup(popupCloser);
                     }, 3000);
                 }
@@ -295,6 +324,8 @@ function initiatePopup(callback, referralId) {
             .catch(() => {
                 if (popupForm.classList.contains("subscribe-form")) {
                     popupAlertMsg.innerHTML = "Your subscription could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+                } else if (popupForm.classList.contains("resource-form")) {
+                    popupAlertMsg.innerHTML = "Sorry, the desired resource is not available at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
                 } else {
                     popupAlertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
                 }
@@ -330,6 +361,11 @@ function initiatePopup(callback, referralId) {
 
 function fillPopup(filling) {
     popupContent.innerHTML = filling;
+}
+
+function attachExternalLink(link) {
+    const popupBtn = popupContent.querySelector(".cta-button");
+    popupBtn.dataset.resource = link;
 }
 
 

@@ -1135,6 +1135,12 @@ html {
   background-color: rgba(20, 30, 70, 0.7);
   color: #faf8ed; }
 
+.home .block-section--6 .articleContainer__standard {
+  min-height: 45rem; }
+
+.home .block-section--6 .form__container {
+  margin: 3rem auto 0; }
+
 .about {
   text-align: center; }
   .about__title {

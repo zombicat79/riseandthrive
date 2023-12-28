@@ -261,4 +261,15 @@
             color: $color-light-grey;
         }
     }
+
+    .block-section--6 {
+
+        .articleContainer__standard {
+            min-height: 45rem;
+        }
+
+        .form__container {
+            margin: 3rem auto 0;
+        }
+    }
 }

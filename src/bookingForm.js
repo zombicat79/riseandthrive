@@ -1,12 +1,14 @@
-const form = document.querySelector("#booking-form form");
-const inputs = Array.from(document.querySelectorAll("#booking-form .form__input"));
+const form = document.querySelector("#booking-form form") || document.querySelector("#subscribe-form form");
+const inputs = Array.from(document.querySelectorAll("#booking-form .form__input")) || Array.from(document.querySelectorAll("#subscribe-form .form__input"));
 const selects = Array.from(document.querySelectorAll("#booking-form .form__select"));
 const allInputFields = inputs.concat(selects);
-const alertPanel = document.querySelector("#booking-form .form__alert");
-const alertMsg = document.querySelector("#booking-form .alert__msg");
-const alertList = document.querySelector("#booking-form .alert__list");
-const proceedBtn = document.querySelector("#booking-form .cta-button--success");
+const alertPanel = document.querySelector("#booking-form .form__alert") || document.querySelector("#subscribe-form .form__alert");
+const alertMsg = document.querySelector("#booking-form .alert__msg") || document.querySelector("#subscribe-form .alert__msg");
+const alertList = document.querySelector("#booking-form .alert__list") || document.querySelector("#subscribe-form .alert__list");
+const proceedBtn = document.querySelector("#booking-form .cta-button--success") || document.querySelector("#subscribe-form .cta-button--success");
 const clearanceBtn = document.querySelector("#booking-form .cta-button--alert");
+console.log(form)
+console.log(inputs)
 
 const regularFormOBJ = {
     alertList: alertList,
@@ -52,12 +54,14 @@ if (form) {
         }
     }
 
-    tableButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            prefillField(btn.id);
-            form.scrollIntoView({ block: "center", behavior: "smooth" });
+    if (tableButtons) {
+        tableButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                prefillField(btn.id);
+                form.scrollIntoView({ block: "center", behavior: "smooth" });
+            })
         })
-    })
+    }
 }
 
 
@@ -69,29 +73,31 @@ if (form) {
     const individualSelection = document.getElementById("session-individual");
     const corporateSelection = document.getElementById("session-corporate");
 
-    service.addEventListener("change", (event) => {
-        const value = event.target.value;
-
-        if (value === "1") {
-            corporateSelection.classList.add("select__group--hidden");
-            corporateSelection.querySelector(".select__placeholder").selected = false;
-            individualSelection.classList.remove("select__group--hidden");
-            individualSelection.querySelector(".select__placeholder").selected = true;  
-        }
-
-        if (value === "2") {
-            individualSelection.classList.add("select__group--hidden");
-            individualSelection.querySelector(".select__placeholder").selected = false;
-            corporateSelection.classList.remove("select__group--hidden");
-            corporateSelection.querySelector(".select__placeholder").selected = true;
-        }
-    })
+    if (serviceSelector) {
+        serviceSelector.addEventListener("change", (event) => {
+            const value = event.target.value;
+    
+            if (value === "1") {
+                corporateSelection.classList.add("select__group--hidden");
+                corporateSelection.querySelector(".select__placeholder").selected = false;
+                individualSelection.classList.remove("select__group--hidden");
+                individualSelection.querySelector(".select__placeholder").selected = true;  
+            }
+    
+            if (value === "2") {
+                individualSelection.classList.add("select__group--hidden");
+                individualSelection.querySelector(".select__placeholder").selected = false;
+                corporateSelection.classList.remove("select__group--hidden");
+                corporateSelection.querySelector(".select__placeholder").selected = true;
+            }
+        })
+    }
 }
 
 
 // Clearance button management
 
-if (form) {
+if (form && clearanceBtn) {
     clearanceBtn.addEventListener("click", () => {
         alertPanel.classList.remove("form__alert--success", "form__alert--error");
         proceedBtn.disabled = true;
@@ -242,6 +248,7 @@ function validateForm(formType, targetOBJ) {
 
 if (form) {
     allInputFields.forEach((input) => {
+        console.log(input)
         input.addEventListener("change", () => {       
             validateForm("regular", regularFormOBJ);
         });
