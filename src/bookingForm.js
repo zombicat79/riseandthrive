@@ -1,5 +1,14 @@
+// MANAGES NOT ONLY BOOKING FORMS BUT ALSO SUBSCRIPTION FORMS AND RESOURCE FETCH FORMS
+
 const form = document.querySelector("#booking-form form") || document.querySelector("#subscribe-form form");
-const inputs = Array.from(document.querySelectorAll("#booking-form .form__input")) || Array.from(document.querySelectorAll("#subscribe-form .form__input"));
+let inputs = [];
+if (form) {
+    if (form.closest(".block-section").id === "booking-form") {
+        inputs = Array.from(document.querySelectorAll("#booking-form .form__input"));
+    } else {
+        inputs = Array.from(document.querySelectorAll("#subscribe-form .form__input"));
+    }
+}
 const selects = Array.from(document.querySelectorAll("#booking-form .form__select"));
 const allInputFields = inputs.concat(selects);
 const alertPanel = document.querySelector("#booking-form .form__alert") || document.querySelector("#subscribe-form .form__alert");
@@ -7,8 +16,6 @@ const alertMsg = document.querySelector("#booking-form .alert__msg") || document
 const alertList = document.querySelector("#booking-form .alert__list") || document.querySelector("#subscribe-form .alert__list");
 const proceedBtn = document.querySelector("#booking-form .cta-button--success") || document.querySelector("#subscribe-form .cta-button--success");
 const clearanceBtn = document.querySelector("#booking-form .cta-button--alert");
-console.log(form)
-console.log(inputs)
 
 const regularFormOBJ = {
     alertList: alertList,
@@ -121,7 +128,7 @@ if (form && clearanceBtn) {
 function validateName(formType) {
     let nameInput;
     if (formType === "regular") {
-        nameInput = document.querySelector("#booking-form #name");
+        nameInput = document.querySelector("#booking-form #name") || document.querySelector("#subscribe-form #name");
     } else {
         nameInput = document.querySelector("#popup-form #name");
     }
@@ -136,7 +143,7 @@ function validateName(formType) {
 function validateEmail(formType) {
     let emailInput;
     if (formType === "regular") {
-        emailInput = document.querySelector("#booking-form #email");
+        emailInput = document.querySelector("#booking-form #email") || document.querySelector("#subscribe-form #email");
     } else {
         emailInput = document.querySelector("#popup-form #email");
     }
@@ -152,7 +159,7 @@ function validateEmail(formType) {
 function validateService(formType) {
     let serviceInput;
     if (formType === "regular") {
-        serviceInput = document.querySelector("#booking-form #service");
+        serviceInput = document.querySelector("#booking-form #service") || document.querySelector("#subscribe-form #service");
     } else {
         serviceInput = document.querySelector("#popup-form #service");
     }
@@ -166,7 +173,7 @@ function validateService(formType) {
 function validatePhone(formType) {
     let phoneInput;
     if (formType === "regular") {
-        phoneInput = document.querySelector("#booking-form #phone");
+        phoneInput = document.querySelector("#booking-form #phone") || document.querySelector("#subscribe-form #phone");
     } else {
         phoneInput = document.querySelector("#popup-form #phone");
     }
@@ -197,7 +204,16 @@ function validateForm(formType, targetOBJ) {
     targetOBJ.alertList.innerHTML = "";
     targetOBJ.alertPanel.classList.remove("form__alert--success", "form__alert--error");
     
-    const selectorModifier = formType === "regular" ? "#booking-form" : "#popup-form"; 
+    let selectorModifier = "";
+    if (form) {
+        if (form.closest(".block-section").id === "booking-form") {
+            selectorModifier = formType === "regular" ? "#booking-form" : "#popup-form";
+        } else {
+            selectorModifier = formType === "regular" ? "#subscribe-form" : "#popup-form";
+        }
+    } else {
+        selectorModifier = formType === "regular" ? "#subscribe-form" : "#popup-form";
+    }
     for (const input in formStatus) {
         if (formStatus[input] === false) {
             if (document.querySelector(`${selectorModifier} #${input}`).classList.contains("form__input")) {
@@ -248,7 +264,6 @@ function validateForm(formType, targetOBJ) {
 
 if (form) {
     allInputFields.forEach((input) => {
-        console.log(input)
         input.addEventListener("change", () => {       
             validateForm("regular", regularFormOBJ);
         });
@@ -267,30 +282,74 @@ if (form) {
             delete serializedData.goals;
         }
         alertPanel.classList.remove("form__alert--success", "form__alert--error");
-    
-        fetch("http://localhost:3000/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(serializedData)
-        })
-        .then((response) => {
-            if (response.ok && (response.status >= 200 && response.status < 300)) {
-                alertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
-                alertList.innerHTML = "";
-                alertPanel.classList.add("form__alert--success");
-                proceedBtn.disabled = true;
-                proceedBtn.classList.remove("pulsing");
-                proceedBtn.classList.add("disabled");
-            }
-        })
-        .catch(() => {
-            alertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
-            alertList.innerHTML = "";
-            alertPanel.classList.add("form__alert--error");
-            throw new Error("Server unavailable!")
-        })
+
+        if (form.closest(".block-section").id === "booking-form") {
+            fetch("http://localhost:3000/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(serializedData)
+            })
+            .then((serverResponse) => {
+                manageServerResponse(serverResponse);
+            })
+            .catch(() => {
+                manageServerError();
+            })
+        } else {
+            delete serializedData.service;
+            delete serializedData.phone;
+
+            fetch(`http://localhost:3000/subscribe/${serializedData.email}/`, { method: "GET" })
+            .then((serverResponse) => {
+                if (serverResponse.status === 404) {
+                    fetch("http://localhost:3000/subscribe/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(serializedData)
+                    })
+                    .then((serverResponse) => {
+                        manageServerResponse(serverResponse);
+                    })
+                } else {
+                    alertMsg.innerHTML = "The email you entered is already subscribed.";
+                    alertList.innerHTML = "";
+                    alertPanel.classList.add("form__alert--error");
+                }
+            })
+            .catch(() => {
+                manageServerError();
+            })
+        }
         alertPanel.classList.remove("form__alert--inactive");
     })
+
+    function manageServerResponse(response) {
+        if (response.ok && (response.status >= 200 && response.status < 300)) {
+            if (form.closest(".block-section").id === "booking-form") {
+                alertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
+            } else {
+                alertMsg.innerHTML = "Your subscription to <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will keep in touch with you."
+            }
+            alertList.innerHTML = "";
+            alertPanel.classList.add("form__alert--success");
+            proceedBtn.disabled = true;
+            proceedBtn.classList.remove("pulsing");
+            proceedBtn.classList.add("disabled");
+        }
+    }
+
+    function manageServerError() {
+        if (form.closest(".block-section").id === "booking-form") {
+            alertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+        } else {
+            alertMsg.innerHTML = "Your subscription could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+        }
+        alertList.innerHTML = "";
+        alertPanel.classList.add("form__alert--error");
+        throw new Error("Server unavailable!")
+    }
 }

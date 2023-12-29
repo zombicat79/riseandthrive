@@ -277,64 +277,104 @@ function initiatePopup(callback, referralId) {
             const serializedData = Object.fromEntries(data);
             popupAlertPanel.classList.remove("form__alert--success", "form__alert--error");
 
-            let url = "";
             if (popupForm.classList.contains("subscribe-form")) {
-                url = "http://localhost:3000/subscribe/";
                 delete serializedData.service;
                 delete serializedData.phone;
-            } else if (popupForm.classList.contains("resource-form")) {
-                url = "http://localhost:3000/access-resource/";
-                delete serializedData.service;
-                delete serializedData.phone;
-            } else {
-                url = "http://localhost:3000/";
-            }
-        
-            fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(serializedData)
-            })
-            .then((response) => {
-                if (response.ok && (response.status >= 200 && response.status < 300)) {
-                    if (popupForm.classList.contains("subscribe-form")) {
-                        popupAlertMsg.innerHTML = "Your subscription to <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will keep in touch with you.";
-                    } else if (popupForm.classList.contains("resource-form")) {
-                        Cookies.set("r&t-resources", "true", {expires: 7});
-                        popupAlertMsg.innerHTML = "Thank you very much. A new tab is now opening with the selected resource.";
+
+                fetch(`http://localhost:3000/subscribe/${serializedData.email}/`, { method: "GET" })
+                .then((serverResponse) => {
+                    if (serverResponse.status === 404) {
+                        fetch("http://localhost:3000/subscribe/", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(serializedData)
+                        })
+                        .then((serverResponse) => {
+                            manageServerResponse(serverResponse);
+                        })
                     } else {
-                        popupAlertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
+                        popupAlertMsg.innerHTML = "The email you entered is already subscribed.";
+                        popupAlertList.innerHTML = "";
+                        popupAlertPanel.classList.add("form__alert--error");
                     }
-                    popupAlertList.innerHTML = "";
-                    popupAlertPanel.classList.add("form__alert--success");
-                    popupProceedBtn.disabled = true;
-                    popupProceedBtn.classList.remove("pulsing");
-                    popupProceedBtn.classList.add("disabled");
-                    setTimeout(() => {
-                        if (popupForm.classList.contains("resource-form")) {
-                            const externalResource = popupContent.querySelector(".cta-button").dataset.resource;
-                            window.open(externalResource, "_blank");
-                        }
-                        closePopup(popupCloser);
-                    }, 3000);
-                }
-            })
-            .catch(() => {
-                if (popupForm.classList.contains("subscribe-form")) {
-                    popupAlertMsg.innerHTML = "Your subscription could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
-                } else if (popupForm.classList.contains("resource-form")) {
-                    popupAlertMsg.innerHTML = "Sorry, the desired resource is not available at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
-                } else {
-                    popupAlertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
-                }
-                popupAlertList.innerHTML = "";
-                popupAlertPanel.classList.add("form__alert--error");
-                throw new Error("Server unavailable!")
-            })
+                })
+                .catch(() => {
+                    manageServerError();
+                });
+            } else if (popupForm.classList.contains("resource-form")) {
+                delete serializedData.service;
+                delete serializedData.phone;
+
+                fetch("http://localhost:3000/access-resource/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(serializedData)
+                })
+                .then((serverResponse) => {
+                    manageServerResponse(serverResponse);
+                })
+                .catch(() => {
+                    manageServerError();
+                });
+            } else {
+                fetch("http://localhost:3000/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(serializedData)
+                })
+                .then((serverResponse) => {
+                    manageServerResponse(serverResponse);
+                })
+                .catch(() => {
+                    manageServerError();
+                });
+            }
             popupAlertPanel.classList.remove("form__alert--inactive");
         })
+
+        function manageServerResponse(response) {
+            if (response.ok && (response.status >= 200 && response.status < 300)) {
+                if (popupForm.classList.contains("subscribe-form")) {
+                    popupAlertMsg.innerHTML = "Your subscription to <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will keep in touch with you.";
+                } else if (popupForm.classList.contains("resource-form")) {
+                    Cookies.set("r&t-resources", "true", {expires: 7});
+                    popupAlertMsg.innerHTML = "Thank you very much. A new tab is now opening with the selected resource.";
+                } else {
+                    popupAlertMsg.innerHTML = "Your booking with <span class='bold-regular-text'>Rise and Thrive</span> has been successfully processed. We will contact you shortly.";
+                }
+                popupAlertList.innerHTML = "";
+                popupAlertPanel.classList.add("form__alert--success");
+                popupProceedBtn.disabled = true;
+                popupProceedBtn.classList.remove("pulsing");
+                popupProceedBtn.classList.add("disabled");
+                setTimeout(() => {
+                    if (popupForm.classList.contains("resource-form")) {
+                        const externalResource = popupContent.querySelector(".cta-button").dataset.resource;
+                        window.open(externalResource, "_blank");
+                    }
+                    closePopup(popupCloser);
+                }, 3000);
+            }
+        }
+    
+        function manageServerError() {
+            if (popupForm.classList.contains("subscribe-form")) {
+                popupAlertMsg.innerHTML = "Your subscription could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+            } else if (popupForm.classList.contains("resource-form")) {
+                popupAlertMsg.innerHTML = "Sorry, the desired resource is not available at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+            } else {
+                popupAlertMsg.innerHTML = "Your booking could not be processed at this moment. Please try again in a few minutes or contact us directly at <a class='bold-regular-text' href='mailto:#'>riseandthrive@whatever.com</a>";
+            }
+            popupAlertList.innerHTML = "";
+            popupAlertPanel.classList.add("form__alert--error");
+            throw new Error("Server unavailable!")
+        }
     }
     /* End of popup booking form manager */
 
