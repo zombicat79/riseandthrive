@@ -281,6 +281,7 @@ function initiatePopup(callback, referralId) {
                 delete serializedData.service;
                 delete serializedData.phone;
 
+                // Check if email already exists in the database - if it does, show error - if not, save email
                 fetch(`http://localhost:3000/subscribe/${serializedData.email}/`, { method: "GET" })
                 .then((serverResponse) => {
                     if (serverResponse.status === 404) {
@@ -307,15 +308,23 @@ function initiatePopup(callback, referralId) {
                 delete serializedData.service;
                 delete serializedData.phone;
 
-                fetch("http://localhost:3000/access-resource/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(serializedData)
-                })
+                // Check if email already exists in the database - if it does, grant automatic access to resource - if not, save email and grant access
+                fetch(`http://localhost:3000/access-resource/${serializedData.email}/`, { method: "GET" })
                 .then((serverResponse) => {
-                    manageServerResponse(serverResponse);
+                    if (serverResponse.status === 404) {
+                        fetch("http://localhost:3000/access-resource/", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(serializedData)
+                        })
+                        .then((serverResponse) => {
+                            manageServerResponse(serverResponse);
+                        })
+                    } else {
+                        manageServerResponse(serverResponse);
+                    }
                 })
                 .catch(() => {
                     manageServerError();
@@ -494,6 +503,44 @@ document.addEventListener("DOMContentLoaded", () => {
             speed: 500,
             appendArrows: $("#advance-btn-container")
           });
+    }
+})
+
+
+// RESOURCE PAGE EVENT LISTENERS
+document.addEventListener("DOMContentLoaded", () => {
+    const resourcePage = document.querySelector(".content-frame.resources");
+
+    if (resourcePage) {
+        const params = new URLSearchParams(document.location.search);
+        const requestedSection = params.get("section");
+        
+        switch(requestedSection) {
+            case "1":
+                focusResource(1);
+                break;
+            case "2":
+                focusResource(2);
+                break;
+            case "3":
+                focusResource(3);
+                break;
+            case "4":
+                focusResource(4);
+                break;
+            case "5":
+                focusResource(5);
+                break;
+            case "6":
+                focusResource(6);
+                break;
+        }
+
+        function focusResource(resourceId) {
+            const resource = document.getElementById(`resource-${resourceId}`);
+            resource.scrollIntoView({ behavior: "smooth" })
+            resource.dataset.status = "expanded";
+        }
     }
 })
 

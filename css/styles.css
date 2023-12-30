@@ -103,6 +103,9 @@ html {
 .flex-start {
   justify-content: flex-start; }
 
+.flex-end {
+  justify-content: flex-end; }
+
 .flex-center {
   justify-content: center; }
 
@@ -1073,6 +1076,47 @@ html {
       font-weight: 300;
       margin-top: 1.5rem; }
 
+.home .resources__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1.5rem;
+  grid-template-areas: "r1-name r1-buttons" "r2-name r2-buttons" "r3-name r3-buttons" "r4-name r4-buttons" "r5-name r5-buttons" "r6-name r6-buttons";
+  max-width: 100rem;
+  margin: 4rem auto 0; }
+  .home .resources__container .r1-name {
+    grid-area: r1-name; }
+  .home .resources__container .r2-name {
+    grid-area: r2-name; }
+  .home .resources__container .r3-name {
+    grid-area: r3-name; }
+  .home .resources__container .r4-name {
+    grid-area: r4-name; }
+  .home .resources__container .r5-name {
+    grid-area: r5-name; }
+  .home .resources__container .r6-name {
+    grid-area: r6-name; }
+  .home .resources__container .r1-buttons {
+    grid-area: r1-buttons; }
+  .home .resources__container .r2-buttons {
+    grid-area: r2-buttons; }
+  .home .resources__container .r3-buttons {
+    grid-area: r3-buttons; }
+  .home .resources__container .r4-buttons {
+    grid-area: r4-buttons; }
+  .home .resources__container .r5-buttons {
+    grid-area: r5-buttons; }
+  .home .resources__container .r6-buttons {
+    grid-area: r6-buttons; }
+
+.home .resources__element {
+  text-align: left; }
+  .home .resources__element--btnPack button:first-child {
+    margin-right: 1rem; }
+
+.home .referrals #referrals-slider {
+  margin-top: 4rem; }
+
 .home .referrals__item {
   background-color: #141e46;
   min-height: 50rem;
@@ -1268,3 +1312,9 @@ html {
   background-position: center;
   padding: 10rem 4rem;
   min-height: 35rem; }
+
+.resources .block-section--2 .articleContainer__textContainer {
+  width: 100%;
+  text-align: center; }
+  .resources .block-section--2 .articleContainer__textContainer p:last-child {
+    margin-top: 4rem; }

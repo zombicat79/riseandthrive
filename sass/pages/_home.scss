@@ -169,7 +169,75 @@
         }
     }
 
+    .resources {
+       
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 1.5rem;
+            grid-template-areas:
+                "r1-name r1-buttons"
+                "r2-name r2-buttons"
+                "r3-name r3-buttons"
+                "r4-name r4-buttons"
+                "r5-name r5-buttons"
+                "r6-name r6-buttons";
+            max-width: 100rem;
+            margin: 4rem auto 0;
+            
+            .r1-name {
+                grid-area: r1-name;
+            }
+            .r2-name {
+                grid-area: r2-name;
+            }
+            .r3-name {
+                grid-area: r3-name;
+            }
+            .r4-name {
+                grid-area: r4-name;
+            }
+            .r5-name {
+                grid-area: r5-name;
+            }
+            .r6-name {
+                grid-area: r6-name;
+            }
+            .r1-buttons {
+                grid-area: r1-buttons;
+            }
+            .r2-buttons {
+                grid-area: r2-buttons;
+            }
+            .r3-buttons {
+                grid-area: r3-buttons;
+            }
+            .r4-buttons {
+                grid-area: r4-buttons;
+            }
+            .r5-buttons {
+                grid-area: r5-buttons;
+            }
+            .r6-buttons {
+                grid-area: r6-buttons;
+            }
+        }
+
+        &__element {
+            text-align: left;
+
+            &--btnPack button:first-child {
+                margin-right: 1rem;
+            }
+        }
+    }
+
     .referrals {
+
+        #referrals-slider {
+            margin-top: 4rem;
+        }
 
         &__item {
             background-color: $color-dark-blue;

@@ -29,4 +29,16 @@
         padding: 10rem 4rem;
         min-height: 35rem;
     }
+
+    .block-section--2 {
+
+        .articleContainer__textContainer {
+            width: 100%;
+            text-align: center;
+
+            p:last-child {
+                margin-top: 4rem;
+            }
+        }
+    }
 }
