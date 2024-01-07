@@ -490,7 +490,23 @@ document.addEventListener("DOMContentLoaded", () => {
             arrows: false,
             autoplay: true,
             autoplaySpeed: 3000,
-            speed: 500
+            speed: 500,
+            responsive: [
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                }
+            ]
           });
     }
 
@@ -501,7 +517,23 @@ document.addEventListener("DOMContentLoaded", () => {
             slidesToScroll: 1,
             autoplaySpeed: 3000,
             speed: 500,
-            appendArrows: $("#advance-btn-container")
+            appendArrows: $("#advance-btn-container"),
+            responsive: [
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                    },
+                },
+                {
+                    breakpoint: 750,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                }
+            ]
           });
     }
 })

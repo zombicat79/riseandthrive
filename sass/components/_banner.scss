@@ -6,11 +6,28 @@
         width: 100%;
         max-width: 80rem;
     }
+    @media only screen and (max-width: 500px) {
+        &-horizontal {
+            display: none;
+        }
+    }
+
+    &-vertical {
+        display: none;
+    }
+    @media only screen and (max-width: 500px) {
+        &-vertical {
+            display: block;
+            width: 100%;
+            max-width: 30rem;
+            margin: 0 auto;
+        }
+    }
 }
 @media only screen and (min-width: 1800px) {
     .banner-horizontal {
         position: absolute;
-        bottom: 3rem;
+        bottom: 10rem;
         left: 50%;
         transform: translateX(-50%);
     }

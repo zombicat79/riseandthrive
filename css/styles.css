@@ -365,12 +365,26 @@ html {
   margin: 0 auto; }
   .content-frame__buffer {
     height: 7.5vh; }
+  .content-frame__lastCall {
+    text-align: center;
+    margin-bottom: 3rem; }
+
+@media only screen and (max-width: 500px) {
+  .content-frame {
+    padding: 10rem 2.5rem 2rem; }
+    .content-frame__buffer {
+      height: unset; } }
 
 @media only screen and (min-width: 1800px) {
   .content-frame {
     min-height: 100vh; }
     .content-frame__buffer {
-      height: 7.5vh; } }
+      height: 13.5vh; }
+    .content-frame__lastCall {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%); } }
 
 .footer {
   background: linear-gradient(to right, #141e46, #faf8ed);
@@ -428,7 +442,11 @@ html {
     margin: 0 -4rem;
     margin-bottom: 5rem; }
     .block-section__band .cta-button {
-      min-width: 35rem; }
+      min-width: 35rem;
+      text-align: center; }
+    @media only screen and (max-width: 500px) {
+      .block-section__band .cta-button {
+        min-width: unset; } }
   .block-section .articleContainer {
     align-items: stretch;
     text-align: center; }
@@ -438,6 +456,9 @@ html {
       background-color: #fae7c9;
       border-radius: 2rem;
       font-size: 2rem; }
+    @media only screen and (max-width: 500px) {
+      .block-section .articleContainer__standard {
+        padding: 3rem; } }
     .block-section .articleContainer__figure {
       width: 30%;
       min-height: 40rem;
@@ -458,6 +479,16 @@ html {
       text-transform: uppercase;
       font-size: 3rem;
       font-weight: 700; }
+  @media only screen and (max-width: 750px) {
+    .block-section .articleContainer {
+      flex-direction: column; }
+      .block-section .articleContainer__figure {
+        width: 100%;
+        margin-bottom: 5rem; }
+      .block-section .articleContainer__textContainer {
+        width: 100%; }
+      .block-section .articleContainer__title {
+        font-size: 2rem; } }
   .block-section .form {
     background-color: rgba(20, 30, 70, 0.7);
     color: #faf8ed;
@@ -495,6 +526,9 @@ html {
         border: 3px solid #e83f3c; }
       .block-section .form__input::placeholder, .block-section .form__select::placeholder {
         font-size: 1.5rem; }
+      @media only screen and (max-width: 350px) {
+        .block-section .form__input::placeholder, .block-section .form__select::placeholder {
+          font-size: 1.25rem; } }
       .block-section .form__input:-webkit-autofill, .block-section .form__input:-webkit-autofill:hover, .block-section .form__input:-webkit-autofill:focus, .block-section .form__select:-webkit-autofill, .block-section .form__select:-webkit-autofill:hover, .block-section .form__select:-webkit-autofill:focus {
         background-color: #faf8ed;
         -webkit-text-fill-color: #141e46;
@@ -536,6 +570,12 @@ html {
           text-transform: uppercase; }
     .block-section .form__button {
       width: 48%; }
+    @media only screen and (max-width: 950px) {
+      .block-section .form__button {
+        width: 60%; } }
+    @media only screen and (max-width: 350px) {
+      .block-section .form__button {
+        width: 100%; } }
     .block-section .form__footnote {
       font-size: 1.75rem;
       margin-top: 3rem;
@@ -722,6 +762,10 @@ html {
     text-shadow: none;
     padding: 1rem 6rem; }
 
+@media only screen and (max-width: 500px) {
+  .cta-button {
+    font-size: 1.25rem; } }
+
 .popup {
   display: none;
   position: fixed;
@@ -784,12 +828,9 @@ html {
     margin-top: 4rem; }
   .popup__title {
     width: 100%;
-    position: absolute;
-    top: 5.5rem;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 2rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-bottom: 3rem; }
     .popup__title span {
       font-size: 1.5rem; }
   .popup__subtitle {
@@ -912,11 +953,22 @@ html {
   .banner-horizontal {
     width: 100%;
     max-width: 80rem; }
+  @media only screen and (max-width: 500px) {
+    .banner-horizontal {
+      display: none; } }
+  .banner-vertical {
+    display: none; }
+  @media only screen and (max-width: 500px) {
+    .banner-vertical {
+      display: block;
+      width: 100%;
+      max-width: 30rem;
+      margin: 0 auto; } }
 
 @media only screen and (min-width: 1800px) {
   .banner-horizontal {
     position: absolute;
-    bottom: 3rem;
+    bottom: 10rem;
     left: 50%;
     transform: translateX(-50%); } }
 
@@ -980,12 +1032,24 @@ html {
     width: fit-content;
     margin: 0 auto; }
 
+@media only screen and (max-width: 950px) {
+  .home .heading__billboard {
+    padding: 0 14vw; } }
+
 .home__title {
   font-family: "Raleway";
   font-weight: 900;
   font-size: 12rem;
   text-transform: uppercase;
   text-shadow: 0 1rem 0.75rem #000; }
+
+@media only screen and (max-width: 950px) {
+  .home__title {
+    font-size: 9rem; } }
+
+@media only screen and (max-width: 500px) {
+  .home__title {
+    font-size: 7rem; } }
 
 .home__owner {
   position: absolute;
@@ -997,12 +1061,22 @@ html {
   font-style: italic;
   color: #141e46; }
 
+@media only screen and (max-width: 950px) {
+  .home__owner {
+    position: unset;
+    margin-bottom: 1rem;
+    font-size: 2.5rem; } }
+
 .home__midtitle {
   font-family: "Raleway";
   font-weight: 700;
   font-size: 2rem;
   text-transform: uppercase;
   text-shadow: 0 1rem 1rem #000; }
+
+@media only screen and (max-width: 500px) {
+  .home__midtitle {
+    font-size: 1.5rem; } }
 
 .home__subtitle {
   font-family: "Caveat-Bold";
@@ -1011,6 +1085,14 @@ html {
   font-style: italic;
   color: #141e46;
   margin: 4rem 0; }
+
+@media only screen and (max-width: 950px) {
+  .home__subtitle {
+    font-size: 4.5rem; } }
+
+@media only screen and (max-width: 500px) {
+  .home__subtitle {
+    font-size: 3rem; } }
 
 .home .value-proposition {
   text-align: center; }
@@ -1058,13 +1140,17 @@ html {
       margin: 2rem 0; }
     .home .value-proposition .articleContainer .proposition__element {
       transition: all .5s;
-      overflow: hidden; }
+      overflow: hidden;
+      font-size: 1.7rem; }
       .home .value-proposition .articleContainer .proposition__element:not(.proposition__element:last-child) {
         margin-bottom: 1.5rem; }
       .home .value-proposition .articleContainer .proposition__element[data-status="contracted"] {
         max-height: 3rem; }
       .home .value-proposition .articleContainer .proposition__element[data-status="expanded"] {
         max-height: 50rem; }
+    @media only screen and (min-width: 1100px) {
+      .home .value-proposition .articleContainer .proposition__element {
+        font-size: 2rem; } }
     .home .value-proposition .articleContainer .proposition__title {
       text-transform: capitalize; }
       .home .value-proposition .articleContainer .proposition__title:hover {
@@ -1075,6 +1161,21 @@ html {
       font-size: 1.8rem;
       font-weight: 300;
       margin-top: 1.5rem; }
+  @media only screen and (max-width: 950px) {
+    .home .value-proposition .articleContainer .proposition {
+      flex-direction: column; }
+      .home .value-proposition .articleContainer .proposition__container {
+        width: 100%; }
+        .home .value-proposition .articleContainer .proposition__container:first-child {
+          margin-bottom: 4rem; } }
+  @media only screen and (max-width: 500px) {
+    .home .value-proposition .articleContainer .proposition__element[data-status="contracted"] {
+      max-height: 4.5rem; } }
+  @media only screen and (max-width: 350px) {
+    .home .value-proposition .articleContainer .proposition__element[data-status="contracted"] {
+      max-height: 6.5rem; }
+    .home .value-proposition .articleContainer .proposition__element[data-status="expanded"] {
+      max-height: 60rem; } }
 
 .home .resources__container {
   display: grid;
@@ -1109,10 +1210,20 @@ html {
   .home .resources__container .r6-buttons {
     grid-area: r6-buttons; }
 
+@media only screen and (max-width: 500px) {
+  .home .resources__container {
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas: "r1-name r1-name" "r1-buttons r1-buttons" "r2-name r2-name" "r2-buttons r2-buttons" "r3-name r3-name" "r3-buttons r3-buttons" "r4-name r4-name" "r4-buttons r4-buttons" "r5-name r5-name" "r5-buttons r5-buttons" "r6-name r6-name" "r6-buttons r6-buttons"; } }
+
 .home .resources__element {
   text-align: left; }
   .home .resources__element--btnPack button:first-child {
     margin-right: 1rem; }
+
+@media only screen and (max-width: 500px) {
+  .home .resources__element {
+    text-align: center;
+    justify-content: center; } }
 
 .home .referrals #referrals-slider {
   margin-top: 4rem; }
@@ -1125,6 +1236,17 @@ html {
   font-size: 2rem;
   border-radius: 2rem;
   position: relative; }
+
+@media only screen and (max-width: 1200px) {
+  .home .referrals__item {
+    padding: 2.5rem;
+    min-height: 65rem; } }
+
+@media only screen and (max-width: 400px) {
+  .home .referrals__item {
+    min-height: 75rem;
+    padding: 2.5rem;
+    margin: 0 .5rem; } }
 
 .home .referrals__author {
   cursor: pointer; }
@@ -1139,6 +1261,10 @@ html {
   max-width: 10rem;
   transition: all .5s; }
 
+@media only screen and (max-width: 400px) {
+  .home .referrals__img {
+    max-width: 8rem; } }
+
 .home .referrals__name {
   text-transform: uppercase; }
 
@@ -1148,11 +1274,23 @@ html {
   font-style: italic;
   margin: 2rem 0; }
 
+@media only screen and (max-width: 1200px) {
+  .home .referrals__excerpt {
+    font-size: 1.75rem; } }
+
+@media only screen and (max-width: 300px) {
+  .home .referrals__excerpt {
+    font-size: 1.5rem; } }
+
 .home .referrals__button {
   position: absolute;
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%); }
+
+@media only screen and (max-width: 1200px) {
+  .home .referrals__button {
+    padding: 1rem 3rem; } }
 
 .home .referrals__control {
   position: relative;
@@ -1184,6 +1322,14 @@ html {
 
 .home .block-section--6 .form__container {
   margin: 3rem auto 0; }
+
+@media only screen and (max-width: 750px) {
+  .home .block-section--6 .form__container {
+    width: 60%; } }
+
+@media only screen and (max-width: 500px) {
+  .home .block-section--6 .form__container {
+    width: 100%; } }
 
 .home .block-section--6 .form__alert {
   width: 100%; }

@@ -79,11 +79,11 @@ const corporatePricingTemplate = `
 
         <li class="list__element list__element--pricing">
             <p class="popup__text popup__subtitle">Initial Consultation</p>
-            <p class="popup__text bold"><span>Price:</span> $750 (one-time fee)</p>
+            <p class="popup__text bold"><span>Price:</span> Ask for an estimate</p>
         </li>
         <li class="list__element list__element--pricing">
             <p class="popup__text popup__subtitle">Monthly Retainer for Ongoing Services</p>
-            <p class="popup__text bold"><span>Price:</span> $850 per month for 3 months</p>
+            <p class="popup__text bold"><span>Price:</span> Ask for an estimate</p>
         </li>
 
         <button class="cta-button positioned" data-link="./booking.html">Book now!</button>

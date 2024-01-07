@@ -8,13 +8,34 @@
     &__buffer {
         height: 7.5vh;
     }
+
+    &__lastCall {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .content-frame {
+        padding: 10rem 2.5rem 2rem;
+
+        &__buffer {
+            height: unset;
+        }
+    }
 }
 @media only screen and (min-width: 1800px) {
     .content-frame {
         min-height: 100vh;
 
         &__buffer {
-            height: 7.5vh;
+            height: 13.5vh;
+        }
+
+        &__lastCall {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 }
