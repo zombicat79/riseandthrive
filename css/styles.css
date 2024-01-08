@@ -391,6 +391,16 @@ html {
   padding: 0 3rem; }
   .footer__content {
     padding: 6rem 0; }
+  @media only screen and (max-width: 950px) {
+    .footer__content {
+      flex-direction: column; }
+      .footer__content .footer__nav {
+        order: 1; }
+      .footer__content .subscribe-btn {
+        order: 2;
+        margin: 2rem 0; }
+      .footer__content .cta-button:last-child {
+        order: 3; } }
   .footer__logo {
     width: 100%;
     max-width: 4rem; }
@@ -447,6 +457,10 @@ html {
     @media only screen and (max-width: 500px) {
       .block-section__band .cta-button {
         min-width: unset; } }
+  @media only screen and (max-width: 500px) {
+    .block-section__band {
+      margin: 0 -2.5rem;
+      margin-bottom: 5rem; } }
   .block-section .articleContainer {
     align-items: stretch;
     text-align: center; }
@@ -788,7 +802,7 @@ html {
     border-bottom-right-radius: 1.5rem; }
   .popup::-webkit-scrollbar-thumb {
     background: linear-gradient(to right, transparent, #faf8ed, #141e46, #faf8ed, transparent); }
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 750px) {
     .popup {
       height: 100vh;
       width: 100vw;
@@ -799,12 +813,12 @@ html {
       z-index: 20; } }
   .popup--appearing {
     transform: translate(-50%, -40%) scale(1); }
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 750px) {
     .popup--appearing {
       transform: translate(0, 0) scale(1); } }
   .popup--disappearing {
     transform: translate(-50%, -40%) scale(0); }
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 750px) {
     .popup--disappearing {
       transform: translate(0, 0) scale(0); } }
   .popup__xCloser {
@@ -845,9 +859,6 @@ html {
   .popup__text.contact-detail {
     margin-bottom: 0;
     display: block; }
-  @media only screen and (max-width: 950px) {
-    .popup__text {
-      text-align: left; } }
   .popup__ad {
     text-transform: uppercase;
     color: #748e63;
@@ -901,6 +912,9 @@ html {
       border: 3px solid #e83f3c; }
     .popup .form__input::placeholder, .popup .form__select::placeholder {
       font-size: 1.5rem; }
+    @media only screen and (max-width: 350px) {
+      .popup .form__input::placeholder, .popup .form__select::placeholder {
+        font-size: 1.25rem; } }
     .popup .form__input:-webkit-autofill, .popup .form__input:-webkit-autofill:hover, .popup .form__input:-webkit-autofill:focus, .popup .form__select:-webkit-autofill, .popup .form__select:-webkit-autofill:hover, .popup .form__select:-webkit-autofill:focus {
       background-color: #fae7c9;
       -webkit-text-fill-color: #141e46;
@@ -1011,6 +1025,10 @@ html {
   max-height: 80rem;
   color: #faf8ed;
   position: relative; }
+
+@media only screen and (max-width: 500px) {
+  .home__heading {
+    margin: 0 -2.5rem; } }
 
 .home .heading__background {
   background-image: linear-gradient(to right, rgba(20, 30, 70, 0.7), rgba(250, 248, 237, 0.7)), url("./../public/images/cloudy-bg_bigger.jpg");
@@ -1339,6 +1357,9 @@ html {
   .about__title {
     font-family: "Caveat-Bold";
     font-size: 6rem; }
+  @media only screen and (max-width: 500px) {
+    .about__title {
+      font-size: 4rem; } }
   .about .block-section--1 {
     margin: 0 -4rem;
     background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/rosy-skies.jpg");
@@ -1347,16 +1368,56 @@ html {
     background-position: bottom;
     padding: 10rem 4rem;
     min-height: 35rem; }
+  @media only screen and (max-width: 500px) {
+    .about .block-section--1 {
+      margin: 0 -2.5rem; } }
   .about .block-section--2 .introContainer__figure {
     background-image: url("./../public/images/cristina-pro-2.jpeg"); }
+  @media only screen and (max-width: 750px) {
+    .about .block-section--2 .introContainer__figure {
+      order: 2;
+      min-height: 60rem;
+      margin-bottom: 0; }
+    .about .block-section--2 .introContainer .articleContainer__textContainer {
+      order: 1;
+      margin-bottom: 5rem; } }
   .about .block-section--3 .introContainer__figure {
     background-image: url("./../public/images/superpowers.jpg"); }
+  @media only screen and (max-width: 750px) {
+    .about .block-section--3 .introContainer__figure {
+      order: 2;
+      min-height: 60rem;
+      margin-bottom: 0; }
+    .about .block-section--3 .introContainer .articleContainer__textContainer {
+      order: 1;
+      margin-bottom: 5rem; } }
   .about .block-section--4 .introContainer__figure {
     background-image: url("./../public/images/teamwork.jpg"); }
+  @media only screen and (max-width: 750px) {
+    .about .block-section--4 .introContainer__figure {
+      order: 2;
+      margin-bottom: 0; }
+    .about .block-section--4 .introContainer .articleContainer__textContainer {
+      order: 1;
+      margin-bottom: 5rem; } }
   .about .block-section--5 .introContainer__figure {
     background-image: url("./../public/images/guidance.jpg"); }
+  @media only screen and (max-width: 750px) {
+    .about .block-section--5 .introContainer__figure {
+      order: 2;
+      margin-bottom: 0; }
+    .about .block-section--5 .introContainer .articleContainer__textContainer {
+      order: 1;
+      margin-bottom: 5rem; } }
   .about .block-section--6 .introContainer__figure {
     background-image: url("./../public/images/transformation.jpg"); }
+  @media only screen and (max-width: 750px) {
+    .about .block-section--6 .introContainer__figure {
+      order: 2;
+      margin-bottom: 0; }
+    .about .block-section--6 .introContainer .articleContainer__textContainer {
+      order: 1;
+      margin-bottom: 5rem; } }
   .about .block-section--7 {
     font-family: "Raleway";
     font-size: 3rem;

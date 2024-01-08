@@ -5,6 +5,11 @@
         font-family: "Caveat-Bold";
         font-size: 6rem;
     }
+    @media only screen and (max-width: 500px) {
+        &__title {
+            font-size: 4rem;
+        }
+    }
 
     .block-section--1 {
         margin: 0 -4rem;
@@ -17,6 +22,11 @@
         padding: 10rem 4rem;
         min-height: 35rem;
     }
+    @media only screen and (max-width: 500px) {
+        .block-section--1 {
+            margin: 0 -2.5rem;
+        }
+    }
 
     .block-section--2 {
 
@@ -24,6 +34,18 @@
 
             &__figure {
                 background-image: url("./../public/images/cristina-pro-2.jpeg");
+            }
+            @media only screen and (max-width: 750px) {
+                &__figure {
+                    order: 2;
+                    min-height: 60rem;
+                    margin-bottom: 0;
+                }
+
+                .articleContainer__textContainer {
+                    order: 1;
+                    margin-bottom: 5rem;
+                }
             }
         }
     }
@@ -35,6 +57,18 @@
             &__figure {
                 background-image: url("./../public/images/superpowers.jpg");
             }
+            @media only screen and (max-width: 750px) {
+                &__figure {
+                    order: 2;
+                    min-height: 60rem;
+                    margin-bottom: 0;
+                }
+
+                .articleContainer__textContainer {
+                    order: 1;
+                    margin-bottom: 5rem;
+                }
+            }
         }
     }
 
@@ -44,6 +78,17 @@
 
             &__figure {
                 background-image: url("./../public/images/teamwork.jpg");
+            }
+            @media only screen and (max-width: 750px) {
+                &__figure {
+                    order: 2;
+                    margin-bottom: 0;
+                }
+    
+                .articleContainer__textContainer {
+                    order: 1;
+                    margin-bottom: 5rem;
+                }
             }
         }
     }
@@ -55,6 +100,17 @@
             &__figure {
                 background-image: url("./../public/images/guidance.jpg");
             }
+            @media only screen and (max-width: 750px) {
+                &__figure {
+                    order: 2;
+                    margin-bottom: 0;
+                }
+    
+                .articleContainer__textContainer {
+                    order: 1;
+                    margin-bottom: 5rem;
+                }
+            }
         }
     }
 
@@ -64,6 +120,17 @@
 
             &__figure {
                 background-image: url("./../public/images/transformation.jpg");
+            }
+            @media only screen and (max-width: 750px) {
+                &__figure {
+                    order: 2;
+                    margin-bottom: 0;
+                }
+    
+                .articleContainer__textContainer {
+                    order: 1;
+                    margin-bottom: 5rem;
+                }
             }
         }
     }

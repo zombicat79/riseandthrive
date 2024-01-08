@@ -24,7 +24,7 @@
         background: linear-gradient(to right, transparent, $color-light-grey, $color-dark-blue, $color-light-grey, transparent);
     }
 
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 750px) {
         & {
             height: 100vh;
             width: 100vw;
@@ -39,7 +39,7 @@
     &--appearing {
         transform: translate(-50%, -40%) scale(1);
     }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 750px) {
         &--appearing {
             transform: translate(0, 0) scale(1);
         }
@@ -48,7 +48,7 @@
     &--disappearing {
         transform: translate(-50%, -40%) scale(0);
     }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 750px) {
         &--disappearing {
             transform: translate(0, 0) scale(0);
         }
@@ -119,9 +119,9 @@
             display: block;
         }
     }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 750px) {
         &__text {
-            text-align: left;
+            // text-align: left;
         }
     }
 
@@ -209,6 +209,11 @@
 
             &::placeholder {
                 font-size: 1.5rem;
+            }
+            @media only screen and (max-width: 350px) {
+                &::placeholder {
+                    font-size: 1.25rem;
+                }
             }
 
             &:-webkit-autofill, &:-webkit-autofill:hover,

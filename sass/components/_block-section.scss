@@ -23,6 +23,12 @@
             }
         }
     }
+    @media only screen and (max-width: 500px) {
+        &__band {
+            margin: 0 -2.5rem;
+            margin-bottom: 5rem;
+        }
+    }
 
     .articleContainer {
         align-items: stretch;

@@ -5,6 +5,24 @@
     &__content {
         padding: 6rem 0;
     }
+    @media only screen and (max-width: 950px) {
+        &__content {
+            flex-direction: column;
+
+            .footer__nav {
+                order: 1;
+            }
+
+            .subscribe-btn {
+                order: 2;
+                margin: 2rem 0;
+            }
+
+            .cta-button:last-child {
+                order: 3;
+            }
+        }
+    }
 
     &__logo {
         width: 100%;

@@ -6,6 +6,11 @@
         color: $color-light-grey;
         position: relative;
     }
+    @media only screen and (max-width: 500px) {
+        &__heading {
+            margin: 0 -2.5rem;
+        }
+    }
 
     .heading__background {
         background-image: 
