@@ -253,6 +253,7 @@
             width: 100%;
             padding: 4rem 0;
 
+
             .header__img {
                 width: 100%;
                 max-width: 20rem;
@@ -267,6 +268,20 @@
                 font-size: 5rem;
                 font-weight: 900;
                 text-transform: uppercase;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            &__header {
+                flex-direction: column;
+
+                .header__img {
+                    max-width: 15rem;
+                }
+
+                .header__title {
+                    font-size: 3rem;
+                    margin-top: 2rem;
+                }
             }
         }
 
@@ -360,6 +375,11 @@
                     margin-left: 4rem;
                     margin-block: 2rem;
                 }
+                @media only screen and (max-width: 400px) {
+                    &__list {
+                        margin-left: 2rem;
+                    }
+                }
     
                 &__title, &__subtitle {
                     bottom: 0;
@@ -440,6 +460,11 @@
                 opacity: 0;
                 padding: 0 6rem;
             }
+            @media only screen and (max-width: 950px) {
+                .unfolding-content__body {
+                    width: 100%;
+                }
+            }
 
             .body__shrink {
                 opacity: 0;
@@ -453,6 +478,32 @@
                 max-height: 200rem;
                 opacity: 1;
                 padding: 4rem 6rem;
+            }
+            @media only screen and (max-width: 950px) {
+                .unfolding-content__body {
+                    max-height: 1000rem;
+                    width: 100%;
+                }
+            }
+            @media only screen and (max-width: 750px) {
+                .body__btnContainer {
+                    flex-direction: column;
+
+                    .cta-button:first-child {
+                        margin-right: 0;
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+            @media only screen and (max-width: 500px) {
+                .cta-button {
+                    min-width: 27rem;
+                }
+            }
+            @media only screen and (max-width: 400px) {
+                .unfolding-content__body {
+                    padding: 4rem 3rem;
+                }
             }
 
             .body__shrink {
