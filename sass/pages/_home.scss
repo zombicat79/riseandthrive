@@ -308,22 +308,28 @@
                 grid-area: r6-buttons;
             }
         }
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 950px) {
             &__container {
+                grid-template-columns: 35% 1fr;
+            }
+        }
+        @media only screen and (max-width: 750px) {
+            &__container {
+                grid-template-columns: 100%;
                 grid-template-rows: repeat(12, 1fr);
                 grid-template-areas:
-                    "r1-name r1-name"
-                    "r1-buttons r1-buttons"
-                    "r2-name r2-name"
-                    "r2-buttons r2-buttons"
-                    "r3-name r3-name"
-                    "r3-buttons r3-buttons"
-                    "r4-name r4-name"
-                    "r4-buttons r4-buttons"
-                    "r5-name r5-name"
-                    "r5-buttons r5-buttons"
-                    "r6-name r6-name"
-                    "r6-buttons r6-buttons";
+                    "r1-name"
+                    "r1-buttons"
+                    "r2-name"
+                    "r2-buttons"
+                    "r3-name"
+                    "r3-buttons"
+                    "r4-name"
+                    "r4-buttons"
+                    "r5-name"
+                    "r5-buttons"
+                    "r6-name"
+                    "r6-buttons";
             }
         }
 
@@ -333,11 +339,49 @@
             &--btnPack button:first-child {
                 margin-right: 1rem;
             }
+            @media only screen and (max-width: 750px) {
+                &--btnPack {
+                    justify-content: center;
+                }
+            }
+            @media only screen and (max-width: 400px) {
+                &--btnPack {
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .cta-button {
+                        min-width: 20rem;
+
+                        &:first-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
         }
         @media only screen and (max-width: 500px) {
             &__element {
                 text-align: center;
                 justify-content: center;
+            }
+        }
+
+        &__title {
+            font-size: 3.5rem;
+        }
+        @media only screen and (max-width: 950px) {
+            &__title {
+                font-size: 2.75vw;
+            }
+        }
+        @media only screen and (max-width: 750px) {
+            &__title {
+                text-align: center;
+            }
+        }
+        @media only screen and (max-width: 500px) {
+            &__title {
+                font-size: 5vw;
             }
         }
     }

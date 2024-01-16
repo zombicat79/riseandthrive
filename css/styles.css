@@ -1258,20 +1258,51 @@ html {
   .home .resources__container .r6-buttons {
     grid-area: r6-buttons; }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 950px) {
   .home .resources__container {
+    grid-template-columns: 35% 1fr; } }
+
+@media only screen and (max-width: 750px) {
+  .home .resources__container {
+    grid-template-columns: 100%;
     grid-template-rows: repeat(12, 1fr);
-    grid-template-areas: "r1-name r1-name" "r1-buttons r1-buttons" "r2-name r2-name" "r2-buttons r2-buttons" "r3-name r3-name" "r3-buttons r3-buttons" "r4-name r4-name" "r4-buttons r4-buttons" "r5-name r5-name" "r5-buttons r5-buttons" "r6-name r6-name" "r6-buttons r6-buttons"; } }
+    grid-template-areas: "r1-name" "r1-buttons" "r2-name" "r2-buttons" "r3-name" "r3-buttons" "r4-name" "r4-buttons" "r5-name" "r5-buttons" "r6-name" "r6-buttons"; } }
 
 .home .resources__element {
   text-align: left; }
   .home .resources__element--btnPack button:first-child {
     margin-right: 1rem; }
+  @media only screen and (max-width: 750px) {
+    .home .resources__element--btnPack {
+      justify-content: center; } }
+  @media only screen and (max-width: 400px) {
+    .home .resources__element--btnPack {
+      flex-direction: column;
+      gap: 1rem; }
+      .home .resources__element--btnPack .cta-button {
+        min-width: 20rem; }
+        .home .resources__element--btnPack .cta-button:first-child {
+          margin-right: 0; } }
 
 @media only screen and (max-width: 500px) {
   .home .resources__element {
     text-align: center;
     justify-content: center; } }
+
+.home .resources__title {
+  font-size: 3.5rem; }
+
+@media only screen and (max-width: 950px) {
+  .home .resources__title {
+    font-size: 2.75vw; } }
+
+@media only screen and (max-width: 750px) {
+  .home .resources__title {
+    text-align: center; } }
+
+@media only screen and (max-width: 500px) {
+  .home .resources__title {
+    font-size: 5vw; } }
 
 .home .referrals #referrals-slider {
   margin-top: 4rem; }
@@ -1464,6 +1495,9 @@ html {
   text-align: center; }
   .booking .articleContainer__textContainer {
     padding: 0; }
+  @media only screen and (max-width: 1100px) {
+    .booking .regular-content__body {
+      flex-direction: column; } }
   .booking .block-section--1 {
     margin: 0 -4rem;
     background-image: linear-gradient(to right, rgba(20, 30, 70, 0.5), rgba(250, 248, 237, 0.5)), url("./../public/images/coffee-talk.jpg");
@@ -1472,20 +1506,88 @@ html {
     background-position: center;
     padding: 10rem 4rem;
     min-height: 50rem; }
+    @media only screen and (max-width: 950px) {
+      .booking .block-section--1 .about__title {
+        font-size: 5rem; } }
+    @media only screen and (max-width: 500px) {
+      .booking .block-section--1 .about__title {
+        font-size: 4rem; } }
+  @media only screen and (max-width: 500px) {
+    .booking .block-section--1 {
+      margin: 0 -2.5rem; } }
+  @media only screen and (max-width: 1100px) {
+    .booking .block-section--2 .form__container {
+      width: 100%; } }
+  @media only screen and (max-width: 950px) {
+    .booking .block-section--2 .form__button {
+      width: 40%; } }
+  @media only screen and (max-width: 600px) {
+    .booking .block-section--2 .form__row {
+      flex-direction: column; }
+    .booking .block-section--2 .form__column:first-child {
+      margin-right: 0; }
+    .booking .block-section--2 .form__buttonContainer {
+      flex-direction: column;
+      gap: 2rem; }
+      .booking .block-section--2 .form__buttonContainer .form__button {
+        width: 100%;
+        max-width: 25rem; } }
+  @media only screen and (max-width: 400px) {
+    .booking .block-section--2 .form__title {
+      font-size: 3.5rem; } }
   .booking .block-section--3 .introContainer__figure {
     background-image: url("./../public/images/laptop-signalling.jpg"); }
+  @media only screen and (max-width: 950px) {
+    .booking .block-section--3 .introContainer__figure {
+      width: 100%;
+      min-height: 60rem;
+      margin-bottom: 5rem; } }
+  @media only screen and (max-width: 950px) {
+    .booking .block-section--3 .introContainer {
+      flex-direction: column; } }
+  @media only screen and (max-width: 950px) {
+    .booking .block-section--3 .articleContainer__textContainer {
+      width: 100%; } }
+  @media only screen and (max-width: 500px) {
+    .booking .block-section--3 .articleContainer__textContainer .regular-content__body {
+      padding: 4rem; } }
   .booking .block-section--4 .articleContainer {
     background-color: #fae7c9;
     padding: 4rem;
     border-radius: 2rem; }
+  @media only screen and (max-width: 350px) {
+    .booking .block-section--4 .articleContainer {
+      padding: 4rem 2rem; } }
+  @media only screen and (max-width: 1100px) {
+    .booking .block-section--4 .introContainer .regular-content__body {
+      flex-direction: column-reverse;
+      padding: 4rem 0; } }
   .booking .block-section--4 .introContainer__figure {
     background-image: url("./../public/images/duck-king.jpg"); }
+  @media only screen and (max-width: 1100px) {
+    .booking .block-section--4 .introContainer__figure {
+      width: 100%;
+      max-width: 80rem; } }
   .booking .block-section--5 .articleContainer {
     background-color: #fae7c9;
     padding: 4rem;
     border-radius: 2rem; }
+  @media only screen and (max-width: 350px) {
+    .booking .block-section--5 .articleContainer {
+      padding: 4rem 2rem; } }
+  @media only screen and (max-width: 1100px) {
+    .booking .block-section--5 .introContainer .regular-content__body {
+      flex-direction: column;
+      padding: 4rem 0; } }
   .booking .block-section--5 .introContainer__figure {
     background-image: url("./../public/images/collective-victory.jpg"); }
+  @media only screen and (max-width: 1100px) {
+    .booking .block-section--5 .introContainer__figure {
+      width: 100%;
+      max-width: 80rem; } }
+  @media screen and (max-width: 750px) {
+    .booking .table__caption {
+      text-align: center; } }
   .booking .body__table {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -1493,6 +1595,12 @@ html {
     .booking .body__table .table__element {
       padding: 4rem;
       background-color: #fff; }
+    @media only screen and (max-width: 950px) {
+      .booking .body__table .table__element {
+        padding: 2rem; } }
+    @media only screen and (max-width: 600px) {
+      .booking .body__table .table__element--feature {
+        display: none !important; } }
     .booking .body__table .product1 {
       grid-area: p1; }
     .booking .body__table .product2 {
@@ -1515,8 +1623,14 @@ html {
       grid-area: d4; }
     .booking .body__table .price1 {
       grid-area: pri1; }
+    @media only screen and (max-width: 600px) {
+      .booking .body__table .price1 {
+        margin-bottom: 2rem; } }
     .booking .body__table .price2 {
       grid-area: pri2; }
+    @media only screen and (max-width: 600px) {
+      .booking .body__table .price2 {
+        margin-bottom: 2rem; } }
     .booking .body__table .price3 {
       grid-area: pri3; }
     .booking .body__table .price4 {
@@ -1525,10 +1639,36 @@ html {
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(2, 1fr);
       grid-template-areas: ". p1 p2 p3 p4" "f2 d1 d2 d3 d4" "f1 pri1 pri2 pri3 pri4"; }
+      @media only screen and (max-width: 600px) {
+        .booking .body__table--individual .price3 {
+          margin-bottom: 2rem; } }
+    @media only screen and (max-width: 1100px) {
+      .booking .body__table--individual {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: ". f2 f1" "p1 d1 pri1" "p2 d2 pri2" "p3 d3 pri3" "p4 d4 pri4"; } }
+    @media only screen and (max-width: 600px) {
+      .booking .body__table--individual {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(12, 1fr);
+        grid-template-areas: "p1" "d1" "pri1" "p2" "d2" "pri2" "p3" "d3" "pri3" "p4" "d4" "pri4"; } }
     .booking .body__table--corporate {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 1fr);
       grid-template-areas: ". p1 p2 p3" "f2 d1 d2 d3" "f1 pri1 pri2 pri3"; }
+    @media only screen and (max-width: 1100px) {
+      .booking .body__table--corporate {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: ". f2 f1" "p1 d1 pri1" "p2 d2 pri2" "p3 d3 pri3"; } }
+    @media only screen and (max-width: 600px) {
+      .booking .body__table--corporate {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: "p1" "d1" "pri1" "p2" "d2" "pri2" "p3" "d3" "pri3"; } }
+  @media only screen and (max-width: 950px) {
+    .booking .body__table {
+      font-size: 1.25rem; } }
 
 .resources__title {
   font-family: "Caveat-Bold";

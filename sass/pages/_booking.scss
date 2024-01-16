@@ -5,6 +5,12 @@
         padding: 0;
     }
 
+    @media only screen and (max-width: 1100px) {
+        .regular-content__body {
+            flex-direction: column;
+        }
+    }
+
     .block-section--1 {
         margin: 0 -4rem;
         background-image: 
@@ -15,6 +21,60 @@
         background-position: center;
         padding: 10rem 4rem;
         min-height: 50rem;
+
+        @media only screen and (max-width: 950px) {
+            .about__title {
+                font-size: 5rem;
+            }
+        }
+        @media only screen and (max-width: 500px) {
+            .about__title {
+                font-size: 4rem;
+            }
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        .block-section--1 {
+            margin: 0 -2.5rem;
+        }
+    }
+
+    .block-section--2 {
+
+        @media only screen and (max-width: 1100px) {
+            .form__container {
+                width: 100%;
+            }
+        }
+        @media only screen and (max-width: 950px) {
+            .form__button {
+                width: 40%;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            .form__row {
+                flex-direction: column;
+            }
+            
+            .form__column:first-child {
+                margin-right: 0;
+            }
+
+            .form__buttonContainer {
+                flex-direction: column;
+                gap: 2rem;
+               
+                .form__button {
+                    width: 100%;
+                    max-width: 25rem;
+                }
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            .form__title {
+                font-size: 3.5rem;
+            }
+        }
     }
 
     .block-section--3 {
@@ -23,6 +83,32 @@
 
             &__figure {
                 background-image: url("./../public/images/laptop-signalling.jpg");
+            }
+            @media only screen and (max-width: 950px) {
+                &__figure {
+                    width: 100%;
+                    min-height: 60rem;
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+        @media only screen and (max-width: 950px) {
+            .introContainer {
+                flex-direction: column;
+            }
+        }
+
+        .articleContainer {
+
+            @media only screen and (max-width: 950px) {
+                &__textContainer {
+                    width: 100%;
+                }
+            }
+            @media only screen and (max-width: 500px) {
+                &__textContainer .regular-content__body {
+                    padding: 4rem;
+                }
             }
         }
     }
@@ -34,11 +120,29 @@
             padding: 4rem;
             border-radius: 2rem;
         }
+        @media only screen and (max-width: 350px) {
+            .articleContainer {
+                padding: 4rem 2rem;
+            }
+        }
 
         .introContainer {
 
+            @media only screen and (max-width: 1100px) {
+                .regular-content__body {
+                    flex-direction: column-reverse;
+                    padding: 4rem 0;
+                }
+            }
+
             &__figure {
                 background-image: url("./../public/images/duck-king.jpg");
+            }
+            @media only screen and (max-width: 1100px) {
+                &__figure {
+                    width: 100%;
+                    max-width: 80rem;
+                }
             }
         }
     }
@@ -50,11 +154,38 @@
             padding: 4rem;
             border-radius: 2rem;
         }
+        @media only screen and (max-width: 350px) {
+            .articleContainer {
+                padding: 4rem 2rem;
+            }
+        }
 
         .introContainer {
 
+            @media only screen and (max-width: 1100px) {
+                .regular-content__body {
+                    flex-direction: column;
+                    padding: 4rem 0;
+                }
+            }
+
             &__figure {
                 background-image: url("./../public/images/collective-victory.jpg");
+            }
+            @media only screen and (max-width: 1100px) {
+                &__figure {
+                    width: 100%;
+                    max-width: 80rem;
+                }
+            }
+        }
+    }
+
+    .table__caption {
+
+        @media screen and (max-width: 750px) {
+            & {
+                text-align: center;
             }
         }
     }
@@ -70,6 +201,16 @@
         .table__element {
             padding: 4rem;
             background-color: #fff;
+        }
+        @media only screen and (max-width: 950px) {
+            .table__element {
+                padding: 2rem;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            .table__element--feature {
+                display: none !important;
+            }
         }
 
         .product1 {
@@ -105,8 +246,18 @@
         .price1 {
             grid-area: pri1;
         }
+        @media only screen and (max-width: 600px) {
+            .price1 {
+                margin-bottom: 2rem;
+            }
+        }
         .price2 {
             grid-area: pri2;
+        }
+        @media only screen and (max-width: 600px) {
+            .price2 {
+                margin-bottom: 2rem;
+            }
         }
         .price3 {
             grid-area: pri3;
@@ -122,6 +273,43 @@
                 ". p1 p2 p3 p4"
                 "f2 d1 d2 d3 d4"
                 "f1 pri1 pri2 pri3 pri4";
+
+            @media only screen and (max-width: 600px) {
+                .price3 {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        @media only screen and (max-width: 1100px) {
+            &--individual {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                grid-template-areas:
+                    ". f2 f1"
+                    "p1 d1 pri1"
+                    "p2 d2 pri2"
+                    "p3 d3 pri3"
+                    "p4 d4 pri4";
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            &--individual {
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(12, 1fr);
+                grid-template-areas:
+                    "p1"
+                    "d1"
+                    "pri1"
+                    "p2"
+                    "d2"
+                    "pri2"
+                    "p3"
+                    "d3"
+                    "pri3"
+                    "p4"
+                    "d4"
+                    "pri4";
+            }
         }
 
         &--corporate {
@@ -131,6 +319,38 @@
                 ". p1 p2 p3"
                 "f2 d1 d2 d3"
                 "f1 pri1 pri2 pri3";
+        }
+        @media only screen and (max-width: 1100px) {
+            &--corporate {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-areas:
+                    ". f2 f1"
+                    "p1 d1 pri1"
+                    "p2 d2 pri2"
+                    "p3 d3 pri3";
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            &--corporate {
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(9, 1fr);
+                grid-template-areas:
+                    "p1"
+                    "d1"
+                    "pri1"
+                    "p2"
+                    "d2"
+                    "pri2"
+                    "p3"
+                    "d3"
+                    "pri3";
+            }
+        }
+    }
+    @media only screen and (max-width: 950px) {
+        .body__table {
+            font-size: 1.25rem;
         }
     }
 }
